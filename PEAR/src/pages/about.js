@@ -8,7 +8,7 @@ export default () => (
     <Header siteTitle = "lololoo"/>
     <h1>About Gatsby</h1>
     <p>Such wow. Very React.</p>
-    <Link to="/"><Button buttonText="clickme"/></Link>
+    <Link to="/"><Button buttonText = "BIG BUTTON"/></Link>
 
   </div>
 )
