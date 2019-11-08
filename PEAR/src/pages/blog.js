@@ -8,17 +8,22 @@ const BlogPage = ({data}) => (
     <h1>Latest Posts</h1>
     <hr/>
     {data.allMarkdownRemark.edges.map(post =>(
-        <div key = {post.node.id}>
+      
+        
+        <td key = {post.node.id}>
             <h3>{post.node.frontmatter.title}</h3>
             <small>Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</small>
-            <br/>
-            <br/>
+            
+            <img src ="https://66.media.tumblr.com/080ba65aaa6d0e1d22fd047c8c649e6e/tumblr_oblslqFoRN1qggwnvo1_1280.jpg" alt = 'oops'></img>
+            
             <Link to ={post.node.frontmatter.path}> Read more</Link>
-            <br/>
-            <br/>
+            
+            
             <hr/>
 
-        </div>
+        </td>
+        
+      
     ))}
     
   </Layout>

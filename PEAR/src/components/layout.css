@@ -617,6 +617,15 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+.blog-column{
+  
+  -webkit-columns: 300px 2; /* Chrome, Safari, Opera */
+  -moz-columns: 300px 2; /* Firefox */
+  columns: 300px 2;
+  
+  
+
+}
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
