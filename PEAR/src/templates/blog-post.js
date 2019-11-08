@@ -22,11 +22,11 @@ export const postQuery = graphql`
     query BlogPostByPath($path: String!){
         markdownRemark(frontmatter: {path: { eq: $path}}){
             html
-            frontmatter{
+            frontmatter {
                 path
                 title
                 author
-                date
+                date            
             }
 
         }
