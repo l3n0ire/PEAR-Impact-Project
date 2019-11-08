@@ -13,7 +13,7 @@ import Layout from "../components/layout"
 const BlogPage = ({data}) => (
   <Layout>
     <h1>Latest Posts</h1>
-    <Grid container 
+    <Grid container
     direction="row"
     justify="center"
     alignItems="center"
@@ -27,7 +27,7 @@ const BlogPage = ({data}) => (
                     Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}
                   </Typography>
                   <br/><br/>
-                  <Link to ={post.node.frontmatter.path}> 
+                  <Link to ={post.node.frontmatter.path}>
                     Read more
                   </Link>
                   <br/><br/>
@@ -35,9 +35,9 @@ const BlogPage = ({data}) => (
               </Card>
             </Grid>
           ))}
-      
+
     </Grid>
-    
+
   </Layout>
 )
 
@@ -57,7 +57,7 @@ export const pageQuery = graphql`
              }
            }
       }
-    
+
 `
 
 export default BlogPage
