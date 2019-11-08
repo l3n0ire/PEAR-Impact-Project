@@ -8,15 +8,12 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>We have to beat Henry</h1>
-    <p>this is the index page</p>
+    <h1>Welcome to the winning site</h1>
     <p>$250 on the line</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
-    <br></br>
-    <Link to="/about/">Go to about</Link>
   </Layout>
 )
 

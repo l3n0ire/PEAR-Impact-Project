@@ -1,14 +1,16 @@
-import React from "react"
-import Header from "../components/header"
-import { Link } from "gatsby"
-import Button from "../components/button"
+import React from 'react'
+import Layout from "../components/layout"
 
-export default () => (
-  <div style={{ color: `teal` }}>
-    <Header siteTitle = "lololoo"/>
-    <h1>About Gatsby</h1>
-    <p>Such wow. Very React.</p>
-    <Link to="/"><Button buttonText = "BIG BUTTON"/></Link>
 
-  </div>
+const  AboutPage = () => 
+(
+        <Layout>
+        <div>
+            <h1>About Us</h1>
+            <p>Quis et quis dolor laborum non ex duis tempor commodo.</p>
+            
+        </div>
+        </Layout>
 )
+
+export default AboutPage;
