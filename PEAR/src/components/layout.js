@@ -29,7 +29,6 @@ const Layout = ({ children }) => {
   return (
     <>
       <Menu2 />
-      <TabNav/>
 
       <div
         style={{
