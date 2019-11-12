@@ -14,6 +14,7 @@ import Menu2 from "./menu2"
 import Menu from "./menu"
 import "./layout.css"
 import TabNav from"./tabs"
+import Parallax from "./parallax"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,6 +30,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Menu2 />
+      <Parallax/>
 
       <div
         style={{
@@ -36,6 +38,7 @@ const Layout = ({ children }) => {
           maxWidth: 960,
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: '1vh',
+         
 
         }}
       >

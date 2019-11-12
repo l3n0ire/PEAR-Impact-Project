@@ -1,7 +1,7 @@
 ---
 path: "/post-3"
 date: "2019-11-08"
-title: "Another One?"
+title: "My Second Gatsby Post1?"
 author: "YEEET"
 ---
 Voluptate reprehenderit elit velit exercitation proident consectetur est est cupidatat culpa ipsum nostrud. Mollit fugiat consequat aute labore et sit mollit. Proident aliquip veniam minim irure ipsum. Qui sint laborum labore voluptate do velit amet exercitation sunt.
