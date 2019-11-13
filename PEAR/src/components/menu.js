@@ -23,7 +23,7 @@ const Menu = () => (
     direction="row"
     pad="medium"
     background={{
-      color: "light-1",
+      color: "dark-4",
     }}
   >
     <Desktop>
