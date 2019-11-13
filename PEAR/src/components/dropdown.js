@@ -12,30 +12,35 @@ const Dropdown = () => (
           plain
           items={[
             {
-              label: <Box alignSelf="center"><Link to='/about'>About</Link></Box>,
+              label: <Box alignSelf="center">About</Box>,
               icon: (
-                <Box pad="medium">
-                <Contact />
-              </Box>
+                <Link to='/about'>
+                  <Box pad="medium">
+                    <Contact />
+                  </Box>
+                </Link>
  
               )
               
             },
             {
-              label: <Box alignSelf="center"><Link to='/services'>Services</Link></Box>,
+              label: <Box alignSelf="center">Services</Box>,
               icon: (
-                <Box pad="medium">
-                <Services />
-              </Box>
- 
+                <Link to='/services'>
+                  <Box pad="medium">
+                    <Services />
+                  </Box>
+                </Link>
               )
             },
             {
-              label: <Box alignSelf="center"><Link to='/blog'>Blog</Link></Box>,
+              label: <Box alignSelf="center">Blog</Box>,
               icon: (
-                <Box pad="medium">
-                <Blog />
-              </Box>
+                <Link to='/blog'>
+                  <Box pad="medium">
+                    <Blog />
+                  </Box>
+                </Link>
  
               )
             },
