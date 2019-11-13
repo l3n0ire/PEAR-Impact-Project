@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import { Grid, Box, Grommet, Text, InfiniteScroll ,Image} from "grommet"
+import { Grid, Box, Grommet, Text, InfiniteScroll ,Image, Button} from "grommet"
 import Link from "gatsby-link"
 
 
@@ -20,9 +20,7 @@ const BlogPage = ({data}) => (
               <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
               <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
               <hr></hr>
-              <Link to ={post.node.frontmatter.path}>
-                    Read more
-                  </Link>
+              <Box alignSelf ='center' pad = 'small'><Link to ={post.node.frontmatter.path}><Button label = 'Read More'></Button></Link></Box>
 
             </Box>
                  ))}
