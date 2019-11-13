@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
     <>
     <div style = {{height: '100vh', width: '100vw'}}>
       <Grid
-        rows = {['15vh', '65vh', '10vh', '20vh']}
+        rows = {['15vh', 'flex', '10vh', '20vh']}
         columns = {['full']}
         areas = {[
           { name: 'header', start: [0, 0], end: [0, 0] },
