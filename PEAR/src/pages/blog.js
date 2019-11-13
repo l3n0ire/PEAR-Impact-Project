@@ -1,7 +1,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import { Grid, Box, Grommet, Text, InfiniteScroll } from "grommet"
+import { Grid, Box, Grommet, Text, InfiniteScroll ,Image} from "grommet"
 import Link from "gatsby-link"
 
 
@@ -15,6 +15,8 @@ const BlogPage = ({data}) => (
         
     {data.allMarkdownRemark.edges.map(post =>(
             <Box justify = 'center' border = 'all'>
+                  <Image fit="cover" src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" />
+
               <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
               <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
               <hr></hr>
