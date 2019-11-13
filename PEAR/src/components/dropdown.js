@@ -7,7 +7,7 @@ import Link from 'gatsby-link';
 
 const Dropdown = () => (
     <Grommet theme={grommet}>
-      <Box align="center" pad="small" background ={{color: 'light-1'}}>
+      <Box align="center" pad="medium" background ={{color: 'light-1'}}>
         <Menu
           plain
           items={[

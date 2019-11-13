@@ -11,7 +11,9 @@ const Menu = () =>
             flex = {true}
             align = 'center'
             direction = 'row'
+            flex = 'grow'
             pad = 'medium'
+            overflow = "hidden"
             background = {{
                 color: 'light-1'
             }}
