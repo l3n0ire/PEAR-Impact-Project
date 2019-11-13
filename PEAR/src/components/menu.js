@@ -1,28 +1,28 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import { Box, Button, Heading } from 'grommet'
+
 
 const Menu = () => 
 (
-        <div style={{
-            background: '#f4f4f4',
-            paddingTop: '10px',
+        <Box
+            justify = 'evenly'
+            flex = {true}
+            align = 'center'
+            direction = 'row'
+            pad = 'medium'
+            background = {{
+                color: 'light-1'
+            }}
+        >
+            <Heading margin = 'none' size = 'small'>Azhar</Heading>
+            <Link to = '/'><Button primary = {true} label = 'Home'></Button></Link>
+            <Link to = '/about'><Button primary = {false} label = 'About'></Button></Link>
+            <Link to = '/services'><Button primary = {false} label = 'Services'></Button></Link>
+            <Link to = '/blog'><Button primary = {false} label = 'Blog'></Button></Link> 
+        
+        </Box>
 
-        }}>
-        <ul style={{
-            listStyle: 'none',
-            display: 'flex',
-            justifyContent: 'space-evenly'
-        }}>
-            <li><Link to = '/'>Home</Link> </li>
-            <li><Link to = '/about'>About</Link> </li>
-            <li><Link to = '/services'>Services</Link> </li>
-            <li><Link to = '/blog'>Blog</Link></li>
-
-
-
-        </ul>
-            
-        </div>
 )
 
 export default Menu;
