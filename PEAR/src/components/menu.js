@@ -59,3 +59,4 @@ const Menu = () => (
 )
 
 export default Menu;
+export { Mobile, Desktop };
