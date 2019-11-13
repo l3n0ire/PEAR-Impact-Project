@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Grid, Box } from "grommet"
+import { Grid, Box, Grommet } from "grommet"
 
 import Menu from "./menu"
 import "./layout.css"

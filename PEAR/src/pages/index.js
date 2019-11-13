@@ -1,6 +1,9 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { Box, Carousel, Image, Grid } from 'grommet'
+import { Box, Carousel, Image } from 'grommet'
+
+
+
 
 const Index = () => {
   return (

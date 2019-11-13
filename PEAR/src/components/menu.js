@@ -16,7 +16,6 @@ const Menu = () =>
             }}
         >
             <Heading margin = 'none' size = 'small'>Azhar</Heading>
-            <Link to = '/'><Button primary = {true} label = 'Home'></Button></Link>
             <Link to = '/about'><Button primary = {false} label = 'About'></Button></Link>
             <Link to = '/services'><Button primary = {false} label = 'Services'></Button></Link>
             <Link to = '/blog'><Button primary = {false} label = 'Blog'></Button></Link> 
