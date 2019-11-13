@@ -2,7 +2,7 @@ import React from "react";
 
 import { Grommet, Box, Text, Menu } from "grommet";
 import { grommet } from "grommet/themes";
-import { Apps, Contact, Blog, Services} from "grommet-icons";
+import { Apps, Contact, Blog, Services, FormDown} from "grommet-icons";
 import Link from 'gatsby-link';
 
 const Dropdown = () => (
@@ -46,8 +46,10 @@ const Dropdown = () => (
             },
           ]}
         >
-          <Box direction="row" gap="small" pad="medium">
-            <Apps />
+          <Box align = "end" direction="row" gap="small" pad="medium">
+          <FormDown />
+            <Text> Menu</Text>
+            
           </Box>
         </Menu>
       </Box>

@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
       <Grid
         rows = {['15vh', 'flex', '10vh', '20vh']}
         columns = {['full']}
+        justifyContent = 'center'
         areas = {[
           { name: 'header', start: [0, 0], end: [0, 0] },
           { name: 'content', start: [0, 1], end: [0, 1] },
