@@ -24,7 +24,7 @@ const BlogPage = ({data}) => (
             margin='3vw'>
             
             {data.allMarkdownRemark.edges.map(post =>(
-                <Box justify = 'center' border = 'all'>
+                <Box justify = 'center' border = 'all' pad = {{'bottom': 'small'}}>
                   <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
                   <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
                   <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
