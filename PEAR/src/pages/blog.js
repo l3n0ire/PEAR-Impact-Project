@@ -28,7 +28,6 @@ const BlogPage = ({data}) => (
                   <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
                   <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
                   <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
-                  <hr></hr>
                   <Box alignSelf ='center' pad = 'small'><Link to ={post.node.frontmatter.path}><Button label = 'Read More'></Button></Link></Box>
 
               </Box>
@@ -46,7 +45,6 @@ const BlogPage = ({data}) => (
             <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
             <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
             <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
-            <hr></hr>
             <Box alignSelf ='center' pad = 'small'><Link to ={post.node.frontmatter.path}><Button label = 'Read More'></Button></Link></Box>
 
           </Box>
