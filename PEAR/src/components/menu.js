@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { useState } from 'react'
 import Link from 'gatsby-link'
 import { Box, Button, Heading } from 'grommet'
 import { useMediaQuery } from "react-responsive"
@@ -13,8 +14,8 @@ const Mobile = ({ children }) => {
   return isTablet ? children : null
 }
 
-
 const Menu = () => (
+  
   <Box
     justify="evenly"
     flex={true}
@@ -23,7 +24,7 @@ const Menu = () => (
     direction="row"
     pad="medium"
     background={{
-      color: "dark-4",
+      color: "light-1",
     }}
   >
     <Desktop>
@@ -35,15 +36,15 @@ const Menu = () => (
         </Link>
 
         <Link to="/about">
-          <Button primary={false} label="About"></Button>
+          <Button hoverIndicator primary={false} label="About"></Button>
         </Link>
 
         <Link to="/services">
-          <Button primary={false} label="Services"></Button>
+          <Button hoverIndicator primary={false} label="Services"></Button>
         </Link>
 
         <Link to="/blog">
-          <Button primary={false} label="Blog"></Button>
+          <Button hoverIndicator primary={false} label="Blog"></Button>
         </Link>
       </Fragment>
     </Desktop>

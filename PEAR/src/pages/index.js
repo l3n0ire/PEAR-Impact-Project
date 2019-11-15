@@ -1,15 +1,12 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { Box, Carousel, Image } from 'grommet'
-
+import { Box, Carousel, Image, Grommet } from 'grommet'
 
 
 
 const Index = () => {
   return (
-    <div>
       <Layout>
-        
         <Box height = '75vh' width = '100vw' overflow = 'hidden' border = 'top'>
           <Carousel fill play = '7000'>
             <Image fit="cover" src="https://stadelmanfruit.com/wp-content/uploads/2017/06/pear-rotate-still-1400x788.jpg"/>
@@ -19,7 +16,6 @@ const Index = () => {
         </Box>
 
       </Layout>
-    </div>
   )
 }
 export default Index
