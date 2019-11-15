@@ -19,6 +19,13 @@ exports.createPages = ({actions, graphql}) =>{
                title
                date
                author
+               featuredImage {
+                childImageSharp {
+                  fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
              }
            }
          }

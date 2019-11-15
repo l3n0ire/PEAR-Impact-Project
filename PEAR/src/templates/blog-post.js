@@ -2,6 +2,8 @@ import React from 'react'
 
 import Link from 'gatsby-link'
 import Layout from '../components/layout'
+import { graphql } from "gatsby"
+
 
 export default function Template({data}) {
     const post  = data.markdownRemark
@@ -29,7 +31,9 @@ export const postQuery = graphql`
                 path
                 title
                 author
-                date            
+                date
+                
+                          
             }
 
         }
