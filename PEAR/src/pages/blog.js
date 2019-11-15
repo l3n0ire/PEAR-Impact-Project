@@ -1,7 +1,7 @@
 import  React, { Fragment } from "react"
 
 import Layout from "../components/layout"
-import { Grid, Box, Grommet, Text, InfiniteScroll ,Image, Button} from "grommet"
+import { Grid, Box, Grommet, Text, Button} from "grommet"
 import Link from "gatsby-link"
 import { Desktop, Mobile } from "../components/menu"
 import { graphql } from "gatsby"
