@@ -1,9 +1,12 @@
 import  React, { Fragment } from "react"
 
 import Layout from "../components/layout"
-import { Grid, Box, Grommet, Text, InfiniteScroll ,Image, Button} from "grommet"
+import { Grid, Box, Grommet, Text, Button} from "grommet"
 import Link from "gatsby-link"
 import { Desktop, Mobile } from "../components/menu"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
+
 
 
 
@@ -12,15 +15,19 @@ const BlogPage = ({data}) => (
     <Desktop>
       <Fragment>
         <Layout>
-          <Grid columns = 'medium' rows = 'medium' alignContent = 'center' gap="medium" margin='small'>
+          <Grid
+            alignSelf = "center"
+            columns = {["45vw","45vw"]} 
+            rows = 'medium' 
+            alignContent = 'center' 
+            gap="large" 
+            margin='3vw'>
             
             {data.allMarkdownRemark.edges.map(post =>(
-                <Box justify = 'center' border = 'all'>
-                
-                  <Image fit="contain" src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" />
+                <Box justify = 'center' border = 'all' pad = {{'bottom': 'small'}}>
+                  <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
                   <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
                   <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
-                  <hr></hr>
                   <Box alignSelf ='center' pad = 'small'><Link to ={post.node.frontmatter.path}><Button label = 'Read More'></Button></Link></Box>
 
               </Box>
@@ -34,11 +41,10 @@ const BlogPage = ({data}) => (
       <Layout>
         {data.allMarkdownRemark.edges.map(post =>(
           <Box justify = 'center' border = 'all' margin = 'medium'>
-              
-            <Image fit="cover" src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg" />
+
+            <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
             <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
             <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
-            <hr></hr>
             <Box alignSelf ='center' pad = 'small'><Link to ={post.node.frontmatter.path}><Button label = 'Read More'></Button></Link></Box>
 
           </Box>
@@ -59,6 +65,15 @@ export const pageQuery = graphql`
                    title
                    date
                    author
+                   featuredImage {
+                    childImageSharp {
+                      fluid(maxWidth: 800, maxHeight: 400) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
+                    
+                  
                  }
                }
              }
