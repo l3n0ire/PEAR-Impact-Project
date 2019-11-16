@@ -14,7 +14,7 @@ const ContactPage = () =>
             <Box pad = 'large'>
                 <Heading>Contact</Heading>
                 <ReCAPTCHA
-                    sitekey = "6LeVEcMUAAAAAKk65uTYiohQsEMrVdasRxiBkSQ4"
+                    sitekey = "6LctE8MUAAAAAHBd7pFmtRxcmzDoSART6Q5BsanO"
                     onChange = {onChange}
                 />
                 <Box pad = {{'top':'medium'}}>
