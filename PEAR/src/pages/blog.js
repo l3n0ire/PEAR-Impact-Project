@@ -1,7 +1,7 @@
 import  React, { Fragment } from "react"
 
 import Layout from "../components/layout"
-import { Grid, Box, Grommet, Text, Button} from "grommet"
+import { Grid, Box, Grommet, Text, Heading } from "grommet"
 import Link from "gatsby-link"
 import { Desktop, Mobile } from "../components/menu"
 import { graphql } from "gatsby"
@@ -23,9 +23,9 @@ const BlogPage = ({data}) => (
             margin='3vw'>
             
             {data.allMarkdownRemark.edges.map(post =>(
-                <Box justify = 'center' border = 'all' pad = {{'bottom': 'small'}}>
+                <Box justify = 'center' pad = {{'bottom': 'small'}}>
                   <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
-                  <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
+                  <Heading alignSelf ='center' level = '3' margin = 'medium'>{post.node.frontmatter.title}</Heading>
                   <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
                   
                   
@@ -41,10 +41,11 @@ const BlogPage = ({data}) => (
     <Mobile>
       <Layout>
         {data.allMarkdownRemark.edges.map(post =>(
-          <Box justify = 'center' border = 'all' margin = 'medium'>
+          <Box justify = 'center'margin = 'medium'>
 
             <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
-            <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
+            <br/>
+            <Heading alignSelf ='center' level = '3' margin = 'medium'>{post.node.frontmatter.title}</Heading>
             <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
             <PlainButton text = 'Read More' target = {post.node.frontmatter.path}/>
 
