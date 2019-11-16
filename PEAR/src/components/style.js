@@ -13,14 +13,6 @@ const globalTheme = {
             }
         }
     },
-    button: {
-        border: { 
-            color: 'black',
-            radius: '0px',
-            width: '1px'
-        },
-        
-    },
 }
 
 export default globalTheme
