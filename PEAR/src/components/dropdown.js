@@ -24,9 +24,9 @@ const Dropdown = () => (
               
             },
             {
-              label: <Box alignSelf="center"><Link to='/services'>Services</Link></Box>,
+              label: <Box alignSelf="center"><Link to='/contact'>Contact</Link></Box>,
               icon: (
-                <Link to='/services'>
+                <Link to='/contact'>
                   <Box pad="medium">
                     <Services />
                   </Box>

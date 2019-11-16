@@ -35,9 +35,9 @@ const Menu = () => (
             Azhar
           </Heading>
         </Link>
-        
+
         <PlainButton text = 'About' target = '/about'/>
-        <PlainButton text = 'Services' target = '/services'/>
+        <PlainButton text = 'Contact' target = '/contact'/>
         <PlainButton text = 'Blog' target = '/blog'/>
         
       </Fragment>
