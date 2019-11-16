@@ -12,7 +12,7 @@ const Dropdown = () => (
           plain
           items={[
             {
-              label: <Box alignSelf = "center" width = '100vw'> <Link to='/about'>About</Link></Box>,
+              label: <Box alignSelf = "center"> <Link to='/about'>About</Link></Box>,
               icon: (
                 <Link to='/about'>
                   <Box pad="medium">
