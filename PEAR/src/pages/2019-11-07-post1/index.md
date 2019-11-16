@@ -6,4 +6,4 @@ author: "Colin Lin"
 featuredImage: "../../images/post-1.jpg"
 ---
 
-This is my very first blog post in gatsby
+This is my very first blog post!

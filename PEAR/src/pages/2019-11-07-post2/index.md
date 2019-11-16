@@ -1,12 +1,12 @@
 ---
 path: "/post-2"
 date: "2019-11-07"
-title: "My Second Gatsby Post"
-author: "Azhar Dude"
+title: "My Second Post"
+author: "Jesse Maltese"
 featuredImage: "../../images/post-2.jpg"
 
 ---
-Another Gatsby Post
+Another Post
 
 # This is a header
 Lorem adipisicing nisi do sint in velit ex. Ad duis cillum Lorem aliquip voluptate. Duis ea et qui excepteur Lorem ex officia mollit magna consequat sunt aliquip labore deserunt.

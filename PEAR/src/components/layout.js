@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
           <Menu gridArea = 'header'/>
           <main gridArea = 'content'>{children}</main>
           <Box gridArea = 'footer' align = 'center'>
-            © {new Date().getFullYear()}, Colin Lin and Daniel Chua
+            © {new Date().getFullYear()}, Colin Lin, Daniel Chua, and Jesse Maltese
           </Box>
         </Grid>
         </div>
