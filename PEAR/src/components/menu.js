@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 import { Box, Button, Heading } from 'grommet'
 import { useMediaQuery } from "react-responsive"
 import Dropdown from './dropdown'
+import PlainButton from './plainbutton'
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 768 })
@@ -34,18 +35,11 @@ const Menu = () => (
             Azhar
           </Heading>
         </Link>
-
-        <Link to="/about">
-          <Button hoverIndicator primary={false} label="About"></Button>
-        </Link>
-
-        <Link to="/services">
-          <Button hoverIndicator primary={false} label="Services"></Button>
-        </Link>
-
-        <Link to="/blog">
-          <Button hoverIndicator primary={false} label="Blog"></Button>
-        </Link>
+        
+        <PlainButton text = 'About' target = '/about'/>
+        <PlainButton text = 'Services' target = '/services'/>
+        <PlainButton text = 'Blog' target = '/blog'/>
+        
       </Fragment>
     </Desktop>
     <Mobile>
