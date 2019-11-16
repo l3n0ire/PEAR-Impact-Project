@@ -2,7 +2,7 @@
 path: "/post-3"
 date: "2019-11-08"
 title: "My Second Gatsby Post1?"
-author: "YEEET"
+author: "Daniel Chua"
 featuredImage: "../../images/post-3.jpg"
 
 ---
