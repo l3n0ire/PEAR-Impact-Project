@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import { Box, Heading } from "grommet"
 
 
-const  ServicesPage = () =>
+const ContactPage = () =>
 (
         <Layout>
             <Box pad = 'large'>
