@@ -17,7 +17,7 @@ const BlogPage = ({data}) => (
           <Grid
             alignSelf = "center"
             columns = {["45vw","45vw"]} 
-            rows = 'medium' 
+            rows = 'flex' 
             alignContent = 'center' 
             gap="large" 
             margin='3vw'>
