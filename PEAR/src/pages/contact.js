@@ -1,6 +1,11 @@
 import React from 'react'
 import Layout from "../components/layout"
-import { Box, Heading } from "grommet"
+import { Box, Heading, MaskedInput } from "grommet"
+import ReCAPTCHA from 'react-google-recaptcha'
+
+function onChange(value) {
+    console.log("Captcha value:", value);
+}
 
 
 const ContactPage = () =>
@@ -8,10 +13,30 @@ const ContactPage = () =>
         <Layout>
             <Box pad = 'large'>
                 <Heading>Contact</Heading>
-                <p>Aliqua nulla irure do ad adipisicing. Aute qui reprehenderit 
-                mollit est officia amet ipsum sint reprehenderit deserunt. 
-                In cupidatat aute cillum ullamco in irure laboris adipisicing
-                 mollit culpa non enim consectetur.</p>
+                <ReCAPTCHA
+                    sitekey = "6LeVEcMUAAAAAKk65uTYiohQsEMrVdasRxiBkSQ4"
+                    onChange = {onChange}
+                />
+                <Box pad = {{'top':'medium'}}>
+                    <MaskedInput
+                        mask = {[
+                            {
+                                regexp: /^[\w\-_.]+$/,
+                                placeholder: "example"
+                            },
+                            { fixed: "@" },
+                            {
+                                regexp: /^[\w]+$/,
+                                placeholder: "domain"
+                            },
+                            { fixed: "." },
+                            {
+                                regexp: /^[\w]+$/,
+                                placeholder: "com"
+                            }
+                        ]}
+                    />
+                </Box>
             
             </Box>
         </Layout>
