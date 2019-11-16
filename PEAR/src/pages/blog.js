@@ -24,7 +24,7 @@ const BlogPage = ({data}) => (
             
             {data.allMarkdownRemark.edges.map(post =>(
                 <Box justify = 'center' height='55vh'>
-                  <Image style={{margin:'0px'}} fit="cover" src ={post.node.frontmatter.featuredImage.childImageSharp.resolutions.src}/>
+                  <Image style={{margin:'0px'}} fit="cover" src ={post.node.frontmatter.featuredImage.childImageSharp.fluid.src}/>
                   <Heading style={{margin:'10px'}}alignSelf ='center' level = '3' margin = 'medium'>{post.node.frontmatter.title}</Heading>
                   <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
                   
@@ -43,7 +43,7 @@ const BlogPage = ({data}) => (
         {data.allMarkdownRemark.edges.map(post =>(
           <Box justify = 'center' margin = 'medium'>
 
-            <Image style={{margin:'0px'}}fit="cover" src ={post.node.frontmatter.featuredImage.childImageSharp.resolutions.src}/>
+            <Image style={{margin:'0px'}} fit="cover" src ={post.node.frontmatter.featuredImage.childImageSharp.fluid.src}/>
             <br/>
             <Heading alignSelf ='center' level = '3' margin = 'medium'>{post.node.frontmatter.title}</Heading>
             <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
@@ -69,10 +69,12 @@ export const pageQuery = graphql`
                    author
                    featuredImage {
                     childImageSharp {
-                      resolutions(quality: 100) {
+                      fluid(quality:100 ,maxWidth: 800) {
+                        ...GatsbyImageSharpFluid
                         src
                       }
                     }
+                    
                   }
                     
                   
