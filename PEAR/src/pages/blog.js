@@ -6,6 +6,7 @@ import Link from "gatsby-link"
 import { Desktop, Mobile } from "../components/menu"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import PlainButton from "../components/plainbutton"
 
 
 const BlogPage = ({data}) => (
@@ -26,25 +27,10 @@ const BlogPage = ({data}) => (
                   <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
                   <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
                   <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
-                  <Box 
-                    alignSelf ='center' 
-                    margin = 'small'
-                    overflow = 'hidden'
-                    border = {{'side': 'all', 'color': 'black'}}
-                  >
-                    <Link to ={post.node.frontmatter.path}>
-                      <Button 
-                        alignSelf = 'center'
-                        label = 'Read More' 
-                        plain = {true}
-                        style = {{padding: '10px'}} 
-                        hoverIndicator = 'black' 
-                        fill = {true}
-                      />
-
-                    </Link>
-                  </Box>
-
+                  
+                  
+                  <PlainButton text = 'Read More' target = {post.node.frontmatter.path}/>
+                  
               </Box>
             ))}
 
@@ -60,7 +46,7 @@ const BlogPage = ({data}) => (
             <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
             <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
             <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
-            <Box alignSelf ='center' pad = 'small'><Link to ={post.node.frontmatter.path}><Button label = 'Read More'></Button></Link></Box>
+            <PlainButton text = 'Read More' target = {post.node.frontmatter.path}/>
 
           </Box>
         ))}
