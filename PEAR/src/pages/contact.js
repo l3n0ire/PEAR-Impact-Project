@@ -17,4 +17,4 @@ const  ServicesPage = () =>
         </Layout>
 )
 
-export default ServicesPage;
+export default ContactPage;
