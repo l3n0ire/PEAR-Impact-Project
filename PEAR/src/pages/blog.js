@@ -8,8 +8,6 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 
-
-
 const BlogPage = ({data}) => (
   <Box>
     <Desktop>
@@ -28,7 +26,24 @@ const BlogPage = ({data}) => (
                   <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
                   <Text alignSelf = 'center'> {post.node.frontmatter.title}</Text>
                   <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
-                  <Box alignSelf ='center' pad = 'small'><Link to ={post.node.frontmatter.path}><Button label = 'Read More'></Button></Link></Box>
+                  <Box 
+                    alignSelf ='center' 
+                    margin = 'small'
+                    overflow = 'hidden'
+                    border = {{'side': 'all', 'color': 'black'}}
+                  >
+                    <Link to ={post.node.frontmatter.path}>
+                      <Button 
+                        alignSelf = 'center'
+                        label = 'Read More' 
+                        plain = {true}
+                        style = {{padding: '10px'}} 
+                        hoverIndicator = 'black' 
+                        fill = {true}
+                      />
+
+                    </Link>
+                  </Box>
 
               </Box>
             ))}

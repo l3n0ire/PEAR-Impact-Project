@@ -3,9 +3,9 @@ const globalTheme = {
         hover: {
             background: {
                 opacity: '100',
-                color: 'black'
+                color: 'black',
             },
-            color: 'white'
+            color: 'white',
         },
         active: {
             background: {
@@ -19,7 +19,8 @@ const globalTheme = {
             radius: '0px',
             width: '1px'
         },
-    }
+        
+    },
 }
 
 export default globalTheme
