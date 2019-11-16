@@ -1,7 +1,7 @@
 import  React, { Fragment } from "react"
 
 import Layout from "../components/layout"
-import { Grid, Box, Grommet, Text, Heading } from "grommet"
+import { Grid, Box, Grommet, Text, Heading ,Image} from "grommet"
 import Link from "gatsby-link"
 import { Desktop, Mobile } from "../components/menu"
 import { graphql } from "gatsby"
@@ -23,9 +23,9 @@ const BlogPage = ({data}) => (
             margin='3vw'>
             
             {data.allMarkdownRemark.edges.map(post =>(
-                <Box justify = 'center' pad = {{'bottom': 'small'}}>
-                  <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
-                  <Heading alignSelf ='center' level = '3' margin = 'medium'>{post.node.frontmatter.title}</Heading>
+                <Box justify = 'center' height='55vh'>
+                  <Image style={{margin:'0px'}} fit="cover" src ={post.node.frontmatter.featuredImage.childImageSharp.resolutions.src}/>
+                  <Heading style={{margin:'10px'}}alignSelf ='center' level = '3' margin = 'medium'>{post.node.frontmatter.title}</Heading>
                   <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
                   
                   
@@ -41,9 +41,9 @@ const BlogPage = ({data}) => (
     <Mobile>
       <Layout>
         {data.allMarkdownRemark.edges.map(post =>(
-          <Box justify = 'center'margin = 'medium'>
+          <Box justify = 'center' margin = 'medium'>
 
-            <Img fluid ={post.node.frontmatter.featuredImage.childImageSharp.fluid}/>
+            <Image style={{margin:'0px'}}fit="cover" src ={post.node.frontmatter.featuredImage.childImageSharp.resolutions.src}/>
             <br/>
             <Heading alignSelf ='center' level = '3' margin = 'medium'>{post.node.frontmatter.title}</Heading>
             <Text alignSelf ='center'> Posted by {post.node.frontmatter.author} on {post.node.frontmatter.date}</Text>
@@ -69,8 +69,8 @@ export const pageQuery = graphql`
                    author
                    featuredImage {
                     childImageSharp {
-                      fluid(maxWidth: 800, maxHeight: 400) {
-                        ...GatsbyImageSharpFluid
+                      resolutions(quality: 100) {
+                        src
                       }
                     }
                   }
