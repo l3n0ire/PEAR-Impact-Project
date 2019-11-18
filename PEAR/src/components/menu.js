@@ -15,6 +15,8 @@ const Mobile = ({ children }) => {
   return isTablet ? children : null
 }
 
+const titles = ["Success Stories", "of", "New Canadians"]
+
 const Menu = () => (
   <Box
     flex={true}
@@ -32,18 +34,19 @@ const Menu = () => (
         <Box width={{min:"300px" , max:"20%"}}>
           <Link to="/">
             <Box alignSelf="start" width="100%">
-              <Heading
-                margin="none"
-                style={{
-                  lineHeight: "40px",
-                  padding: "none",
-                  fontSize: "3.5vh",
-                }}
-              >
-                Success Stories <br />
-                of <br />
-                New Canadians
-              </Heading>
+              {titles.map(title =>
+                <Heading
+                  margin="none"
+                  alignSelf = "center"
+                  style={{
+                    lineHeight: "4vh",
+                    padding: "none",
+                    fontSize: "3.5vh",
+                  }}
+                >
+                  {title}
+                </Heading>    
+              )}
             </Box>
           </Link>
         </Box>
@@ -90,14 +93,22 @@ const Menu = () => (
           width={{ min: "50%" }}
           style={{ lineHeight: "30px", padding: "none" }}
         >
-          <Heading margin="none" size="small">
-            Success Stories <br />
-            of <br />
-            New Canadians
-          </Heading>
+          {titles.map(title =>
+                <Heading
+                  margin="none"
+                  alignSelf = "center"
+                  style={{
+                    lineHeight: "4vh",
+                    padding: "none",
+                    fontSize: "3.5vh",
+                  }}
+                >
+                  {title}
+                </Heading>    
+              )}
         </Box>
       </Link>
-      <Dropdown />
+      <Dropdown/>
     </Mobile>
   </Box>
 )
