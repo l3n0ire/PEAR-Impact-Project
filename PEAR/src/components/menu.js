@@ -16,9 +16,7 @@ const Mobile = ({ children }) => {
 }
 
 const Menu = () => (
-  
   <Box
-    justify="evenly"
     flex={true}
     fill="horizontal"
     align="center"
@@ -26,28 +24,78 @@ const Menu = () => (
     pad="medium"
     elevation="xsmall"
     background={{
-      color: "light-1", 
+      color: "light-1",
     }}
   >
     <Desktop>
       <Fragment>
-        <Link to="/">
-          <Heading margin="none" size="medium">
-            Azhar
-          </Heading>
-        </Link>
+        <Box width={{min:"300px" , max:"20%"}}>
+          <Link to="/">
+            <Box alignSelf="start" width="100%">
+              <Heading
+                margin="none"
+                style={{
+                  lineHeight: "40px",
+                  padding: "none",
+                  fontSize: "3.5vh",
+                }}
+              >
+                Success Stories <br />
+                of <br />
+                New Canadians
+              </Heading>
+            </Box>
+          </Link>
+        </Box>
+        <Box
+          width="80%"
+          direction="row"
+          align="center"
+          pad="large"
+          justify="evenly"
+        >
+          <PlainButton
+            hoverColor="red"
+            fillColor="none"
+            size="2.5vw"
+            border={false}
+            text="Stories"
+            target="/"
+          />
 
-        <PlainButton size = 'xlarge' border = {false} text = 'Stories' target = '/'/>
-        <PlainButton size = 'xlarge' border = {false} text = 'About' target = '/about'/>
-        <PlainButton size = 'xlarge' border = {false} text = 'Contact' target = '/contact'/>
-        
+          <PlainButton
+            hoverColor="red"
+            fillColor="none"
+            size="2.5vw"
+            border={false}
+            text="About"
+            target="/about"
+          />
+
+          <PlainButton
+            hoverColor="red"
+            fillColor="none"
+            size="2.5vw"
+            border={false}
+            text="Contact"
+            target="/contact"
+          />
+        </Box>
       </Fragment>
     </Desktop>
     <Mobile>
       <Link to="/">
-        <Heading margin="none" size="medium">
-          Azhar
-        </Heading>
+        <Box
+          margin="none"
+          width={{ min: "50%" }}
+          style={{ lineHeight: "30px", padding: "none" }}
+        >
+          <Heading margin="none" size="small">
+            Success Stories <br />
+            of <br />
+            New Canadians
+          </Heading>
+        </Box>
       </Link>
       <Dropdown />
     </Mobile>

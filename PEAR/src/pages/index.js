@@ -22,34 +22,40 @@ const BlogPage = ({ data }) => (
             margin="3vw"
           >
             {data.allMarkdownRemark.edges.map(post => (
-              <Box justify="center" height="55vh" background={{color: 'light-1'}}>
-                <Image
-                  style={{ padding: "10px", margin: "0px"}}
-                  fit="cover"
-                  src={
-                    post.node.frontmatter.featuredImage.childImageSharp.fluid
-                      .src
-                  }
-                />
-                <Heading
-                  style={{ margin: "10px" }}
-                  alignSelf="center"
-                  level="3"
-                  margin="medium"
+              <Link to={post.node.frontmatter.path}>
+                <Box
+                  justify="center"
+                  height="55vh"
+                  background={{ color: "light-1" }}
                 >
-                  {post.node.frontmatter.title}
-                </Heading>
-                <Text alignSelf="center">
-                  {" "}
-                  Posted by {post.node.frontmatter.author} on{" "}
-                  {post.node.frontmatter.date}
-                </Text>
+                  <Image
+                    style={{ padding: "10px", margin: "0px" }}
+                    fit="cover"
+                    src={
+                      post.node.frontmatter.featuredImage.childImageSharp.fluid
+                        .src
+                    }
+                  />
+                  <Heading
+                    style={{ margin: "10px" }}
+                    alignSelf="center"
+                    level="3"
+                    margin="medium"
+                  >
+                    {post.node.frontmatter.title}
+                  </Heading>
+                  <Text alignSelf="center">
+                    {" "}
+                    Posted by {post.node.frontmatter.author} on{" "}
+                    {post.node.frontmatter.date}
+                  </Text>
 
-                <PlainButton
-                  text="Read More"
-                  target={post.node.frontmatter.path}
-                />
-              </Box>
+                  <PlainButton
+                    text="Read More"
+                    target={post.node.frontmatter.path}
+                  />
+                </Box>
+              </Link>
             ))}
           </Grid>
         </Layout>
