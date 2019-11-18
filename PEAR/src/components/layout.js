@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { Grid, Box, Grommet } from "grommet"
+import { Grid, Box, Grommet, Text} from "grommet"
 
 import Menu from "./menu"
 import "./layout.css"
@@ -37,7 +37,9 @@ const Layout = ({ children }) => {
           <Menu gridArea = 'header'/>
           <main gridArea = 'content'>{children}</main>
           <Box gridArea = 'footer' align = 'center'>
-            © {new Date().getFullYear()}, Colin Lin, Daniel Chua, and Jesse Maltese
+            <Text size='small'> 
+              © {new Date().getFullYear()}, Colin Lin, Daniel Chua, and Jesse Maltese
+            </Text>
           </Box>
         </Grid>
         </div>

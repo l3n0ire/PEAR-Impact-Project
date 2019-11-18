@@ -25,26 +25,26 @@ const Menu = () => (
     direction="row"
     pad="medium"
     background={{
-      color: "light-1",
+      color: "light-1", 
     }}
   >
     <Desktop>
       <Fragment>
         <Link to="/">
-          <Heading margin="none" size="small">
+          <Heading margin="none" size="medium">
             Azhar
           </Heading>
         </Link>
 
-        <PlainButton text = 'About' target = '/about'/>
-        <PlainButton text = 'Contact' target = '/contact'/>
-        <PlainButton text = 'Blog' target = '/blog'/>
+        <PlainButton size = 'xlarge' border = {false} text = 'Stories' target = '/blog'/>
+        <PlainButton size = 'xlarge' border = {false} text = 'About' target = '/about'/>
+        <PlainButton size = 'xlarge' border = {false} text = 'Contact' target = '/contact'/>
         
       </Fragment>
     </Desktop>
     <Mobile>
       <Link to="/">
-        <Heading margin="none" size="small">
+        <Heading margin="none" size="medium">
           Azhar
         </Heading>
       </Link>
