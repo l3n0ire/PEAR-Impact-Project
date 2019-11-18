@@ -1,6 +1,8 @@
 import React from 'react'
 import Layout from "../components/layout"
-import { Box, Heading, MaskedInput } from "grommet"
+import PlainButton from "../components/plainbutton"
+
+import { Box, Heading, FormField, Form, TextArea, Button } from "grommet"
 import ReCAPTCHA from 'react-google-recaptcha'
 
 function onChange(value) {
@@ -8,38 +10,73 @@ function onChange(value) {
 }
 
 
-const ContactPage = () =>
-(
-        <Layout>
-            <Box pad = 'large'>
-                <Heading>Contact</Heading>
-                <ReCAPTCHA
-                    sitekey = "6LctE8MUAAAAAHBd7pFmtRxcmzDoSART6Q5BsanO"
-                    onChange = {onChange}
-                />
-                <Box pad = {{'top':'medium'}}>
-                    <MaskedInput
-                        mask = {[
-                            {
-                                regexp: /^[\w\-_.]+$/,
-                                placeholder: "example"
-                            },
-                            { fixed: "@" },
-                            {
-                                regexp: /^[\w]+$/,
-                                placeholder: "domain"
-                            },
-                            { fixed: "." },
-                            {
-                                regexp: /^[\w]+$/,
-                                placeholder: "com"
-                            }
-                        ]}
-                    />
-                </Box>
-            
-            </Box>
-        </Layout>
+
+const ContactPage = () => (
+  <Layout>
+    <Box pad="large">
+      <Heading>Contact</Heading>
+      <ReCAPTCHA
+        sitekey="6LctE8MUAAAAAHBd7pFmtRxcmzDoSART6Q5BsanO"
+        onChange={onChange}
+      />
+      <Form>
+        <Box pad={{ top: "medium" }}>
+          <FormField
+            style={{ width: "30vw" }}
+            label="Name"
+            name="name"
+            required
+            validate={{ regexp: /^[a-z]/i }}
+          />
+          <FormField
+            style={{ width: "30vw" }}
+            placeholder="name@domain.com"
+            label="Email"
+            name="email"
+            validate={{
+              regexp: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              message: 'Please enter a valid email.'
+            }}
+            required
+          />
+          <TextArea
+            component={TextArea}
+            required
+            name="message"
+            resize={false}
+            plain={false}
+            style={{
+              height: "40vh",
+            }}
+            label="Message"
+            placeholder="Type your message here."
+          />
+        </Box>
+        <Box
+          alignSelf="center"
+          margin="small"
+          overflow="hidden"
+          width={{ min: "80px", max: "150px" }}
+          border={{ side: "all", color: "black" }}
+        >
+          <Button
+            alignSelf="center"
+            plain={true}
+            style={{
+              padding: "10px",
+              textAlign: "center",
+              transition: "0.35s",
+              fontSize: "3vh",
+            }}
+            hoverIndicator="black"
+            fill={true}
+            type="submit"
+            label="Submit"
+          />
+        </Box>
+      </Form>
+    </Box>
+  </Layout>
 )
 
 export default ContactPage;
