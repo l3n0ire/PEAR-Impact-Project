@@ -108,7 +108,7 @@ const Menu = () => (
               )}
         </Box>
       </Link>
-      <Dropdown/>
+      <Dropdown alignSelf = 'end'></Dropdown>
     </Mobile>
   </Box>
 )

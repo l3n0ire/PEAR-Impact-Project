@@ -64,25 +64,27 @@ const BlogPage = ({ data }) => (
     <Mobile>
       <Layout>
         {data.allMarkdownRemark.edges.map(post => (
-          <Box justify="center" margin="medium">
-            <Image
-              style={{ margin: "0px" }}
-              fit="cover"
-              src={
-                post.node.frontmatter.featuredImage.childImageSharp.fluid.src
-              }
-            />
-            <br />
-            <Heading alignSelf="center" level="3" margin="medium">
-              {post.node.frontmatter.title}
-            </Heading>
-            <Text alignSelf="center">
-              {" "}
-              Posted by {post.node.frontmatter.author} on{" "}
-              {post.node.frontmatter.date}
-            </Text>
-            <PlainButton text="Read More" target={post.node.frontmatter.path} />
-          </Box>
+          <Link to={post.node.frontmatter.path}>
+            <Box justify="center" margin="medium">
+              <Image
+                style={{ margin: "0px" }}
+                fit="cover"
+                src={
+                  post.node.frontmatter.featuredImage.childImageSharp.fluid.src
+                }
+              />
+              <br />
+              <Heading alignSelf="center" level="3" margin="medium">
+                {post.node.frontmatter.title}
+              </Heading>
+              <Text alignSelf="center">
+                {" "}
+                Posted by {post.node.frontmatter.author} on{" "}
+                {post.node.frontmatter.date}
+              </Text>
+              <PlainButton text="Read More" target={post.node.frontmatter.path} />
+            </Box>
+          </Link>
         ))}
       </Layout>
     </Mobile>
