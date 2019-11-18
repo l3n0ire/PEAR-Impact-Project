@@ -8,7 +8,6 @@ import Link from 'gatsby-link';
 const Dropdown = () => (
   <Grommet theme={grommet}>
     <Box
-      alignContent="end"
       pad="medium"
       pad={{ right: "small" }}
       background={{ color: "light-1" }}
@@ -20,11 +19,11 @@ const Dropdown = () => (
             label: (
               <Box alignSelf="center">
                 {" "}
-                <Link to="/blog">Stories</Link>
+                <Link to="/">Stories</Link>
               </Box>
             ),
             icon: (
-              <Link to="/blog">
+              <Link to="/">
                 <Box pad="medium">
                   <Article />
                 </Box>

@@ -1,21 +1,112 @@
-import React from 'react'
-import Layout from '../components/layout'
-import { Box, Carousel, Image, Grommet } from 'grommet'
+import React, { Fragment } from "react"
 
+import Layout from "../components/layout"
+import { Grid, Box, Grommet, Text, Heading, Image } from "grommet"
+import Link from "gatsby-link"
+import { Desktop, Mobile } from "../components/menu"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
+import PlainButton from "../components/plainbutton"
 
+const BlogPage = ({ data }) => (
+  <Box>
+    <Desktop>
+      <Fragment>
+        <Layout>
+          <Grid
+            alignSelf="center"
+            columns={["45vw", "45vw"]}
+            rows="flex"
+            alignContent="center"
+            gap="large"
+            margin="3vw"
+          >
+            {data.allMarkdownRemark.edges.map(post => (
+              <Box justify="center" height="55vh" background={{color: 'light-1'}}>
+                <Image
+                  style={{ padding: "10px", margin: "0px"}}
+                  fit="cover"
+                  src={
+                    post.node.frontmatter.featuredImage.childImageSharp.fluid
+                      .src
+                  }
+                />
+                <Heading
+                  style={{ margin: "10px" }}
+                  alignSelf="center"
+                  level="3"
+                  margin="medium"
+                >
+                  {post.node.frontmatter.title}
+                </Heading>
+                <Text alignSelf="center">
+                  {" "}
+                  Posted by {post.node.frontmatter.author} on{" "}
+                  {post.node.frontmatter.date}
+                </Text>
 
-const Index = () => {
-  return (
+                <PlainButton
+                  text="Read More"
+                  target={post.node.frontmatter.path}
+                />
+              </Box>
+            ))}
+          </Grid>
+        </Layout>
+      </Fragment>
+    </Desktop>
+    <Mobile>
       <Layout>
-        <Box height = '75vh' width = '100vw' overflow = 'hidden' border = 'top'>
-          <Carousel fill play = '7000'>
-            <Image fit="cover" src="https://stadelmanfruit.com/wp-content/uploads/2017/06/pear-rotate-still-1400x788.jpg"/>
-            <Image fit="cover" src="https://azharlaher.com/wp-content/uploads/2019/10/img-3298_orig-1024x576.jpg" />
-            <Image fit="cover" src="https://boundless.utoronto.ca/wp-content/uploads/Krembil-UTSC-gift_story-13.jpg" />
-          </Carousel>
-        </Box>
-
+        {data.allMarkdownRemark.edges.map(post => (
+          <Box justify="center" margin="medium">
+            <Image
+              style={{ margin: "0px" }}
+              fit="cover"
+              src={
+                post.node.frontmatter.featuredImage.childImageSharp.fluid.src
+              }
+            />
+            <br />
+            <Heading alignSelf="center" level="3" margin="medium">
+              {post.node.frontmatter.title}
+            </Heading>
+            <Text alignSelf="center">
+              {" "}
+              Posted by {post.node.frontmatter.author} on{" "}
+              {post.node.frontmatter.date}
+            </Text>
+            <PlainButton text="Read More" target={post.node.frontmatter.path} />
+          </Box>
+        ))}
       </Layout>
-  )
-}
-export default Index
+    </Mobile>
+  </Box>
+)
+
+export const pageQuery = graphql`
+  query BlogIndexQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            title
+            date
+            author
+            featuredImage {
+              childImageSharp {
+                fluid(quality: 100, maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+export default BlogPage

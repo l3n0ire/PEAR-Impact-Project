@@ -24,6 +24,7 @@ const Menu = () => (
     align="center"
     direction="row"
     pad="medium"
+    elevation="xsmall"
     background={{
       color: "light-1", 
     }}
@@ -36,7 +37,7 @@ const Menu = () => (
           </Heading>
         </Link>
 
-        <PlainButton size = 'xlarge' border = {false} text = 'Stories' target = '/blog'/>
+        <PlainButton size = 'xlarge' border = {false} text = 'Stories' target = '/'/>
         <PlainButton size = 'xlarge' border = {false} text = 'About' target = '/about'/>
         <PlainButton size = 'xlarge' border = {false} text = 'Contact' target = '/contact'/>
         
