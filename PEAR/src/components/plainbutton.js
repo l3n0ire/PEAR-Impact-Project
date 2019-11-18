@@ -18,7 +18,7 @@ const PlainButton = ({ text, target, border = true, size = "medium", fillColor =
         margin="small"
         overflow="hidden"
         width={{ min: "80px", max: "300px" }}
-        border={border ? { side: "all", color: {fillColor}} : { color: "none" }}
+        border={border ? { side: "all", color: fillColor} : { color: "none" }}
       >
         <Link to={target}>
           <Button
