@@ -20,7 +20,8 @@ const PlainButton = ({text, target}) => (
                         plain = {true}
                         style = {{
                             padding: '10px', 
-                            textAlign: 'center'
+                            textAlign: 'center',
+                            transition: '0.3s'
                         }} 
                         hoverIndicator = 'black' 
                         fill = {true}
