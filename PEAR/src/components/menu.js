@@ -34,19 +34,26 @@ const Menu = () => (
         <Box width={{min:"300px" , max:"20%"}}>
           <Link to="/">
             <Box alignSelf="start" width="100%">
-              {titles.map(title =>
-                <Heading
-                  margin="none"
-                  alignSelf = "center"
-                  style={{
-                    lineHeight: "4vh",
-                    padding: "none",
-                    fontSize: "3.5vh",
-                  }}
-                >
-                  {title}
-                </Heading>    
-              )}
+              <Heading
+                margin="none"
+                style={{
+                  lineHeight: "4vh",
+                  padding: "none",
+                  fontSize: "3.5vh",
+                }}
+              >
+                Success Stories     
+              </Heading>
+              <Heading
+                margin="none"
+                style={{
+                  lineHeight: "4vh",
+                  padding: "none",
+                  fontSize: "3.5vh",
+                }}
+              >
+                of <span style = {{color: 'red'}}>New Canadians</span>     
+              </Heading>    
             </Box>
           </Link>
         </Box>
@@ -93,19 +100,26 @@ const Menu = () => (
           width={{ min: "50%" }}
           style={{ lineHeight: "30px", padding: "none" }}
         >
-          {titles.map(title =>
-                <Heading
-                  margin="none"
-                  alignSelf = "center"
-                  style={{
-                    lineHeight: "4vh",
-                    padding: "none",
-                    fontSize: "3.5vh",
-                  }}
-                >
-                  {title}
-                </Heading>    
-              )}
+          <Heading
+            margin="none"
+            style={{
+              lineHeight: "4vh",
+              padding: "none",
+              fontSize: "3.5vh",
+            }}
+          >
+            Success Stories     
+          </Heading>
+          <Heading
+            margin="none"
+            style={{
+              lineHeight: "4vh",
+              padding: "none",
+              fontSize: "3.5vh",
+            }}
+          >
+            of <span style = {{color: 'red'}}>New Canadians</span>     
+          </Heading> 
         </Box>
       </Link>
       <Dropdown alignSelf = 'end'></Dropdown>
