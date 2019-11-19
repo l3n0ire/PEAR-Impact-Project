@@ -20,16 +20,18 @@ const BlogPage = ({ data }) => (
             alignContent="center"
             gap="large"
             margin="3vw"
+            
           >
             {data.allMarkdownRemark.edges.map(post => (
               <Link to={post.node.frontmatter.path}>
                 <Box
                   justify="center"
                   height="55vh"
-                  background={{ color: "light-1" }}
+                  elevation='xsmall'
+                  background={{ color: "white" }}
                 >
                   <Image
-                    style={{ padding: "10px", margin: "0px" }}
+                    style={{ margin: "0px" }}
                     fit="cover"
                     src={
                       post.node.frontmatter.featuredImage.childImageSharp.fluid
@@ -53,6 +55,8 @@ const BlogPage = ({ data }) => (
                   <PlainButton
                     text="Read More"
                     target={post.node.frontmatter.path}
+                    textColor='black'
+                    border={false}
                   />
                 </Box>
               </Link>
@@ -82,7 +86,10 @@ const BlogPage = ({ data }) => (
                 Posted by {post.node.frontmatter.author} on{" "}
                 {post.node.frontmatter.date}
               </Text>
-              <PlainButton text="Read More" target={post.node.frontmatter.path} />
+              <PlainButton
+                text="Read More"
+                target={post.node.frontmatter.path}
+              />
             </Box>
           </Link>
         ))}
