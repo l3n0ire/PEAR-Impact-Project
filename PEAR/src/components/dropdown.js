@@ -6,21 +6,37 @@ import { Article, Contact, ContactInfo, Services, FormDown} from "grommet-icons"
 import Link from 'gatsby-link';
 
 const Dropdown = () => (
-  <Grommet theme={grommet}>
+  <Grommet>
     <Box
       alignContent="end"
       pad="medium"
       pad={{ right: "small" }}
-      background={{ color: "light-1" }}
+      background={{ color: "#CC002C" }}
     >
       <Menu
+        dropBackground="#CC002C"
+        color="white"
+        style={{
+          global: {
+            colors: {
+              control: "white",
+            },
+          },
+          menu: {
+            extend: {
+              color: "white",
+            },
+          },
+        }}
         plain
         items={[
           {
             label: (
               <Box alignSelf="center">
                 {" "}
-                <Link to="/">Stories</Link>
+                  <Link to="/">
+                    <Text font='Lora' color="white">Stories</Text>
+                  </Link>
               </Box>
             ),
             icon: (
@@ -34,7 +50,9 @@ const Dropdown = () => (
           {
             label: (
               <Box alignSelf="center">
-                <Link to="/about">About</Link>
+                <Link to="/about">
+                  <Text color="white">About</Text>
+                </Link>
               </Box>
             ),
             icon: (
@@ -48,7 +66,9 @@ const Dropdown = () => (
           {
             label: (
               <Box alignSelf="center">
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact">
+                  <Text color="white">Contact</Text>
+                </Link>
               </Box>
             ),
             icon: (
@@ -63,7 +83,7 @@ const Dropdown = () => (
       >
         <Box align="end" direction="row" gap="small" pad="medium">
           <FormDown />
-          <Text> Menu</Text>
+          <Text>Menu</Text>
         </Box>
       </Menu>
     </Box>
