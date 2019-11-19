@@ -15,8 +15,6 @@ const Mobile = ({ children }) => {
   return isTablet ? children : null
 }
 
-const titles = ["Success Stories", "of", "New Canadians"]
-
 const Menu = () => (
   <Box
     flex={true}
