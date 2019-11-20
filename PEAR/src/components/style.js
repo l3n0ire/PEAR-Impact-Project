@@ -12,7 +12,7 @@ const globalTheme = {
                 color: 'red'
             }
         }
-    }
+    },
 }
 
 export default globalTheme

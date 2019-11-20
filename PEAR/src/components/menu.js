@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { useState } from 'react'
 import Link from 'gatsby-link'
-import { Box, Button, Heading, Text} from 'grommet'
+import { Box, Button, Heading } from 'grommet'
 import { useMediaQuery } from "react-responsive"
 import Dropdown from './dropdown'
 import PlainButton from './plainbutton'
@@ -15,8 +15,6 @@ const Mobile = ({ children }) => {
   return isTablet ? children : null
 }
 
-const titles = ["Success Stories", "of", "New Canadians"]
-
 const Menu = () => (
   <Box
     flex={true}
@@ -24,69 +22,68 @@ const Menu = () => (
     align="center"
     direction="row"
     pad="medium"
-    height="xxsmall"
+    elevation="xsmall"
     background={{
-      color: "#CC002C",
+      color: "light-1",
     }}
   >
     <Desktop>
       <Fragment>
-        <Box width={{ min: "20%", max: "40%" }}>
+        <Box width={{min:"300px" , max:"20%"}}>
           <Link to="/">
             <Box alignSelf="start" width="100%">
               <Heading
                 margin="none"
-                alignSelf="left"
                 style={{
-                  lineHeight: "3.5vh",
+                  lineHeight: "4vh",
                   padding: "none",
-                  fontSize: "2.3vw",
-                  fontWeight: "400",
-                  color: "white",
-                  overflow: "hidden",
-                  whiteSpace: "nowrap",
-                  display: "inline-block",
+                  fontSize: "3.5vh",
                 }}
               >
-                Success Stories of New Canadians
+                Success Stories
+              </Heading>
+              <Heading
+                margin="none"
+                style={{
+                  lineHeight: "4vh",
+                  padding: "none",
+                  fontSize: "3.5vh",
+                }}
+              >
+                of <span style = {{color: 'red'}}>New Canadians</span>
               </Heading>
             </Box>
           </Link>
         </Box>
         <Box
-          width={{ min: "60%", max: "100%" }}
-          fill="vertical"
+          width="80%"
           direction="row"
           align="center"
-          pad="medium"
+          pad="large"
           justify="evenly"
-          overflow="hidden"
         >
           <PlainButton
-            textColor="white"
-            hoverTextColor="white"
-            fillColor="#BA0028"
-            size="2.3vw"
+            hoverColor="red"
+            fillColor="none"
+            size="2.5vw"
             border={false}
             text="Stories"
             target="/"
           />
 
           <PlainButton
-            textColor="white"
-            hoverTextColor="white"
-            fillColor="#BA0028"
-            size="2.3vw"
+            hoverColor="red"
+            fillColor="none"
+            size="2.5vw"
             border={false}
             text="About"
             target="/about"
           />
 
           <PlainButton
-            textColor="white"
-            hoverTextColor="white"
-            fillColor="#BA0028"
-            size="2.3vw"
+            hoverColor="red"
+            fillColor="none"
+            size="2.5vw"
             border={false}
             text="Contact"
             target="/contact"
@@ -95,32 +92,35 @@ const Menu = () => (
       </Fragment>
     </Desktop>
     <Mobile>
-      <Box
-        margin="none"
-        width="80%"
-        style={{ lineHeight: "30px", padding: "none" }}
-        background={{ color: "#CC002C" }}
-      >
-        <Link to="/">
+      <Link to="/">
+        <Box
+          margin="none"
+          width={{ min: "50%" }}
+          style={{ lineHeight: "30px", padding: "none" }}
+        >
           <Heading
             margin="none"
-            alignSelf="start"
             style={{
-              fontSize: "4vw",
-              fontWeight: "400",
-              color: "white",
-              whiteSpace: "nowrap",
-              display: "inline-block",
+              lineHeight: "4vh",
+              padding: "none",
+              fontSize: "3.5vh",
             }}
           >
-            Success Stories of New Canadians
+            Success Stories
           </Heading>
-        </Link>
-      </Box>
-
-      <Box width="20%">
-        <Dropdown alignSelf="end"></Dropdown>
-      </Box>
+          <Heading
+            margin="none"
+            style={{
+              lineHeight: "4vh",
+              padding: "none",
+              fontSize: "3.5vh",
+            }}
+          >
+            of <span style = {{color: 'red'}}>New Canadians</span>
+          </Heading>
+        </Box>
+      </Link>
+      <Dropdown alignSelf = 'end'></Dropdown>
     </Mobile>
   </Box>
 )

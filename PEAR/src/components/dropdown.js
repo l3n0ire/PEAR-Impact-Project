@@ -6,14 +6,12 @@ import { Article, Contact, ContactInfo, Services, FormDown} from "grommet-icons"
 import Link from 'gatsby-link';
 
 const Dropdown = () => (
-  <Box
-    align="end"
-    fill="horizontal"
-    pad={{ right: "small" }}
-    background={{ color: "#CC002C" }}
-
-  >
-    <Grommet>
+  <Grommet theme={grommet}>
+    <Box
+      pad="medium"
+      pad={{ right: "small" }}
+      background={{ color: "light-1" }}
+    >
       <Menu
         dropBackground="#CC002C"
 
@@ -92,5 +90,5 @@ const Dropdown = () => (
     </Grommet>
   </Box>
 )
-  
+
 export default Dropdown;
