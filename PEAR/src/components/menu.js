@@ -21,6 +21,7 @@ const Menu = () => (
     fill="horizontal"
     align="center"
     direction="row"
+    height='xsmall'
     pad="medium"
     elevation="xsmall"
     background={{
