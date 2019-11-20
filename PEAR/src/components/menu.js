@@ -95,32 +95,32 @@ const Menu = () => (
       </Fragment>
     </Desktop>
     <Mobile>
-      <Link to="/">
-        <Box
-          margin="none"
-          width={{ min: "50%" }}
-          style={{ lineHeight: "30px", padding: "none" }}
-          background={{ color: "#CC002C" }}
-        >
+      <Box
+        margin="none"
+        width="80%"
+        style={{ lineHeight: "30px", padding: "none" }}
+        background={{ color: "#CC002C" }}
+      >
+        <Link to="/">
           <Heading
             margin="none"
-            alignSelf="left"
+            alignSelf="start"
             style={{
-              lineHeight: "3.5vh",
-              padding: "none",
-              fontSize: "2.3vw",
+              fontSize: "4vw",
               fontWeight: "400",
               color: "white",
-              overflow: "hidden",
               whiteSpace: "nowrap",
               display: "inline-block",
             }}
           >
             Success Stories of New Canadians
           </Heading>
-        </Box>
-      </Link>
-      <Dropdown alignSelf="end"></Dropdown>
+        </Link>
+      </Box>
+
+      <Box width="20%">
+        <Dropdown alignSelf="end"></Dropdown>
+      </Box>
     </Mobile>
   </Box>
 )
