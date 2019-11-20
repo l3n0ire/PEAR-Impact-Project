@@ -13,30 +13,13 @@ const Dropdown = () => (
       background={{ color: "light-1" }}
     >
       <Menu
-        dropBackground="#CC002C"
-
-        style={{
-          global: {
-            colors: {
-              control: "white",
-            },
-          },
-          menu: {
-            extend: {
-              color: "white"
-            },
-          },
-          color: 'white'
-        }}
         items={[
           {
             label: (
               <Box alignSelf="center">
                 {" "}
                 <Link to="/">
-                  <Text color="white">
-                    Stories
-                  </Text>
+                   <Text>Stories</Text>
                 </Link>
               </Box>
             ),
@@ -52,7 +35,7 @@ const Dropdown = () => (
             label: (
               <Box alignSelf="center">
                 <Link to="/about">
-                  <Text color="white">About</Text>
+                   <Text>About</Text>
                 </Link>
               </Box>
             ),
@@ -68,7 +51,7 @@ const Dropdown = () => (
             label: (
               <Box alignSelf="center">
                 <Link to="/contact">
-                  <Text color="white">Contact</Text>
+                   <Text>Contact</Text>
                 </Link>
               </Box>
             ),
@@ -82,13 +65,13 @@ const Dropdown = () => (
           },
         ]}
       >
-        <Box align="end" alignContent='center' direction="row">
-          <FormDown size='3vw' color='white'/>
-          <Text size='2.8vw'> Menu</Text>
+        <Box align="end" alignContent="center" direction="row">
+          <FormDown size="3vw"   />
+          <Text size="2.8vw"> Menu</Text>
         </Box>
       </Menu>
-    </Grommet>
-  </Box>
+    </Box>
+  </Grommet>
 )
 
 export default Dropdown;
