@@ -5,7 +5,6 @@ import globalTheme from './style'
 
 const PlainButton = ({ text, target, border = true, size = "medium", fillColor = "black", hoverColor }) => (
   <Box alignSelf="center">
-    {console.log(hoverColor)}
     <Grommet theme={{
               global: {
                 hover: {

@@ -4,7 +4,7 @@ date: "2019-11-08"
 title: "Ipsum Dipsum?"
 author: "Lorem"
 featuredImage: "../../images/post-4.jpg"
-
+tags: ""
 ---
 
 #Lorem?

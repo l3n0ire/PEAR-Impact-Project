@@ -4,7 +4,7 @@ date: "2019-11-07"
 title: "My Second Post"
 author: "Jesse Maltese"
 featuredImage: "../../images/post-2.jpg"
-
+tags: ""
 ---
 Another Post
 

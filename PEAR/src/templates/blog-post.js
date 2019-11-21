@@ -3,10 +3,12 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Layout from '../components/layout'
 import { graphql } from "gatsby"
-import { Box, Heading, Grid } from "grommet"
+import { Box, Heading, Grommet, Button } from "grommet"
+
 
 export default function Template({data}) {
     const post  = data.markdownRemark
+    const tags = post.frontmatter.tags.split(',').filter(Boolean)
     return (
 
       <Layout>
@@ -15,6 +17,30 @@ export default function Template({data}) {
           <Heading level = '4'>Posted by: {post.frontmatter.author} on {post.frontmatter.date}</Heading>
           <div dangerouslySetInnerHTML={{ __html: post.html }}/>
         </Box>
+        {tags.length > 0 ? (
+        <Grommet theme={{global:{hover:{color: 'dark-1'}}}}>
+        <Box direction='row' gap='large' pad='large' alignContent='center'>
+          <Box alignSelf='center' margin='none' pad='none'>
+            <Heading pad='none' margin='none' level='4'>Tags:</Heading>
+          </Box>
+            { tags.map(tag => (
+              //TODO make tag link to search result with same tag.
+              <Box style={{borderRadius: '5px'}} background='light-2'>
+                <Button 
+                style={{ 
+                  borderRadius: '5px',
+                  padding: '5px',
+                  transition: '0.25s'
+                }} 
+                color='black'
+                hoverIndicator='light-4' 
+                plain 
+                label={tag}/>
+              </Box>
+            ))}
+        </Box>
+        </Grommet>
+        ) :  (null)}
       </Layout>
       
     )
@@ -29,8 +55,7 @@ export const postQuery = graphql`
                 title
                 author
                 date
-                
-                          
+                tags     
             }
 
         }
