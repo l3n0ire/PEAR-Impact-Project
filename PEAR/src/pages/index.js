@@ -1,18 +1,20 @@
 import React, { Fragment } from "react"
 
 import Layout from "../components/layout"
-import { Grid, Box, Grommet, Text, Heading, Image } from "grommet"
+import { Grid, Box, TextInput, Text, Heading, Image } from "grommet"
 import Link from "gatsby-link"
 import { Desktop, Mobile } from "../components/menu"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import PlainButton from "../components/plainbutton"
+import SearchComponent from "../components/SearchComponent"
+{console.log(SearchComponent)}
 
 const BlogPage = ({ data }) => (
   <Box>
     <Desktop>
       <Fragment>
         <Layout>
+          <SearchComponent></SearchComponent>
           <Grid
             alignSelf="center"
             columns={["45vw", "45vw"]}

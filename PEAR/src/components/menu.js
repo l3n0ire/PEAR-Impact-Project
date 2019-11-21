@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
-import { useState } from 'react'
 import Link from 'gatsby-link'
-import { Box, Button, Heading } from 'grommet'
+import { Box, Heading } from 'grommet'
 import { useMediaQuery } from "react-responsive"
 import Dropdown from './dropdown'
 import PlainButton from './plainbutton'
@@ -30,6 +29,7 @@ const Menu = () => (
   >
     <Desktop>
       <Fragment>
+ 
         <Box width={{min:"300px" , max:"20%"}}>
           <Link to="/">
             <Box alignSelf="start" width="100%">
