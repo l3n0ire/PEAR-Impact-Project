@@ -6,15 +6,14 @@ import Link from "gatsby-link"
 import { Desktop, Mobile } from "../components/menu"
 import { graphql } from "gatsby"
 import PlainButton from "../components/plainbutton"
-import SearchComponent from "../components/SearchComponent"
-{console.log(SearchComponent)}
+import Header from '../components/header'
 
 const BlogPage = ({ data }) => (
   <Box>
     <Desktop>
       <Fragment>
         <Layout>
-          <SearchComponent></SearchComponent>
+          <Header></Header>
           <Grid
             alignSelf="center"
             columns={["45vw", "45vw"]}

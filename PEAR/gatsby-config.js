@@ -13,25 +13,25 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    'gatsby-plugin-catch-links',
+    "gatsby-plugin-catch-links",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages'
-      }
+        name: "pages",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "fonts",
-        path: `${__dirname}/src/fonts/`
+        path: `${__dirname}/src/fonts/`,
       },
     },
-    'gatsby-transformer-remark',
+    "gatsby-transformer-remark",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -43,9 +43,21 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
-    }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: ['title', 'tags', 'path', 'author', 'clientName'],
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            tags: node => node.frontmatter.tags,
+            path: node => node.frontmatter.path,
+            author: node => node.frontmatter.author,
+            clientName: node => node.frontmatter.clientName
+          },
+        },
+      },
+    },
   ],
 }
