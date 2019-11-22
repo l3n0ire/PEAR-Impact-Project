@@ -17,22 +17,23 @@ export default class SearchComponent extends Component {
     render() {
     return (
       <>
-        <Box
-          width="large"
-          direction="row"
-          align="center"
-          pad={{ horizontal: "small", vertical: "none" }}
-          round="xsmall"
-          border={{
-            side: "all",
-            color: "black",
-          }}
-          margin={{ left: "3vw" }}
-        >
-          <Search color="black" />
-          <TextInput value={this.state.query} onChange={this.search} placeholder="Search for tags or titles" plain />
-        </Box>
-      </>
+            <Box
+            width="large"
+            direction="row"
+            align="center"
+            pad={{ horizontal: "small", vertical: "none" }}
+            round="xsmall"
+            border={{
+                side: "all",
+                color: "black",
+            }}
+            margin={{ left: "3vw" }}
+            >
+            <Search color="black" />
+            <TextInput value={this.state.query} onChange={this.search} placeholder="Search for tags or titles" plain />
+            {console.log(this.state.results)}
+            </Box>
+        </>
     )
     }
     getOrCreateIndex = () =>
