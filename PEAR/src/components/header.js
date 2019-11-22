@@ -2,7 +2,7 @@ import React from "react"
 import { StaticQuery, Link } from "gatsby"
 import { graphql } from "gatsby"
 
-import SearchComponent from "./SearchComponent"
+import SearchResults from "./SearchResults"
 
 const Header = () => (
   <StaticQuery
@@ -15,7 +15,7 @@ const Header = () => (
     `}
     render={data => (
       <header>
-        <SearchComponent searchIndex={data.siteSearchIndex.index} />
+        <SearchResults searchIndex={data.siteSearchIndex.index} />
       </header>
     )}
   />

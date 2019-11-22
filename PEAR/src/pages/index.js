@@ -13,7 +13,7 @@ const BlogPage = ({ data }) => (
     <Desktop>
       <Fragment>
         <Layout>
-          <Header></Header>
+          
           <Grid
             alignSelf="center"
             columns={["45vw", "45vw"]}
