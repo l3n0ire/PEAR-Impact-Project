@@ -4,7 +4,7 @@ import { Component } from 'react'
 import { TextInput, Box, Grid, Text, Heading, Button, Image} from 'grommet'
 import { Search, Close } from 'grommet-icons'
 import { Index } from 'elasticlunr'
-import PlainButton from './plainbutton'
+const qs = require('query-string')
 
 
 
@@ -18,12 +18,22 @@ export default class SearchResults extends Component {
         }
 
     }
+   
     componentDidMount() {
+      const query = qs.parse(window.location.search).q
+      console.log(query)
+      if(typeof query !== 'undefined') {
+        this.search(query)
+      }
+      else {
         this.search()
+      }
     }
+
     render() {
     return (
       <React.Fragment>
+       
         <Box
           width="large"
           direction="row"
@@ -62,42 +72,31 @@ export default class SearchResults extends Component {
             }}
           />
         </Box>
-        <Grid
-          alignSelf="center"
-          columns={["45vw", "45vw"]}
-          rows="flex"
-          alignContent="center"
-          gap="large"
-          margin="3vw"
-        >
-          {this.state.results.map(post => (
-            <Link to={post.path}>
-              <Box
-                justify="center"
-                height="55vh"
-                background={{ color: "light-1" }}
-              >
-                
-                <Image
-                  style={{ padding: "10px", margin: "0px" }}
-                  fit="cover"
-                  src={post.featuredImage}
-                />
-                <Heading
-                  style={{ margin: "10px" }}
-                  alignSelf="center"
-                  level="3"
-                  margin="medium"
+        {this.state.results.map(post => (
+          <Link to={post.path}>
+            <Box
+              alignContent="start"
+              width="93vw"
+              pad="small"
+              margin="3vw"
+              height="18vh"
+              background={{ color: "light-1" }}
+            >
+              <Box direction="row">
+                <Text
+                  size="2.5vw"
+                  style={{
+                    display: "inline-block",
+                  }}
                 >
-                  {post.title}
-                </Heading>
-                <Text alignSelf="center">Posted by {post.author} on</Text>
-
-                <PlainButton text="Read More" target={post.path} />
+                  <b>{post.title}</b>
+                  &nbsp;&nbsp;by {post.author}
+                </Text>
               </Box>
-            </Link>
-          ))}
-        </Grid>
+              <Text>{post.excerpt.replace(/^(\\)|\#.*/gm, "")}</Text>
+            </Box>
+          </Link>
+        ))}
       </React.Fragment>
     )}
     getOrCreateIndex = () =>
@@ -105,13 +104,22 @@ export default class SearchResults extends Component {
     
     search = evt => {
         this.index = this.getOrCreateIndex()
-        const query = evt ? evt.target.value : ''
+        let query
+        if(typeof evt === 'string') {
+          query = evt
+        }
+        else {
+          query = evt ? evt.target.value : ''
+        }
+        
         if(query !== '') {
             this.setState({
                 query,
                 results: this.index
                 .search(query, { expand: true })
-                .map(({ ref }) => this.index.documentStore.getDoc(ref)),
+                .map(({ ref }) => (
+                    this.index.documentStore.getDoc(ref)
+                )),
             })
         } else {
         var res = []

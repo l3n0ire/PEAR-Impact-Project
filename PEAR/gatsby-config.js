@@ -1,3 +1,5 @@
+const remark = require('remark')
+
 module.exports = {
   siteMetadata: {
     title: `PEAR Impact Project`,
@@ -47,14 +49,7 @@ module.exports = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: [
-          "title",
-          "tags",
-          "path",
-          "author",
-          "clientName",
-          "featuredImage",
-        ],
+        fields: ["title", "tags", "path", "author", "clientName", "excerpt", "html"],
         resolvers: {
           MarkdownRemark: {
             title: node => node.frontmatter.title,
@@ -62,10 +57,15 @@ module.exports = {
             path: node => node.frontmatter.path,
             author: node => node.frontmatter.author,
             clientName: node => node.frontmatter.clientName,
-            featuredImage: node => node.frontmatter.featuredImage,
+            excerpt: node => {
+              const text = remark().use().processSync(node.rawMarkdownBody)
+
+              const excerptLength = 340; // Hard coded excerpt length
+              return String(text).substring(0, excerptLength).trimRight() + "...";
+            },
           },
-        },
+        }
       },
-    },
+    }
   ],
 }
