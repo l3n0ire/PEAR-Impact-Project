@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { Component } from 'react'
-import { TextInput, Box, Grid, Text, Heading, Button, Image} from 'grommet'
+import { TextInput, Box, Text, Button} from 'grommet'
 import { Search, Close } from 'grommet-icons'
 import { Index } from 'elasticlunr'
 const qs = require('query-string')
@@ -30,76 +30,76 @@ export default class SearchResults extends Component {
     }
 
     render() {
-    return (
-      <React.Fragment>
-       
-        <Box
-          width="large"
-          direction="row"
-          align="center"
-          pad={{ horizontal: "small", vertical: "none" }}
-          round="xsmall"
-          border={{
-            side: "all",
-            color: "black",
-          }}
-          margin={{ left: "3vw" }}
-        >
-          <Search color="black" />
-          <TextInput
-            id="textinput"
-            value={this.state.query}
-            onChange={e => {
-              this.setState({ reveal: true })
-              this.search(e)
+      return (
+        <React.Fragment>
+          <Box
+            width="large"
+            direction="row"
+            align="center"
+            pad={{ horizontal: "small", vertical: "none" }}
+            round="xsmall"
+            border={{
+              side: "all",
+              color: "black",
             }}
-            placeholder="Search for tags or titles"
-            plain
-          />
-          <Button
-            icon={
-              this.state.reveal ? (
-                <Close color="#999" />
-              ) : (
-                <Close color="white" />
-              )
-            }
-            disabled={this.state.reveal ? false : true}
-            onClick={e => {
-              document.getElementById("textinput").value = ""
-              this.search("")
-            }}
-          />
-        </Box>
-        {this.state.results.map(post => (
-          <Link to={post.path}>
-            <Box
-              alignContent="start"
-              width="93vw"
-              pad="small"
-              margin="3vw"
-              height="18vh"
-              background={{ color: "light-1" }}
-            >
-              <Box direction="row">
-                <Text
-                  size="2.5vw"
-                  style={{
-                    display: "inline-block",
-                  }}
-                >
-                  <b>{post.title}</b>
-                  &nbsp;&nbsp;by {post.author}
-                </Text>
+            margin={{ left: "3vw" }}
+          >
+            <Search color="black" />
+            <TextInput
+              id="textinput"
+              value={this.state.query}
+              onChange={e => {
+                this.setState({ reveal: true })
+                this.search(e)
+              }}
+              placeholder="Search for tags or titles"
+              plain
+            />
+            <Button
+              icon={
+                this.state.reveal ? (
+                  <Close color="#999" />
+                ) : (
+                  <Close color="white" />
+                )
+              }
+              disabled={this.state.reveal ? false : true}
+              onClick={e => {
+                document.getElementById("textinput").value = ""
+                this.search("")
+              }}
+            />
+          </Box>
+          {this.state.results.map(post => (
+            <Link to={post.path}>
+              <Box
+                alignContent="start"
+                width="93vw"
+                pad="small"
+                margin="3vw"
+                height="18vh"
+                background={{ color: "light-1" }}
+              >
+                <Box direction="row">
+                  <Text
+                    size="2.5vw"
+                    style={{
+                      display: "inline-block",
+                    }}
+                  >
+                    <b>{post.title}</b>
+                    &nbsp;<span style={{fontSize:"1.5vw"}}>by {post.author}</span>
+                  </Text>
+                </Box>
+                <Text>{post.excerpt.replace(/^(\\)|\#.*/gm, "")}</Text>
               </Box>
-              <Text>{post.excerpt.replace(/^(\\)|\#.*/gm, "")}</Text>
-            </Box>
-          </Link>
-        ))}
-      </React.Fragment>
-    )}
-    getOrCreateIndex = () =>
-    this.index ? this.index : Index.load(this.props.searchIndex)
+            </Link>
+          ))}
+        </React.Fragment>
+      )
+    }
+    getOrCreateIndex = () => 
+      this.index ? this.index : Index.load(this.props.searchIndex)
     
     search = evt => {
         this.index = this.getOrCreateIndex()
@@ -121,14 +121,14 @@ export default class SearchResults extends Component {
                 )),
             })
         } else {
-        var res = []
-        for (var ref in this.index.documentStore.docInfo) {
-            res.push(this.index.documentStore.getDoc(ref))
-        }
-        this.setState({
-            query,
-            results: res,
-        })
+          var res = []
+          for (var ref in this.index.documentStore.docInfo) {
+              res.push(this.index.documentStore.getDoc(ref))
+          }
+          this.setState({
+              query,
+              results: res,
+          })
         }
     }
 }
