@@ -55,8 +55,8 @@ export default class SearchResults extends Component {
             }
             disabled={this.state.reveal ? false : true}
             onClick={e => {
-              document.getElementById("textinput").value = ""
-              this.search(e)
+              document.getElementById("textinput").value = ''
+              this.search('')
             }}
           />
         </Box>
