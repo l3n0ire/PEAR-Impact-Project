@@ -21,7 +21,6 @@ export default class SearchResults extends Component {
    
     componentDidMount() {
       const query = qs.parse(window.location.search).q
-      console.log(query)
       if(typeof query !== 'undefined') {
         this.search(query)
       }

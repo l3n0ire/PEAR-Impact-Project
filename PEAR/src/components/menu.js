@@ -4,6 +4,7 @@ import { Box, Heading } from 'grommet'
 import { useMediaQuery } from "react-responsive"
 import Dropdown from './dropdown'
 import PlainButton from './plainbutton'
+import SearchBar from './SearchBar'
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 768 })
@@ -16,12 +17,13 @@ const Mobile = ({ children }) => {
 
 const Menu = () => (
   <Box
-    flex={true}
+    style={{
+      flexDirection: "row",
+    }}
     fill="horizontal"
     align="center"
     direction="row"
-    height='xsmall'
-    pad="medium"
+    height="xsmall"
     elevation="xsmall"
     background={{
       color: "light-1",
@@ -29,16 +31,27 @@ const Menu = () => (
   >
     <Desktop>
       <Fragment>
- 
-        <Box width={{min:"300px" , max:"20%"}}>
+        <Box
+          display="inline-block"
+          style={{
+            whiteSpace: 'nowrap'
+          }}
+          flex={{ grow: 2, shrink: 1 }}
+          width={{ min: '225px' , max: "10%" }}
+        >
           <Link to="/">
-            <Box alignSelf="start" width="100%">
+            <Box
+              display="inline-block"
+              flex={true}
+              pad={{ left: "small" }}
+              alignSelf="start"
+            >
               <Heading
                 margin="none"
                 style={{
                   lineHeight: "4vh",
                   padding: "none",
-                  fontSize: "3.5vh",
+                  fontSize: "3.2vh",
                 }}
               >
                 Success Stories
@@ -48,34 +61,36 @@ const Menu = () => (
                 style={{
                   lineHeight: "4vh",
                   padding: "none",
-                  fontSize: "3.5vh",
+                  fontSize: "3.2vh",
                 }}
               >
-                of <span style = {{color: 'red'}}>New Canadians</span>
+                of <span style={{ color: "red" }}>New Canadians</span>
               </Heading>
             </Box>
           </Link>
         </Box>
         <Box
-          width="80%"
+          flex={{ grow: 1, shrink: 2 }}
+          style={{whiteSpace: "nowrap"}}
           direction="row"
           align="center"
-          pad="large"
           justify="evenly"
+          display='inline-block'
         >
           <PlainButton
             hoverColor="red"
             fillColor="none"
-            size="2.5vw"
+            size="2.3vw"
+            display="inline-block"
             border={false}
             text="Stories"
             target="/"
           />
-
           <PlainButton
             hoverColor="red"
             fillColor="none"
-            size="2.5vw"
+            size="2.3vw"
+            display="inline-block"
             border={false}
             text="About"
             target="/about"
@@ -84,11 +99,15 @@ const Menu = () => (
           <PlainButton
             hoverColor="red"
             fillColor="none"
-            size="2.5vw"
+            size="2.3vw"
+            display="inline-block"
             border={false}
             text="Contact"
             target="/contact"
           />
+        </Box>
+        <Box flex={{ shrink: 2 }} margin={{ right: "medium" }}>
+          <SearchBar></SearchBar>
         </Box>
       </Fragment>
     </Desktop>
@@ -117,11 +136,11 @@ const Menu = () => (
               fontSize: "3.5vh",
             }}
           >
-            of <span style = {{color: 'red'}}>New Canadians</span>
+            of <span style={{ color: "red" }}>New Canadians</span>
           </Heading>
         </Box>
       </Link>
-      <Dropdown alignSelf = 'end'></Dropdown>
+      <Dropdown alignSelf="end"></Dropdown>
     </Mobile>
   </Box>
 )
