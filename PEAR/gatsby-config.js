@@ -47,14 +47,22 @@ module.exports = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: ['title', 'tags', 'path', 'author', 'clientName'],
+        fields: [
+          "title",
+          "tags",
+          "path",
+          "author",
+          "clientName",
+          "featuredImage",
+        ],
         resolvers: {
           MarkdownRemark: {
             title: node => node.frontmatter.title,
             tags: node => node.frontmatter.tags,
             path: node => node.frontmatter.path,
             author: node => node.frontmatter.author,
-            clientName: node => node.frontmatter.clientName
+            clientName: node => node.frontmatter.clientName,
+            featuredImage: node => node.frontmatter.featuredImage,
           },
         },
       },

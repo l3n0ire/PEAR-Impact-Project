@@ -1,10 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { Component } from 'react'
-import { TextInput, Box, Grid, Text, Heading, Button} from 'grommet'
+import { TextInput, Box, Grid, Text, Heading, Button, Image} from 'grommet'
 import { Search, Close } from 'grommet-icons'
 import { Index } from 'elasticlunr'
 import PlainButton from './plainbutton'
+
+
 
 export default class SearchResults extends Component {
     constructor(props) {
@@ -55,8 +57,8 @@ export default class SearchResults extends Component {
             }
             disabled={this.state.reveal ? false : true}
             onClick={e => {
-              document.getElementById("textinput").value = ''
-              this.search('')
+              document.getElementById("textinput").value = ""
+              this.search("")
             }}
           />
         </Box>
@@ -75,6 +77,12 @@ export default class SearchResults extends Component {
                 height="55vh"
                 background={{ color: "light-1" }}
               >
+                
+                <Image
+                  style={{ padding: "10px", margin: "0px" }}
+                  fit="cover"
+                  src={post.featuredImage}
+                />
                 <Heading
                   style={{ margin: "10px" }}
                   alignSelf="center"
@@ -106,7 +114,6 @@ export default class SearchResults extends Component {
                 .map(({ ref }) => this.index.documentStore.getDoc(ref)),
             })
         } else {
-        console.log(query)
         var res = []
         for (var ref in this.index.documentStore.docInfo) {
             res.push(this.index.documentStore.getDoc(ref))

@@ -1,7 +1,10 @@
 import React from 'react'
 import Header from "../components/header"
+import Layout from "../components/layout"
 
 const Search = () => (
-  <Header></Header>
+  <Layout>
+    <Header></Header>
+  </Layout>
 )
 export default Search
