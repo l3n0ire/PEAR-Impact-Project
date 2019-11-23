@@ -46,10 +46,15 @@ export default class SearchResults extends Component {
           >
             <Search color="black" />
             <TextInput
+              focusIndicator={false}  
               id="textinput"
               value={this.state.query}
               onChange={e => {
-                this.setState({ reveal: true })
+                if (e.target.value !== "") {
+                  this.setState({ reveal: true })
+                } else {
+                  this.setState({ reveal: false })
+                }
                 this.search(e)
               }}
               placeholder="Search for tags or titles"
@@ -60,12 +65,14 @@ export default class SearchResults extends Component {
                 this.state.reveal ? (
                   <Close color="#999" />
                 ) : (
-                  <Close color="white" />
+                  <Close color="none" />
                 )
               }
+              focusIndicator={false}
               disabled={this.state.reveal ? false : true}
               onClick={e => {
                 document.getElementById("textinput").value = ""
+                this.setState({ reveal: false })
                 this.search("")
               }}
             />
@@ -88,7 +95,8 @@ export default class SearchResults extends Component {
                     }}
                   >
                     <b>{post.title}</b>
-                    &nbsp;<span style={{fontSize:"1.5vw"}}>by {post.author}</span>
+                    &nbsp;
+                    <span style={{ fontSize: "1.5vw" }}>by {post.author}</span>
                   </Text>
                 </Box>
                 <Text>{post.excerpt.replace(/^(\\)|\#.*/gm, "")}</Text>
