@@ -1,0 +1,16 @@
+backend:
+  name: Canadian-Success-Stories
+
+media_folder: static/assets
+public_folder: assets
+collections:
+  - name: Canadian-Success-Stories
+    label: Stories
+    folder: stories
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+      - { name: tags, label: Tags }

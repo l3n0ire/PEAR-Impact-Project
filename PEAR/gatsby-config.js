@@ -49,7 +49,15 @@ module.exports = {
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
-        fields: ["title", "tags", "path", "author", "clientName", "excerpt", "html"],
+        fields: [
+          "title",
+          "tags",
+          "path",
+          "author",
+          "clientName",
+          "excerpt",
+          "html",
+        ],
         resolvers: {
           MarkdownRemark: {
             title: node => node.frontmatter.title,
@@ -58,14 +66,21 @@ module.exports = {
             author: node => node.frontmatter.author,
             clientName: node => node.frontmatter.clientName,
             excerpt: node => {
-              const text = remark().use().processSync(node.rawMarkdownBody)
+              const text = remark()
+                .use()
+                .processSync(node.rawMarkdownBody)
 
-              const excerptLength = 340; // Hard coded excerpt length
-              return String(text).substring(0, excerptLength).trimRight() + "...";
+              const excerptLength = 340 // Hard coded excerpt length
+              return (
+                String(text)
+                  .substring(0, excerptLength)
+                  .trimRight() + "..."
+              )
             },
           },
-        }
+        },
       },
-    }
+    },
+    `gatsby-plugin-netlify-cms`,
   ],
 }
