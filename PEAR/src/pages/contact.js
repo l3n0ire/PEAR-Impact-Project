@@ -26,20 +26,23 @@ const ContactPage = () => (
             label="Name"
             name="name"
             required
+            focusIndicator={false}
             validate={{ regexp: /^[a-z]/i }}
           />
           <FormField
+            focusIndicator={false}
             style={{ width: "30vw" }}
             placeholder="name@domain.com"
             label="Email"
             name="email"
             validate={{
               regexp: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              message: 'Please enter a valid email.'
+              message: "Please enter a valid email.",
             }}
             required
           />
           <TextArea
+            focusIndicator={false}
             component={TextArea}
             required
             name="message"
@@ -68,6 +71,7 @@ const ContactPage = () => (
               transition: "0.35s",
               fontSize: "3vh",
             }}
+            focusIndicator={false}
             hoverIndicator="black"
             fill={true}
             type="submit"

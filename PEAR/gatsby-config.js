@@ -56,7 +56,7 @@ module.exports = {
           "author",
           "clientName",
           "excerpt",
-          "html",
+          "image",
         ],
         resolvers: {
           MarkdownRemark: {
@@ -65,6 +65,7 @@ module.exports = {
             path: node => node.frontmatter.path,
             author: node => node.frontmatter.author,
             clientName: node => node.frontmatter.clientName,
+            image: node => node.frontmatter.featuredImage,
             excerpt: node => {
               const text = remark()
                 .use()

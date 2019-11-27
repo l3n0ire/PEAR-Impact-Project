@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { Component } from 'react'
-import { TextInput, Box, Text, Button} from 'grommet'
+import { TextInput, Box, Text, Button, Image } from 'grommet'
 import { Search, Close } from 'grommet-icons'
 import { Index } from 'elasticlunr'
 const qs = require('query-string')
@@ -44,6 +44,7 @@ export default class SearchResults extends Component {
             }}
             margin={{ left: "3vw" }}
           >
+            
             <Search color="black" />
             <TextInput
               focusIndicator={false}  
@@ -87,6 +88,7 @@ export default class SearchResults extends Component {
                 height="18vh"
                 background={{ color: "light-1" }}
               >
+                {console.log(post)}
                 <Box direction="row">
                   <Text
                     size="2.5vw"

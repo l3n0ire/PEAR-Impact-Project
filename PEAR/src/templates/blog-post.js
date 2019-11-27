@@ -24,7 +24,7 @@ export default function Template({data}) {
             <Heading pad='none' margin='none' level='4'>Tags:</Heading>
           </Box>
             { tags.map(tag => (
-              //TODO make tag link to search result with same tag.
+              
               <Box style={{borderRadius: '5px'}} background='light-2'>
                 <Button 
                 style={{ 
@@ -34,7 +34,8 @@ export default function Template({data}) {
                 }} 
                 color='black'
                 hoverIndicator='light-4' 
-                plain 
+                plain
+                href={'/search?q=' + tag}
                 label={tag}/>
               </Box>
             ))}

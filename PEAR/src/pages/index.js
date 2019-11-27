@@ -6,7 +6,6 @@ import Link from "gatsby-link"
 import { Desktop, Mobile } from "../components/menu"
 import { graphql } from "gatsby"
 import PlainButton from "../components/plainbutton"
-import Header from '../components/header'
 
 const BlogPage = ({ data }) => (
   <Box>
@@ -91,6 +90,8 @@ const BlogPage = ({ data }) => (
     </Mobile>
   </Box>
 )
+
+
 
 export const pageQuery = graphql`
   query BlogIndexQuery {

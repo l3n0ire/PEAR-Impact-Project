@@ -26,6 +26,7 @@
     "gatsby-transformer-sharp": "^2.3.1",
     "grommet": "^2.8.0",
     "netlify-cms": "^2.9.7",
+    "netlify-cms-app": "^2.9.7",
     "polished": "^3.4.2",
     "prop-types": "^15.7.2",
     "query-string": "^6.9.0",

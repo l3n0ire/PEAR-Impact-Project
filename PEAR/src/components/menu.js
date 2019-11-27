@@ -51,8 +51,9 @@ const Menu = () => (
                 style={{
                   lineHeight: "4vh",
                   padding: "none",
-                  fontSize: "3.2vh",
+                  fontSize: "3.2vh"
                 }}
+                color='black'
               >
                 Success Stories
               </Heading>
@@ -63,6 +64,7 @@ const Menu = () => (
                   padding: "none",
                   fontSize: "3.2vh",
                 }}
+                color='black'
               >
                 of <span style={{ color: "red" }}>New Canadians</span>
               </Heading>

@@ -25,7 +25,7 @@ class SearchBarComponent extends Component {
     this.state = {
       query: ``,
       results: [],
-      reveal: false,
+      reveal: false
     }
   }
   _handleKeyDown = e => {
@@ -43,27 +43,28 @@ class SearchBarComponent extends Component {
               extend: {
                 backgroundColor: "#F2F2F2",
               },
+
             },
           },
         }}
       >
         <Box
+          className='searchBox'
           direction="row"
           align="center"
           margin={{ right: "medium" }}
           pad={{ horizontal: "small", vertical: "none" }}
-          round="xsmall"
           fill="horizontal"
         >
           <Search color="black" />
           <TextInput
             onKeyDown={e => this._handleKeyDown(e)}
             id="textinput"
+            plain
             size="medium"
             focusIndicator={false}
             dropHeight="large"
             placeholder="Search..."
-            plain
             onChange={e => {
               this.search(e)
               if (e.target.value !== "") {
@@ -72,11 +73,19 @@ class SearchBarComponent extends Component {
                 this.setState({ reveal: false })
               }
             }}
-            //TODO: Truncate title...
-            suggestions={this.state.results.map(post => ({
-              label: post.title,
-              path: post.path,
-            }))}
+            //Only truncate title if its over 50 characters...
+            suggestions={this.state.results.map((post) => { 
+                let title = post.title
+                let lastIdx = post.title.lastIndexOf(' ', 25)
+                if(lastIdx > 25) {
+                  title = post.title.substring(0, lastIdx) + '...'
+                }
+                return ({
+                  label: title,
+                  path: post.path })
+                }
+              )
+            }
             onSelect={e => (window.location.href = e.suggestion.path)}
           />
           <Button
