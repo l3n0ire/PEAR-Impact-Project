@@ -114,7 +114,9 @@ const Menu = () => (
       </Fragment>
     </Desktop>
     <Mobile>
+
       <Link to="/">
+
         <Box
           margin="none"
           width={{ min: "50%" }}
@@ -141,8 +143,11 @@ const Menu = () => (
             of <span style={{ color: "red" }}>New Canadians</span>
           </Heading>
         </Box>
+        
+
       </Link>
-      <Dropdown alignSelf="end"></Dropdown>
+    
+
     </Mobile>
   </Box>
 )
