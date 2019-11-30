@@ -6,7 +6,7 @@ import { Grid, Box, Grommet, Text, Accordion, AccordionPanel} from "grommet"
 import Menu from "./menu"
 import "./layout.css"
 import globalTheme from './style'
-import SearchBar from './SearchBar'
+import Dropdown from './dropdown'
 
 
 
@@ -42,32 +42,8 @@ const Layout = ({ children }) => {
           
             <Menu gridArea = 'header'/>
           <main gridArea = 'content'>
-              <AccordionPanel label='click me (everything is in layout.js)'>
-
-              <Box alignSelf="center">
-                {" "}
-                <Link to="/">
-                   <Text>Stories</Text>
-                </Link>
-              </Box>
-
-              <Box alignSelf="center">
-                <Link to="/about">
-                   <Text>About</Text>
-                </Link>
-              </Box>
-
-              <Box alignSelf="center">
-                <Link to="/contact">
-                   <Text>Contact</Text>
-                </Link>
-              </Box>
-
-              <Box flex={{ shrink: 2 }} margin={{ right: "medium" }}>
-                <SearchBar></SearchBar>
-              </Box>
-
-              </AccordionPanel>
+            <Dropdown></Dropdown>
+             
               {children}
           </main>
           
