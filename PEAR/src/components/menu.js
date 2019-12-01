@@ -120,7 +120,7 @@ const Menu = () => (
         <Box
           margin="none"
           width={{ min: "50%" }}
-          style={{ lineHeight: "30px", padding: "none" }}
+          style={{ lineHeight: "30px", paddingLeft: "2vw" }}
         >
           <Heading
             margin="none"

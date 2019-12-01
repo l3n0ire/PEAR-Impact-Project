@@ -39,7 +39,6 @@ const Layout = ({ children }) => {
 
           ]}
         > 
-          
             <Menu gridArea = 'header'/>
           <main gridArea = 'content'>
             <Dropdown></Dropdown>

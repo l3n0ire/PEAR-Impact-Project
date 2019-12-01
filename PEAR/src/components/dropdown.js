@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { useMediaQuery } from "react-responsive"
 
 
@@ -7,6 +7,8 @@ import { grommet } from "grommet/themes";
 import { Article, Contact, ContactInfo, Services, FormDown} from "grommet-icons";
 import Link from 'gatsby-link';
 import SearchBar from './SearchBar'
+import PlainButton from './plainbutton'
+
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 768 })
@@ -16,8 +18,30 @@ const Mobile = ({ children }) => {
   const isTablet = useMediaQuery({maxWidth: 767 })
   return isTablet ? children : null
 }
+const customLabel = () => (
+  <Box direction="row" align="center" pad="small" gap="small">
+    <strong>
+      <Text>Menu</Text>
+    </strong>
+  </Box>
+);
+const CustomAccordionTheme = {
+  accordion: {
+    heading: { level: "3" },
+    icons: {
+      color: "red"
+    },
+    border:{
+      color: "white"
+    }
+  }
+};
+
+
+
 
 const Dropdown = () => (
+  <Grommet theme={CustomAccordionTheme}>
   <Box>
 
   <Desktop>
@@ -28,27 +52,48 @@ const Dropdown = () => (
   <Mobile>
     <Fragment>
 
-  <AccordionPanel label='click me (pls style)'>
+  <AccordionPanel
+ label ={customLabel()}
+            >
 
-  <Box alignSelf="center">
-    {" "}
-    <Link to="/">
-       <Text>Stories</Text>
-    </Link>
-  </Box>
-
-  <Box alignSelf="center">
-    <Link to="/about">
-       <Text>About</Text>
-    </Link>
-  </Box>
-
-  <Box alignSelf="center">
-    <Link to="/contact">
-       <Text>Contact</Text>
-    </Link>
-  </Box>
-
+  <Box
+          flex={{ grow: 1, shrink: 2 }}
+          style={{whiteSpace: "nowrap"}}
+          direction="column"
+          align="center"
+          justify="evenly"
+          display='inline-block'
+        >
+          <PlainButton
+            hoverColor="red"
+            fillColor="none"
+            size="5vw"
+            display="inline-block"
+            border={false}
+            text="Stories"
+            target="/"
+            
+          />
+          <PlainButton
+            hoverColor="red"
+            fillColor="none"
+            size="5vw"
+            display="inline-block"
+            border={false}
+            text="About"
+            target="/about"
+          />
+          <PlainButton
+            hoverColor="red"
+            fillColor="none"
+            size="5vw"
+            display="inline-block"
+            border={false}
+            text="Contact"
+            target="/contact"
+          />
+        </Box>
+        
   <Box flex={{ shrink: 2 }} margin={{ right: "medium" }}>
     <SearchBar></SearchBar>
   </Box>
@@ -57,8 +102,10 @@ const Dropdown = () => (
   </Fragment>
   </Mobile>
   </Box>
-  
+  </Grommet>
 )
+  
+
 
 export default Dropdown;
 export { Mobile, Desktop };
