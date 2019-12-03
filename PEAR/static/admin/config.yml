@@ -1,12 +1,11 @@
 backend:
-  name: git-gateway
+  name: github
   repo: l3n0ire/PEAR-Impact-Project
   branch: Grommet
 
 publish_mode: editorial_workflow
 
 media_folder: static/images
-public_folder: src/images
 
 collections:
   - name: "blog"
