@@ -73,7 +73,7 @@ class SearchBarComponent extends Component {
                 this.setState({ reveal: false })
               }
             }}
-            //Only truncate title if its over 25 characters...
+            //Only truncate title if its over 50 characters...
             suggestions={this.state.results.map((post) => { 
                 let title = post.title
                 let lastIdx = post.title.lastIndexOf(' ', 25)
