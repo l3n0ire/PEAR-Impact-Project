@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: l3n0ire/PEAR-Impact-Project
-  branch: grommet
+  branch: Grommet
 
 publish_mode: editorial_workflow
 media_folder: static/assets
