@@ -1,15 +1,19 @@
 backend:
-  name: test-repo
+  name: github
+  repo: l3n0ire/PEAR-Impact-Project
+  branch: grommet
 
+publish_mode: editorial_workflow
 media_folder: static/assets
 public_folder: assets
+folder: "src/pages/blog"
 collections:
-  - name: Canadian-Success-Stories
+  - name: stories
     label: Stories
     folder: stories
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields:
-      - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
