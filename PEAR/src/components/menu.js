@@ -7,11 +7,11 @@ import PlainButton from './plainbutton'
 import SearchBar from './SearchBar'
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 768 })
+  const isDesktop = useMediaQuery({ minWidth: 1025 })
   return isDesktop ? children : null
 }
 const Mobile = ({ children }) => {
-  const isTablet = useMediaQuery({maxWidth: 767 })
+  const isTablet = useMediaQuery({maxWidth: 1024 })
   return isTablet ? children : null
 }
 
@@ -51,7 +51,7 @@ const Menu = () => (
                 style={{
                   lineHeight: "4vh",
                   padding: "none",
-                  fontSize: "3.2vh"
+                  fontSize: "1.5em"
                 }}
                 color='black'
               >
@@ -62,7 +62,7 @@ const Menu = () => (
                 style={{
                   lineHeight: "4vh",
                   padding: "none",
-                  fontSize: "3.2vh",
+                  fontSize: "1.5em",
                 }}
                 color='black'
               >

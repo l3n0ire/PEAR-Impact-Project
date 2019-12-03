@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql,Link } from "gatsby"
-import { Grid, Box, Grommet, Text, Accordion, AccordionPanel} from "grommet"
+import { Grid, Box, Grommet, Text, Accordion, AccordionPanel, Button} from "grommet"
 
 import Menu from "./menu"
 import "./layout.css"
 import globalTheme from './style'
 import Dropdown from './dropdown'
+import {FacebookOption, Instagram, Twitter, MailOption, LinkedinOption} from "grommet-icons"
 
 
 
@@ -24,7 +25,21 @@ const Layout = ({ children }) => {
 
   return (
 
-    <Grommet theme={globalTheme}>
+    <Grommet theme={{
+      icon:{
+          hover:{
+            size:'10vh'
+          }
+      },
+      global: {
+        icon:{
+        hover: {
+          size:'10vh'
+
+        }
+      }
+    }
+    }}>
       <Accordion>
       <div style = {{height: '100vh', width: '100vw'}}>
 
@@ -50,6 +65,26 @@ const Layout = ({ children }) => {
             <Text size='small'> 
               © {new Date().getFullYear()}, Colin Lin, Daniel Chua, and Jesse Maltese
             </Text>
+            <Box direction= 'row' pad='small'>
+
+              
+              <a href="https://www.facebook.com/azhar.laher"
+                target= '_blank'>
+                <Instagram/>
+              </a>
+              
+
+              <a href="https://www.instagram.com/azhar_laher/?hl=en"
+                target= '_blank'>
+                <Instagram/>
+              </a>
+
+              <a href="https://twitter.com/azharlaher?lang=en"
+                target= '_blank'>
+                <Twitter/>
+              </a>
+
+              </Box>
           </Box>
           
         </Grid>

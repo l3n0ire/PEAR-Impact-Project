@@ -11,17 +11,17 @@ import PlainButton from './plainbutton'
 
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 768 })
+  const isDesktop = useMediaQuery({ minWidth: 1025 })
   return isDesktop ? children : null
 }
 const Mobile = ({ children }) => {
-  const isTablet = useMediaQuery({maxWidth: 767 })
+  const isTablet = useMediaQuery({maxWidth: 1024  })
   return isTablet ? children : null
 }
 const customLabel = () => (
-  <Box direction="row" align="center" pad="small" gap="small">
+  <Box direction="row" align="center" pad="none" gap="none">
     <strong>
-      <Text>Menu</Text>
+      <Text margin='2vw'>Menu</Text>
     </strong>
   </Box>
 );
@@ -67,7 +67,7 @@ const Dropdown = () => (
           <PlainButton
             hoverColor="red"
             fillColor="none"
-            size="5vw"
+            size="1.25em"
             display="inline-block"
             border={false}
             text="Stories"
@@ -77,7 +77,7 @@ const Dropdown = () => (
           <PlainButton
             hoverColor="red"
             fillColor="none"
-            size="5vw"
+            size="1.25em"
             display="inline-block"
             border={false}
             text="About"
@@ -86,7 +86,7 @@ const Dropdown = () => (
           <PlainButton
             hoverColor="red"
             fillColor="none"
-            size="5vw"
+            size="1.25em"
             display="inline-block"
             border={false}
             text="Contact"
