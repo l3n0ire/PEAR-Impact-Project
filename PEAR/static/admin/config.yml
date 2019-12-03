@@ -1,18 +1,17 @@
 backend:
-  name: github
+  name: git-gateway
   repo: l3n0ire/PEAR-Impact-Project
   branch: Grommet
 
 publish_mode: editorial_workflow
 media_folder: static/assets
 public_folder: assets
-folder: "src/pages/blog"
 collections:
-  - name: stories
-    label: Stories
-    folder: stories
+  - name: "blog"
+    label: "Stories"
+    folder: "src/pages/blog"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    slug: "{{slug}}" 
     fields:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
