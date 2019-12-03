@@ -5,12 +5,12 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: static/images
+media_folder: PEAR/static/images
 
 collections:
   - name: "blog"
     label: "Stories"
-    folder: "src/pages/blog"
+    folder: "PEAR/src/pages/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields:
