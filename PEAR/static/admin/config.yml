@@ -4,14 +4,16 @@ backend:
   branch: Grommet
 
 publish_mode: editorial_workflow
-media_folder: static/assets
-public_folder: assets
+
+media_folder: static/images
+public_folder: src/images
+
 collections:
   - name: "blog"
     label: "Stories"
     folder: "src/pages/blog"
     create: true
-    slug: "{{slug}}" 
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
