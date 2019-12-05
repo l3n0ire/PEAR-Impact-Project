@@ -8,14 +8,17 @@ publish_mode: editorial_workflow
 media_folder: PEAR/static/images
 
 collections:
-  - name: "blog"
-    label: "Stories"
+  - name: "stories"
+    label: "Story"
     folder: "PEAR/src/pages/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     preview_path: "{{slug}}"
     fields:
-      - { name: date, label: Date, widget: datetime }
+      - { name: date, label: Date, widget: datetime, format: YYYY-M-DD }
       - { name: title, label: Title }
+      - { name: author, label: Author }
+      - { name: featuredImage, label: Featured Image, widget: image, required: True}
+      - { name: clientName, label: 'Client Name'}
       - { name: body, label: Body, widget: markdown }
-      - { name: tags, label: Tags }
+      - { name: tags, label: Tags, widget: list}
