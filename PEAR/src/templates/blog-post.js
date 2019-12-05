@@ -10,7 +10,6 @@ export default function Template({data}) {
     const post  = data.markdownRemark
     const tags = [] //post.frontmatter.tags.split(',').filter(Boolean)
     return (
-
       <Layout>
         <Box pad = 'large'>
           <Heading>{post.frontmatter.title}</Heading>

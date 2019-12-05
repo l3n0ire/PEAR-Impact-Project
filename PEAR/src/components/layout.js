@@ -54,14 +54,14 @@ const Layout = ({ children }) => {
 
           ]}
         > 
-            <Menu gridArea = 'header'/>
-          <main gridArea = 'content'>
+            <Menu gridarea = 'header'/>
+          <main gridarea = 'content'>
             <Dropdown></Dropdown>
              
               {children}
           </main>
           
-          <Box gridArea = 'footer' align = 'center'>
+          <Box gridarea = 'footer' align = 'center'>
             <Text size='small'> 
               © {new Date().getFullYear()}, Colin Lin, Daniel Chua, and Jesse Maltese
             </Text>

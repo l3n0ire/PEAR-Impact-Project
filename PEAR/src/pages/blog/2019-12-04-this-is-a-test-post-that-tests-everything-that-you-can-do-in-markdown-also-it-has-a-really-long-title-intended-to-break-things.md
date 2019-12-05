@@ -13,7 +13,7 @@ This is a post
 
 I am including an inline image:
 
-![this is the text that appears when you hover on the image.](/PEAR/static/images/imageofcutedog.jpeg "This is the title of the image")
+![this is the text that appears when you hover on the image.](../../images/post-4.jpg "This is the title of the image")
 
 Wasn't that a cute inline image? **This is bold text,** _while this is italicized._ 
 

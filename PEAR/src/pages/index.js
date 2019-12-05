@@ -21,7 +21,7 @@ const BlogPage = ({ data }) => (
             margin="3vw"
           >
             {data.allMarkdownRemark.edges.map(post => (
-              <Link to={post.node.frontmatter.path}>
+              <Link to={post.node.fields.slug}>
                 <Box
                   justify="center"
                   height="55vh"
@@ -63,7 +63,7 @@ const BlogPage = ({ data }) => (
     <Mobile>
       <Layout>
         {data.allMarkdownRemark.edges.map(post => (
-          <Link to={post.node.frontmatter.path}>
+          <Link to={post.node.fields.slug}>
             <Box justify="center" margin="medium">
               <Image
                 style={{ margin: "0px" }}
