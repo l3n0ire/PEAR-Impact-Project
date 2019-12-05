@@ -24,13 +24,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages/blog`,
+        name: "blog",
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "fonts",
         path: `${__dirname}/src/fonts/`,
       },
     },
-    "gatsby-transformer-remark",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
@@ -86,6 +92,13 @@ module.exports = {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    `gatsby-plugin-netlify-cms-paths`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-plugin-netlify-cms-paths`],
       },
     },
     "gatsby-plugin-netlify", //keep this last in array

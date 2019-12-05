@@ -8,7 +8,7 @@ import { Box, Heading, Grommet, Button } from "grommet"
 
 export default function Template({data}) {
     const post  = data.markdownRemark
-    const tags = post.frontmatter.tags.split(',').filter(Boolean)
+    const tags = [] //post.frontmatter.tags.split(',').filter(Boolean)
     return (
 
       <Layout>
@@ -48,18 +48,22 @@ export default function Template({data}) {
 }
 
 export const postQuery = graphql`
-    query BlogPostByPath($path: String!){
-        markdownRemark(frontmatter: {path: { eq: $path}}){
-            html
-            frontmatter {
-                path
-                title
-                author
-                date
-                tags     
-            }
-
-        }
-    }
-
-`
+         query BlogPostByPath($slug: String!) {
+           markdownRemark(fields: { slug: { eq: $slug } }) {
+             frontmatter {
+               featuredImage {
+                 childImageSharp {
+                   fluid(maxWidth: 1500) {
+                     src
+                   }
+                 }
+               }
+               date
+               clientName
+               author
+               title
+             }
+             html
+           }
+         }
+       `

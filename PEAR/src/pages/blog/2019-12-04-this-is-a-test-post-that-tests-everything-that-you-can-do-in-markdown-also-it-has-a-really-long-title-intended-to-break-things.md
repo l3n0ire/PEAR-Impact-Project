@@ -4,7 +4,7 @@ title: >-
   This is a test post that tests everything that you can do in markdown, also it
   has a really long title intended to break things...
 author: Jesse Maltese
-featuredImage: /PEAR/static/images/imageofcutedog.jpeg
+featuredImage: "../../images/post-4.jpg"
 clientName: Client... Name?
 tags:
   - tag

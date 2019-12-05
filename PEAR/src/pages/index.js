@@ -12,7 +12,6 @@ const BlogPage = ({ data }) => (
     <Desktop>
       <Fragment>
         <Layout>
-          
           <Grid
             alignSelf="center"
             columns={["45vw", "45vw"]}
@@ -52,7 +51,7 @@ const BlogPage = ({ data }) => (
 
                   <PlainButton
                     text="Read More"
-                    target={post.node.frontmatter.path}
+                    target={post.node.fields.slug}
                   />
                 </Box>
               </Link>
@@ -82,7 +81,7 @@ const BlogPage = ({ data }) => (
                 Posted by {post.node.frontmatter.author} on{" "}
                 {post.node.frontmatter.date}
               </Text>
-              <PlainButton text="Read More" target={post.node.frontmatter.path} />
+              <PlainButton text="Read More" target={post.node.fields.slug} />
             </Box>
           </Link>
         ))}
@@ -94,34 +93,35 @@ const BlogPage = ({ data }) => (
 
 
 export const pageQuery = graphql`
-  query BlogIndexQuery {
-    allMarkdownRemark (
-      sort: {
-        fields: [frontmatter___date, frontmatter___title]
-        order: DESC
-      }
-      ){
-      edges {
-        node {
-          id
-          frontmatter {
-            path
-            title
-            date
-            author
-            featuredImage {
-              childImageSharp {
-                fluid(quality: 100, maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                  src
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+         query MainPageQuery {
+           allMarkdownRemark(
+             sort: {
+               fields: [frontmatter___date, frontmatter___title]
+               order: DESC
+             }
+           ) {
+             edges {
+               node {
+                 fields {
+                   slug
+                 }
+                 frontmatter {
+                   title
+                   date
+                   clientName
+                   author
+                   featuredImage {
+                     childImageSharp {
+                       fluid(maxWidth: 800, quality: 100) {
+                         src
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `
 
 export default BlogPage
