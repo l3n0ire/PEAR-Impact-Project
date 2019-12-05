@@ -110,6 +110,7 @@ export const pageQuery = graphql`
                    date
                    clientName
                    author
+                   tags
                    featuredImage {
                      childImageSharp {
                        fluid(maxWidth: 800, quality: 100) {

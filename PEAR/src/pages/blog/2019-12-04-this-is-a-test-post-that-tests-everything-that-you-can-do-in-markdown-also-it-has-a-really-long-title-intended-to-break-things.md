@@ -6,8 +6,7 @@ title: >-
 author: Jesse Maltese
 featuredImage: "../../images/post-4.jpg"
 clientName: Client... Name?
-tags:
-  - tag
+tags: ['tag', 'tag2']
 ---
 This is a post
 

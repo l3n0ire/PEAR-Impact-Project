@@ -88,7 +88,7 @@ module.exports = {
           MarkdownRemark: {
             title: node => node.frontmatter.title,
             tags: node => node.frontmatter.tags,
-            path: node => node.frontmatter.path,
+            slug: node => node.fields.slug,
             author: node => node.frontmatter.author,
             clientName: node => node.frontmatter.clientName,
             image: node => node.frontmatter.featuredImage,

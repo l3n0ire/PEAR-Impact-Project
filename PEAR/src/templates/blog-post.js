@@ -8,7 +8,7 @@ import { Box, Heading, Grommet, Button } from "grommet"
 
 export default function Template({data}) {
     const post  = data.markdownRemark
-    const tags = [] //post.frontmatter.tags.split(',').filter(Boolean)
+    const tags = post.frontmatter.tags
     return (
       <Layout>
         <Box pad = 'large'>
@@ -61,6 +61,7 @@ export const postQuery = graphql`
                clientName
                author
                title
+               tags
              }
              html
            }
