@@ -1,4 +1,5 @@
 const remark = require('remark')
+var strip = require('strip-markdown')
 
 module.exports = {
   siteMetadata: {
@@ -91,13 +92,13 @@ module.exports = {
             slug: node => node.fields.slug,
             author: node => node.frontmatter.author,
             clientName: node => node.frontmatter.clientName,
-            image: node => node.frontmatter.featuredImage,
+            //image: node => node.frontmatter.childImageSharp.fluid.base64,
             excerpt: node => {
               const text = remark()
-                .use()
+                .use(strip)
                 .processSync(node.rawMarkdownBody)
 
-              const excerptLength = 340 // Hard coded excerpt length
+              const excerptLength = 240 // Hard coded excerpt length
               return (
                 String(text)
                   .substring(0, excerptLength)
