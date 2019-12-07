@@ -12,7 +12,7 @@ This is a post
 
 I am including an inline image:
 
-![](./img_parallax.jpg)
+![](../../images/post-1.jpg)
 
 Wasn't that a cute inline image? **This is bold text,** _while this is italicized._ 
 
