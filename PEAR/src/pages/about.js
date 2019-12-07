@@ -1,6 +1,6 @@
-import React from 'react'
-import Layout from "../components/layout"
-import { Box, Heading } from "grommet"
+import React from 'react';
+import Layout from '../components/layout';
+import {Box, Heading} from 'grommet';
 
 const AboutPage = () => (
   <Layout>
@@ -18,6 +18,6 @@ const AboutPage = () => (
       </p>
     </Box>
   </Layout>
-)
+);
 
 export default AboutPage;

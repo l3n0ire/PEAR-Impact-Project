@@ -1,24 +1,24 @@
-import React, { Fragment } from 'react'
-import Link from 'gatsby-link'
-import { Box, Heading } from 'grommet'
-import { useMediaQuery } from "react-responsive"
-import Dropdown from './dropdown'
-import PlainButton from './plainbutton'
-import SearchBar from './SearchBar'
+import React, {Fragment} from 'react';
+import Link from 'gatsby-link';
+import {Box, Heading} from 'grommet';
+import {useMediaQuery} from 'react-responsive';
+import Dropdown from './dropdown';
+import PlainButton from './plainbutton';
+import SearchBar from './SearchBar';
 
-const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1024 })
-  return isDesktop ? children : null
-}
-const Mobile = ({ children }) => {
-  const isTablet = useMediaQuery({maxWidth: 1023 })
-  return isTablet ? children : null
-}
+const Desktop = ({children}) => {
+  const isDesktop = useMediaQuery({minWidth: 1024});
+  return isDesktop ? children : null;
+};
+const Mobile = ({children}) => {
+  const isTablet = useMediaQuery({maxWidth: 1023});
+  return isTablet ? children : null;
+};
 
 const Menu = () => (
   <Box
     style={{
-      flexDirection: "row",
+      flexDirection: 'row',
     }}
     fill="horizontal"
     align="center"
@@ -26,7 +26,7 @@ const Menu = () => (
     height="xsmall"
     elevation="xsmall"
     background={{
-      color: "light-1",
+      color: 'light-1',
     }}
   >
     <Desktop>
@@ -34,24 +34,24 @@ const Menu = () => (
         <Box
           display="inline-block"
           style={{
-            whiteSpace: 'nowrap'
+            whiteSpace: 'nowrap',
           }}
-          flex={{ grow: 2, shrink: 1 }}
-          width={{ min: '225px' , max: "10%" }}
+          flex={{grow: 2, shrink: 1}}
+          width={{min: '225px', max: '10%'}}
         >
           <Link to="/">
             <Box
               display="inline-block"
               flex={true}
-              pad={{ left: "small" }}
+              pad={{left: 'small'}}
               alignSelf="start"
             >
               <Heading
                 margin="none"
                 style={{
-                  lineHeight: "4vh",
-                  padding: "none",
-                  fontSize: "1.5em"
+                  lineHeight: '4vh',
+                  padding: 'none',
+                  fontSize: '1.5em',
                 }}
                 color='black'
               >
@@ -60,20 +60,20 @@ const Menu = () => (
               <Heading
                 margin="none"
                 style={{
-                  lineHeight: "4vh",
-                  padding: "none",
-                  fontSize: "1.5em",
+                  lineHeight: '4vh',
+                  padding: 'none',
+                  fontSize: '1.5em',
                 }}
                 color='black'
               >
-                of <span style={{ color: "red" }}>New Canadians</span>
+                of <span style={{color: 'red'}}>New Canadians</span>
               </Heading>
             </Box>
           </Link>
         </Box>
         <Box
-          flex={{ grow: 1, shrink: 2 }}
-          style={{whiteSpace: "nowrap"}}
+          flex={{grow: 1, shrink: 2}}
+          style={{whiteSpace: 'nowrap'}}
           direction="row"
           align="center"
           justify="evenly"
@@ -108,7 +108,7 @@ const Menu = () => (
             target="/contact"
           />
         </Box>
-        <Box flex={{ shrink: 2 }} margin={{ right: "medium" }}>
+        <Box flex={{shrink: 2}} margin={{right: 'medium'}}>
           <SearchBar></SearchBar>
         </Box>
       </Fragment>
@@ -119,15 +119,15 @@ const Menu = () => (
 
         <Box
           margin="none"
-          width={{ min: "50%" }}
-          style={{ lineHeight: "30px", paddingLeft: "2vw" }}
+          width={{min: '50%'}}
+          style={{lineHeight: '30px', paddingLeft: '2vw'}}
         >
           <Heading
             margin="none"
             style={{
-              lineHeight: "4vh",
-              padding: "none",
-              fontSize: "3.5vh",
+              lineHeight: '4vh',
+              padding: 'none',
+              fontSize: '3.5vh',
             }}
           >
             Success Stories
@@ -135,22 +135,22 @@ const Menu = () => (
           <Heading
             margin="none"
             style={{
-              lineHeight: "4vh",
-              padding: "none",
-              fontSize: "3.5vh",
+              lineHeight: '4vh',
+              padding: 'none',
+              fontSize: '3.5vh',
             }}
           >
-            of <span style={{ color: "red" }}>New Canadians</span>
+            of <span style={{color: 'red'}}>New Canadians</span>
           </Heading>
         </Box>
-        
+
 
       </Link>
-    
+
 
     </Mobile>
   </Box>
-)
+);
 
 export default Menu;
-export { Mobile, Desktop };
+export {Mobile, Desktop};
