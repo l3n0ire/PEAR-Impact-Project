@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
       <Accordion>
         <div style={{ height: "100vh", width: "100vw" }}>
           <Grid
-            rows={["15vh", "flex", "10vh", "20vh"]}
+            rows={["xsmall", "flex", "10vh", "20vh"]}
             columns={["full"]}
             justifyContent="center"
             areas={[

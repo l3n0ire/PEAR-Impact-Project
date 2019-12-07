@@ -19,9 +19,9 @@ const Mobile = ({ children }) => {
   return isTablet ? children : null
 }
 const customLabel = () => (
-  <Box direction="row" align="center" pad="none" gap="none">
+  <Box direction="row" align="center" pad="small" gap="none">
     <strong>
-      <Text margin='2vw'>Menu</Text>
+      <Text margin="1.5vw">Menu</Text>
     </strong>
   </Box>
 );
