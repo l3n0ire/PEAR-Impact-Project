@@ -10,6 +10,7 @@
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "elasticlunr": "^0.9.5",
+    "eslint": "^6.7.2",
     "flexsearch": "github:nextapps-de/flexsearch#0.7.0",
     "gatsby": "^2.17.6",
     "gatsby-image": "^2.2.33",
