@@ -12,7 +12,7 @@ This is a post
 
 I am including an inline image:
 
-![this is the text that appears when you hover on the image.](../../images/post-4.jpg "This is the title of the image")
+![](./img_parallax.jpg)
 
 Wasn't that a cute inline image? **This is bold text,** _while this is italicized._ 
 
@@ -22,7 +22,7 @@ Wasn't that a cute inline image? **This is bold text,** _while this is italicize
 
 `This is some code. if this then that....`
 
-[Go to google!](google.ca)
+[Go to google!](https://google.ca)
 
 > This is a quote of someone saying something
 >

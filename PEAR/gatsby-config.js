@@ -40,19 +40,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-            },
-          },
-        ],
-      },
-    },
+    
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -119,7 +107,16 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [`gatsby-plugin-netlify-cms-paths`],
+        plugins: [
+          `gatsby-plugin-netlify-cms-paths`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+             
+              maxWidth: 1200,
+            },
+          },
+        ],
       },
     },
     "gatsby-plugin-netlify", //keep this last in array
