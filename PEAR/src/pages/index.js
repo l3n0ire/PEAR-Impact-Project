@@ -64,7 +64,7 @@ const BlogPage = ({data}) => (
       <Layout>
         {data.allMarkdownRemark.edges.map((post) => (
           <Link to={post.node.fields.slug}>
-            <Box justify="center" margin="medium">
+            <Box justify="center" margin="medium" height="medium">
               <Image
                 style={{margin: '0px'}}
                 fit="cover"

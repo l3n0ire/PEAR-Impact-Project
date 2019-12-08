@@ -11,7 +11,7 @@ import PlainButton from './plainbutton';
 
 
 const Desktop = ({children}) => {
-  const isDesktop = useMediaQuery({minWidth: 1025});
+  const isDesktop = useMediaQuery({ minWidth: 1025});
   return isDesktop ? children : null;
 };
 const Mobile = ({children}) => {
