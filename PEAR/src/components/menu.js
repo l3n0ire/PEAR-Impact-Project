@@ -126,25 +126,18 @@ const Menu = () => (
           style={{ lineHeight: "30px", paddingLeft: "2vw" }}
         >
           <Heading
+            color="white"
             margin="none"
             style={{
               lineHeight: "4vh",
               padding: "none",
+              fontWeight: 400,
               fontSize: "3.5vh",
             }}
           >
-            Success Stories
+            Success Stories of <span style={{ color: "red" }}>New Canadians</span>
           </Heading>
-          <Heading
-            margin="none"
-            style={{
-              lineHeight: "4vh",
-              padding: "none",
-              fontSize: "3.5vh",
-            }}
-          >
-            of <span style={{ color: "red" }}>New Canadians</span>
-          </Heading>
+          
         </Box>
       </Link>
     </Mobile>

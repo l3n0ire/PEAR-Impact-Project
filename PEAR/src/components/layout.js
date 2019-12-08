@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {useStaticQuery, graphql, Link} from 'gatsby';
 import {Grid, Box, Grommet, Text, Accordion, AccordionPanel, Button} from 'grommet';
-
+import { Helmet } from 'react-helmet'
 import Menu from './menu';
 import './layout.css';
 import globalTheme from './style';
@@ -38,6 +38,10 @@ const Layout = ({children}) => {
         },
       }}
     >
+      <Helmet>
+        <meta charSet='utf-8'/>
+        <title>Success Stories of New Canadians</title>
+      </Helmet>
       <Accordion>
         <div style={{height: '100vh', width: '100vw'}}>
           <Grid
