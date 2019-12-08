@@ -24,9 +24,9 @@ const Menu = () => (
     align="center"
     direction="row"
     height="xsmall"
-    elevation="xsmall"
+    //elevation="xsmall"
     background={{
-      color: "light-1",
+      color: "black",
     }}
   >
     <Desktop>
@@ -34,10 +34,10 @@ const Menu = () => (
         <Box
           display="inline-block"
           style={{
-            whiteSpace: 'nowrap'
+            whiteSpace: "nowrap",
           }}
           flex={{ grow: 2, shrink: 1 }}
-          width={{ min: '225px' , max: "10%" }}
+          width={{ min: "225px", max: "10%" }}
         >
           <Link to="/">
             <Box
@@ -49,22 +49,24 @@ const Menu = () => (
               <Heading
                 margin="none"
                 style={{
+                  fontWeight: 400,
                   lineHeight: "4vh",
                   padding: "none",
-                  fontSize: "3.2vh"
+                  fontSize: "3.2vh",
                 }}
-                color='black'
+                color="white"
               >
                 Success Stories
               </Heading>
               <Heading
                 margin="none"
                 style={{
+                  fontWeight: 400,
                   lineHeight: "4vh",
                   padding: "none",
                   fontSize: "3.2vh",
                 }}
-                color='black'
+                color="white"
               >
                 of <span style={{ color: "red" }}>New Canadians</span>
               </Heading>
@@ -73,15 +75,16 @@ const Menu = () => (
         </Box>
         <Box
           flex={{ grow: 1, shrink: 2 }}
-          style={{whiteSpace: "nowrap"}}
+          style={{ whiteSpace: "nowrap" }}
           direction="row"
           align="center"
           justify="evenly"
-          display='inline-block'
+          display="inline-block"
         >
           <PlainButton
             hoverColor="red"
             fillColor="none"
+            color="white"
             size="2.3vw"
             display="inline-block"
             border={false}
@@ -92,6 +95,7 @@ const Menu = () => (
             hoverColor="red"
             fillColor="none"
             size="2.3vw"
+            color="white"
             display="inline-block"
             border={false}
             text="About"
@@ -102,6 +106,7 @@ const Menu = () => (
             hoverColor="red"
             fillColor="none"
             size="2.3vw"
+            color="white"
             display="inline-block"
             border={false}
             text="Contact"
@@ -114,9 +119,7 @@ const Menu = () => (
       </Fragment>
     </Desktop>
     <Mobile>
-
       <Link to="/">
-
         <Box
           margin="none"
           width={{ min: "50%" }}
@@ -143,11 +146,7 @@ const Menu = () => (
             of <span style={{ color: "red" }}>New Canadians</span>
           </Heading>
         </Box>
-        
-
       </Link>
-    
-
     </Mobile>
   </Box>
 )

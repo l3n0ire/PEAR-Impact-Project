@@ -38,10 +38,18 @@ class SearchBarComponent extends Component {
     return (
       <Grommet
         theme={{
+          global: {
+            input: {
+              weight: '400'
+            },
+            colors: {
+              placeholder: '#f2f2f2'
+            }
+          },
           textInput: {
             suggestions: {
               extend: {
-                backgroundColor: "#F2F2F2",
+                backgroundColor: "white",
               },
             },
           },
@@ -55,7 +63,7 @@ class SearchBarComponent extends Component {
           pad={{ horizontal: "small", vertical: "none" }}
           fill="horizontal"
         >
-          <Search color="black" />
+          <Search color="white" />
           <TextInput
             onKeyDown={e => this._handleKeyDown(e)}
             id="textinput"

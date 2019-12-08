@@ -3,7 +3,7 @@ import {Button, Box, Grommet, Text} from 'grommet';
 import Link from 'gatsby-link';
 import globalTheme from './style';
 
-const PlainButton = ({text, target, border = true, size = 'medium', fillColor = 'black', hoverColor, display = 'auto'}) => (
+const PlainButton = ({text, target, border = true, color = 'black', size = 'medium', fillColor = 'black', hoverColor, display = 'auto'}) => (
   <Box alignSelf="center">
     <Grommet theme={{
       global: {
@@ -25,7 +25,7 @@ const PlainButton = ({text, target, border = true, size = 'medium', fillColor = 
             alignSelf="center"
             label={<Text size={size}>{text}</Text>}
             plain={true}
-
+            color={color}
             style={{
               padding: '10px',
               textAlign: 'center',

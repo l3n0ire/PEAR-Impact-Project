@@ -25,7 +25,7 @@ const BlogPage = ({data}) => (
                 <Box
                   justify="center"
                   height="55vh"
-                  background={{color: 'light-1'}}
+                  background={{color: 'light-3'}}
                 >
                   <Image
                     style={{padding: '10px', margin: '0px'}}
