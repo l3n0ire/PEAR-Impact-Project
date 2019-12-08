@@ -7,52 +7,48 @@ import {Desktop, Mobile} from '../components/menu';
 import {graphql} from 'gatsby';
 import PlainButton from '../components/plainbutton';
 
-const BlogPage = ({data}) => (
+const BlogPage = ({ data }) => (
   <Box>
     <Desktop>
       <Fragment>
         <Layout>
           <Grid
             alignSelf="center"
-            columns={['45vw', '45vw']}
+            columns={["45vw", "45vw"]}
             rows="flex"
             alignContent="center"
             gap="large"
             margin="3vw"
           >
-            {data.allMarkdownRemark.edges.map((post) => (
+            {data.allMarkdownRemark.edges.map(post => (
               <Link to={post.node.fields.slug}>
-                <Box
-                  justify="center"
-                  height="55vh"
-                  background={{color: 'light-3'}}
-                >
+                <Box justify="center" height="55vh" border={{color: '#000', opacity: '100'}}>
                   <Image
-                    style={{padding: '10px', margin: '0px'}}
+                    style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
                     src={
                       post.node.frontmatter.featuredImage.childImageSharp.fluid
-                          .src
+                        .src
                     }
                   />
-                  <Heading
-                    style={{margin: '10px'}}
-                    alignSelf="center"
-                    level="3"
-                    margin="medium"
-                  >
-                    {post.node.frontmatter.title}
-                  </Heading>
-                  <Text alignSelf="center">
-                    {' '}
-                    Posted by {post.node.frontmatter.author} on{' '}
-                    {post.node.frontmatter.date}
-                  </Text>
+                    <Heading
+                      style={{ margin: "10px" }}
+                      alignSelf="center"
+                      level="3"
+                      margin="medium"
+                    >
+                      {post.node.frontmatter.title}
+                    </Heading>
+                    <Text alignSelf="center">
+                      {" "}
+                      Posted by {post.node.frontmatter.author} on{" "}
+                      {post.node.frontmatter.date}
+                    </Text>
 
-                  <PlainButton
-                    text="Read More"
-                    target={post.node.fields.slug}
-                  />
+                    <PlainButton
+                      text="Read More"
+                      target={post.node.fields.slug}
+                    />
                 </Box>
               </Link>
             ))}
@@ -62,11 +58,11 @@ const BlogPage = ({data}) => (
     </Desktop>
     <Mobile>
       <Layout>
-        {data.allMarkdownRemark.edges.map((post) => (
+        {data.allMarkdownRemark.edges.map(post => (
           <Link to={post.node.fields.slug}>
             <Box justify="center" margin="medium" height="medium">
               <Image
-                style={{margin: '0px'}}
+                style={{ margin: "0px" }}
                 fit="cover"
                 src={
                   post.node.frontmatter.featuredImage.childImageSharp.fluid.src
@@ -77,8 +73,8 @@ const BlogPage = ({data}) => (
                 {post.node.frontmatter.title}
               </Heading>
               <Text alignSelf="center">
-                {' '}
-                Posted by {post.node.frontmatter.author} on{' '}
+                {" "}
+                Posted by {post.node.frontmatter.author} on{" "}
                 {post.node.frontmatter.date}
               </Text>
               <PlainButton text="Read More" target={post.node.fields.slug} />
@@ -88,7 +84,7 @@ const BlogPage = ({data}) => (
       </Layout>
     </Mobile>
   </Box>
-);
+)
 
 
 export const pageQuery = graphql`

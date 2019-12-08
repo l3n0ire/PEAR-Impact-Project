@@ -50,6 +50,7 @@ class SearchBarComponent extends Component {
             suggestions: {
               extend: {
                 backgroundColor: "white",
+                dropShadow: 'none'
               },
             },
           },
