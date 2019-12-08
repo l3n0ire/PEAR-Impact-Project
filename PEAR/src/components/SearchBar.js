@@ -43,14 +43,15 @@ class SearchBarComponent extends Component {
               weight: '400'
             },
             colors: {
-              placeholder: '#f2f2f2'
+              placeholder: 'white'
             }
           },
           textInput: {
             suggestions: {
               extend: {
-                backgroundColor: "white",
-                dropShadow: 'none'
+                backgroundColor: "black",
+                dropShadow: 'none',
+                color:'white'
               },
             },
           },

@@ -26,6 +26,14 @@ const customLabel = () => (
   </Box>
 );
 const CustomAccordionTheme = {
+  textInput: {
+    suggestions: {
+      extend: {
+        backgroundColor: "black",
+        dropShadow: 'none'
+      },
+    },
+  },
   accordion: {
     heading: {level: '3'},
     icons: {
@@ -58,13 +66,14 @@ const Dropdown = () => (
 
             <Box
               flex={{grow: 1, shrink: 2}}
-              style={{whiteSpace: 'nowrap'}}
+              style={{whiteSpace: 'nowrap', backgroundColor:'black'}}
               direction="column"
               align="center"
               justify="evenly"
               display='inline-block'
             >
               <PlainButton
+                color = 'white'
                 hoverColor="red"
                 fillColor="none"
                 size="1.25em"
@@ -75,6 +84,7 @@ const Dropdown = () => (
 
               />
               <PlainButton
+                color = 'white'
                 hoverColor="red"
                 fillColor="none"
                 size="1.25em"
@@ -84,6 +94,7 @@ const Dropdown = () => (
                 target="/about"
               />
               <PlainButton
+                color = 'white'
                 hoverColor="red"
                 fillColor="none"
                 size="1.25em"
@@ -94,8 +105,10 @@ const Dropdown = () => (
               />
             </Box>
 
-            <Box flex={{shrink: 2}} margin={{right: 'medium'}}>
-              <SearchBar></SearchBar>
+            <Box flex={{shrink: 2}} margin={{right: 'medium'}}
+            >
+                 
+              <SearchBar ></SearchBar>
             </Box>
 
           </AccordionPanel>
