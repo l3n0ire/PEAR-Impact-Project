@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { Component } from 'react'
-import { TextInput, Box, Text, Button, Grommet } from 'grommet'
+import { TextInput, Box, Text, Button, Image } from 'grommet'
 import { Search, Close } from 'grommet-icons'
 import { Index } from 'elasticlunr'
 const qs = require('query-string')
@@ -33,8 +33,7 @@ export default class SearchResults extends Component {
       return (
         <React.Fragment>
           <Box
-            width='70vw'
-            height='5vh'
+            width="large"
             direction="row"
             align="center"
             pad={{ horizontal: "small", vertical: "none" }}
@@ -45,10 +44,10 @@ export default class SearchResults extends Component {
             }}
             margin={{ left: "3vw" }}
           >
+            
             <Search color="black" />
             <TextInput
-              focusIndicator={false}
-              size='small'
+              focusIndicator={false}  
               id="textinput"
               value={this.state.query}
               onChange={e => {
@@ -80,37 +79,30 @@ export default class SearchResults extends Component {
             />
           </Box>
           {this.state.results.map(post => (
-            <Link to={post.slug}>
-              
-                {" "}
-                <Box
-                  alignContent="start"
-                  width="93vw"
-                  pad="small"
-                  margin={{left: '3vw', right:'3vw', top: '3vh', bottom: '2vh'}}
-                  hoverIndicator={{ color: "light-2" }}
-                  background={{ color: "light-1" }}
-                  overflow='hidden'
-                >
-                
-                  {console.log(post)}
-                  <Box direction="row">
-                    <Text
-                      size="2.5vh"
-                      style={{
-                        display: "inline-block",
-                      }}
-                    >
-                      <b>{post.title}</b>
-                      &nbsp;
-                      <span style={{ fontSize: "1.5vh" }}>
-                        by {post.author}
-                      </span>
-                    </Text>
-                  </Box>
-                  <Text size='2vh'>{post.excerpt.replace(/^(\\)|\#.*/gm, "")}</Text>
+            <Link to={post.path}>
+              <Box
+                alignContent="start"
+                width="93vw"
+                pad="small"
+                margin="3vw"
+                height="18vh"
+                background={{ color: "light-1" }}
+              >
+                {console.log(post)}
+                <Box direction="row">
+                  <Text
+                    size="2.5vw"
+                    style={{
+                      display: "inline-block",
+                    }}
+                  >
+                    <b>{post.title}</b>
+                    &nbsp;
+                    <span style={{ fontSize: "1.5vw" }}>by {post.author}</span>
+                  </Text>
                 </Box>
-              
+                <Text>{post.excerpt.replace(/^(\\)|\#.*/gm, "")}</Text>
+              </Box>
             </Link>
           ))}
         </React.Fragment>

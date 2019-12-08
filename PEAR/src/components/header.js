@@ -1,8 +1,8 @@
-import React from 'react';
-import {StaticQuery, Link} from 'gatsby';
-import {graphql} from 'gatsby';
+import React from "react"
+import { StaticQuery, Link } from "gatsby"
+import { graphql } from "gatsby"
 
-import SearchResults from './SearchResults';
+import SearchResults from "./SearchResults"
 
 const Header = () => (
   <StaticQuery
@@ -13,12 +13,12 @@ const Header = () => (
         }
       }
     `}
-    render={(data) => (
+    render={data => (
       <header>
         <SearchResults searchIndex={data.siteSearchIndex.index} />
       </header>
     )}
   />
-);
+)
 
-export default Header;
+export default Header
