@@ -19,9 +19,9 @@ const Mobile = ({children}) => {
   return isTablet ? children : null;
 };
 const customLabel = () => (
-  <Box direction="row" align="center" pad="small" gap="none">
+  <Box direction="row" align="center" pad="small" gap="none" style={{backgroundColor:'black'}}>
     <strong>
-      <Text margin="1.5vw">Menu</Text>
+      <Text color ='white' margin="1.5vw">Menu</Text>
     </strong>
   </Box>
 );
@@ -51,7 +51,9 @@ const Dropdown = () => (
         <Fragment>
 
           <AccordionPanel
+          
             label ={customLabel()}
+            style={{backgroundColor:'black'}}
           >
 
             <Box
