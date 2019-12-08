@@ -33,7 +33,7 @@ export default class SearchResults extends Component {
       return (
         <React.Fragment>
           <Box
-            width='70vw'
+            width='30vw'
             height='5vh'
             direction="row"
             align="center"
@@ -48,7 +48,7 @@ export default class SearchResults extends Component {
             <Search color="black" />
             <TextInput
               focusIndicator={false}
-              size='small'
+              size='medium'
               id="textinput"
               value={this.state.query}
               onChange={e => {
@@ -87,23 +87,23 @@ export default class SearchResults extends Component {
                   alignContent="start"
                   width="93vw"
                   pad="small"
+                  pad={{left: 'small', right: 'small', top: 'small', bottom: '3vh'}}
                   margin={{left: '3vw', right:'3vw', top: '3vh', bottom: '2vh'}}
                   hoverIndicator={{ color: "light-2" }}
                   background={{ color: "light-1" }}
                   overflow='hidden'
                 >
                 
-                  {console.log(post)}
                   <Box direction="row">
                     <Text
-                      size="2.5vh"
+                      size="3vh"
                       style={{
                         display: "inline-block",
                       }}
                     >
                       <b>{post.title}</b>
                       &nbsp;
-                      <span style={{ fontSize: "1.5vh" }}>
+                      <span style={{ fontSize: "2.5vh" }}>
                         by {post.author}
                       </span>
                     </Text>
