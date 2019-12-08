@@ -7,7 +7,7 @@ import PlainButton from './plainbutton'
 import SearchBar from './SearchBar'
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1025 })
+  const isDesktop = useMediaQuery({ minWidth: 768 })
   return isDesktop ? children : null
 }
 const Mobile = ({ children }) => {

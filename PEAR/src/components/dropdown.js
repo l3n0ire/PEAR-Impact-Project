@@ -11,11 +11,11 @@ import PlainButton from './plainbutton'
 
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1025 })
+  const isDesktop = useMediaQuery({ minWidth: 768 })
   return isDesktop ? children : null
 }
 const Mobile = ({ children }) => {
-  const isTablet = useMediaQuery({maxWidth: 1024 })
+  const isTablet = useMediaQuery({maxWidth: 767 })
   return isTablet ? children : null
 }
 const customLabel = () => (
