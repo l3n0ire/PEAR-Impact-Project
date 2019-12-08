@@ -5,7 +5,7 @@ title: "My First Gatsby Post"
 author: "Colin Lin"
 clientName: "John Appleseed"
 featuredImage: "../../images/post-1.jpg"
-tags: ['tag', 'tag2']
+tags: "Iran, Computer Science"
 ---
 
 This is my very first blog post!
