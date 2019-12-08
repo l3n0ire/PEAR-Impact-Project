@@ -20,9 +20,7 @@ const Mobile = ({children}) => {
 };
 const customLabel = () => (
   <Box direction="row" align="center" pad="small" gap="none" style={{backgroundColor:'black'}}>
-    <strong>
       <Text color ='white' margin="1.5vw">Menu</Text>
-    </strong>
   </Box>
 );
 const CustomAccordionTheme = {
