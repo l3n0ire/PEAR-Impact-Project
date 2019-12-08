@@ -8,23 +8,17 @@ import SearchBar from './SearchBar'
 
 const Desktop = ({ children }) => {
 <<<<<<< HEAD
-<<<<<<< HEAD
   const isDesktop = useMediaQuery({ minWidth: 1025 })
   return isDesktop ? children : null
 }
 const Mobile = ({ children }) => {
   const isTablet = useMediaQuery({maxWidth: 1024 })
 =======
-=======
->>>>>>> parent of 196179c... Add eslint, run eslint
   const isDesktop = useMediaQuery({ minWidth: 1024 })
   return isDesktop ? children : null
 }
 const Mobile = ({ children }) => {
   const isTablet = useMediaQuery({maxWidth: 1023 })
-<<<<<<< HEAD
->>>>>>> parent of 196179c... Add eslint, run eslint
-=======
 >>>>>>> parent of 196179c... Add eslint, run eslint
   return isTablet ? children : null
 }
@@ -66,11 +60,7 @@ const Menu = () => (
                   lineHeight: "4vh",
                   padding: "none",
 <<<<<<< HEAD
-<<<<<<< HEAD
                   fontSize: "3.2vh"
-=======
-                  fontSize: "1.5em"
->>>>>>> parent of 196179c... Add eslint, run eslint
 =======
                   fontSize: "1.5em"
 >>>>>>> parent of 196179c... Add eslint, run eslint
@@ -85,11 +75,7 @@ const Menu = () => (
                   lineHeight: "4vh",
                   padding: "none",
 <<<<<<< HEAD
-<<<<<<< HEAD
                   fontSize: "3.2vh",
-=======
-                  fontSize: "1.5em",
->>>>>>> parent of 196179c... Add eslint, run eslint
 =======
                   fontSize: "1.5em",
 >>>>>>> parent of 196179c... Add eslint, run eslint

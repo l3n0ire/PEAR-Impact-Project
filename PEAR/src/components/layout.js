@@ -43,7 +43,6 @@ const Layout = ({ children }) => {
       <Accordion>
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
       <div style = {{height: '100vh', width: '100vw'}}>
 
         <Grid
@@ -56,9 +55,6 @@ const Layout = ({ children }) => {
             { name: 'footer', start: [0, 3], end: [0, 3] }
 =======
         <div style={{height: '100vh', width: '100vw'}}>
-=======
-        <div style={{ height: "100vh", width: "100vw" }}>
->>>>>>> parent of 196179c... Add eslint, run eslint
 =======
         <div style={{ height: "100vh", width: "100vw" }}>
 >>>>>>> parent of 196179c... Add eslint, run eslint
