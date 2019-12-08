@@ -43,14 +43,15 @@ class SearchBarComponent extends Component {
               weight: '400'
             },
             colors: {
-              placeholder: '#f2f2f2'
+              placeholder: 'white'
             }
           },
           textInput: {
             suggestions: {
               extend: {
-                backgroundColor: "white",
-                dropShadow: 'none'
+                backgroundColor: 'black',
+                color: 'white',
+                padding: '10px'
               },
             },
           },
@@ -61,7 +62,7 @@ class SearchBarComponent extends Component {
           direction="row"
           align="center"
           margin={{ right: "medium" }}
-          pad={{ horizontal: "small", vertical: "none" }}
+          pad={{ horizontal: "small ", vertical: "none" }}
           fill="horizontal"
         >
           <Search color="white" />
