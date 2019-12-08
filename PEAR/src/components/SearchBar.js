@@ -43,13 +43,12 @@ class SearchBarComponent extends Component {
               extend: {
                 backgroundColor: "#F2F2F2",
               },
-
             },
           },
         }}
       >
         <Box
-          className='searchBox'
+          className="searchBox"
           direction="row"
           align="center"
           margin={{ right: "medium" }}
@@ -74,17 +73,16 @@ class SearchBarComponent extends Component {
               }
             }}
             //Only truncate title if its over 25 characters...
-            suggestions={this.state.results.map((post) => { 
-                let title = post.title
-                if(title.length > 25) {
-                  title = post.title.substring(0, 25) + '...'
-                }
-                return ({
-                  label: title,
-                  path: post.slug })
-                }
-              )
-            }
+            suggestions={this.state.results.map(post => {
+              let title = post.title
+              if (title.length > 25) {
+                title = post.title.substring(0, 25) + "..."
+              }
+              return {
+                label: title,
+                path: post.slug,
+              }
+            })}
             onSelect={e => (window.location.href = e.suggestion.path)}
           />
           <Button

@@ -48,7 +48,8 @@ const ContactPage = () => (
             resize={false}
             plain={false}
             style={{
-              height: '40vh',
+              height: '30vh',
+              width: '50vw'
             }}
             label="Message"
             placeholder="Type your message here."

@@ -2,9 +2,9 @@ import React from 'react';
 import Header from '../components/header';
 import Layout from '../components/layout';
 
-const Search = () => (
+const search = () => (
   <Layout>
     <Header></Header>
   </Layout>
 );
-export default Search;
+export default search;

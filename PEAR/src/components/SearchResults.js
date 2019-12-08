@@ -43,7 +43,7 @@ export default class SearchResults extends Component {
               side: "all",
               color: "black",
             }}
-            margin={{ left: "3vw" }}
+            margin={{ left: "3vw", top: '3vh'}}
           >
             <Search color="black" />
             <TextInput
