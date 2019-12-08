@@ -1,2 +1,2 @@
-import CMS from 'netlify-cms-app';
-CMS.init();
+import CMS from "netlify-cms-app"
+CMS.init()

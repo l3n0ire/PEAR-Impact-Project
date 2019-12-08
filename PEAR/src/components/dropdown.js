@@ -1,15 +1,16 @@
-import React, {Fragment, useState} from 'react';
-import {useMediaQuery} from 'react-responsive';
+import React, { Fragment, useState } from "react";
+import { useMediaQuery } from "react-responsive"
 
 
-import {Grommet, Box, Text, Menu, AccordionPanel} from 'grommet';
-import {grommet} from 'grommet/themes';
-import {Article, Contact, ContactInfo, Services, FormDown} from 'grommet-icons';
+import { Grommet, Box, Text, Menu, AccordionPanel } from "grommet";
+import { grommet } from "grommet/themes";
+import { Article, Contact, ContactInfo, Services, FormDown} from "grommet-icons";
 import Link from 'gatsby-link';
-import SearchBar from './SearchBar';
-import PlainButton from './plainbutton';
+import SearchBar from './SearchBar'
+import PlainButton from './plainbutton'
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 1025 })
@@ -29,6 +30,16 @@ const Mobile = ({children}) => {
   return isTablet ? children : null;
 };
 >>>>>>> parent of 1fbcba9... Revert "Merge branch 'Grommet' of https://github.com/l3n0ire/PEAR-Impact-Project into Grommet"
+=======
+const Desktop = ({ children }) => {
+  const isDesktop = useMediaQuery({ minWidth: 1024 })
+  return isDesktop ? children : null
+}
+const Mobile = ({ children }) => {
+  const isTablet = useMediaQuery({maxWidth: 1023  })
+  return isTablet ? children : null
+}
+>>>>>>> parent of 196179c... Add eslint, run eslint
 const customLabel = () => (
   <Box direction="row" align="center" pad="small" gap="none">
     <strong>
@@ -38,82 +49,85 @@ const customLabel = () => (
 );
 const CustomAccordionTheme = {
   accordion: {
-    heading: {level: '3'},
+    heading: { level: "3" },
     icons: {
-      color: 'red',
+      color: "red"
     },
-    border: {
-      color: 'white',
-    },
-  },
+    border:{
+      color: "white"
+    }
+  }
 };
+
+
 
 
 const Dropdown = () => (
   <Grommet theme={CustomAccordionTheme}>
-    <Box>
+  <Box>
 
-      <Desktop>
-        <Fragment>
-        </Fragment>
+  <Desktop>
+          <Fragment>
+</Fragment>
 
-      </Desktop>
-      <Mobile>
-        <Fragment>
+  </Desktop>
+  <Mobile>
+    <Fragment>
 
-          <AccordionPanel
-            label ={customLabel()}
-          >
-
-            <Box
-              flex={{grow: 1, shrink: 2}}
-              style={{whiteSpace: 'nowrap'}}
-              direction="column"
-              align="center"
-              justify="evenly"
-              display='inline-block'
+  <AccordionPanel
+ label ={customLabel()}
             >
-              <PlainButton
-                hoverColor="red"
-                fillColor="none"
-                size="1.25em"
-                display="inline-block"
-                border={false}
-                text="Stories"
-                target="/"
 
-              />
-              <PlainButton
-                hoverColor="red"
-                fillColor="none"
-                size="1.25em"
-                display="inline-block"
-                border={false}
-                text="About"
-                target="/about"
-              />
-              <PlainButton
-                hoverColor="red"
-                fillColor="none"
-                size="1.25em"
-                display="inline-block"
-                border={false}
-                text="Contact"
-                target="/contact"
-              />
-            </Box>
+  <Box
+          flex={{ grow: 1, shrink: 2 }}
+          style={{whiteSpace: "nowrap"}}
+          direction="column"
+          align="center"
+          justify="evenly"
+          display='inline-block'
+        >
+          <PlainButton
+            hoverColor="red"
+            fillColor="none"
+            size="1.25em"
+            display="inline-block"
+            border={false}
+            text="Stories"
+            target="/"
+            
+          />
+          <PlainButton
+            hoverColor="red"
+            fillColor="none"
+            size="1.25em"
+            display="inline-block"
+            border={false}
+            text="About"
+            target="/about"
+          />
+          <PlainButton
+            hoverColor="red"
+            fillColor="none"
+            size="1.25em"
+            display="inline-block"
+            border={false}
+            text="Contact"
+            target="/contact"
+          />
+        </Box>
+        
+  <Box flex={{ shrink: 2 }} margin={{ right: "medium" }}>
+    <SearchBar></SearchBar>
+  </Box>
 
-            <Box flex={{shrink: 2}} margin={{right: 'medium'}}>
-              <SearchBar></SearchBar>
-            </Box>
-
-          </AccordionPanel>
-        </Fragment>
-      </Mobile>
-    </Box>
+  </AccordionPanel>
+  </Fragment>
+  </Mobile>
+  </Box>
   </Grommet>
-);
+)
+  
 
 
 export default Dropdown;
-export {Mobile, Desktop};
+export { Mobile, Desktop };
