@@ -10,16 +10,6 @@ import SearchBar from './SearchBar';
 import PlainButton from './plainbutton';
 
 
-<<<<<<< HEAD
-const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1025 })
-  return isDesktop ? children : null
-}
-const Mobile = ({ children }) => {
-  const isTablet = useMediaQuery({maxWidth: 1024 })
-  return isTablet ? children : null
-}
-=======
 const Desktop = ({children}) => {
   const isDesktop = useMediaQuery({minWidth: 1024});
   return isDesktop ? children : null;
@@ -28,7 +18,6 @@ const Mobile = ({children}) => {
   const isTablet = useMediaQuery({maxWidth: 1023});
   return isTablet ? children : null;
 };
->>>>>>> parent of 1fbcba9... Revert "Merge branch 'Grommet' of https://github.com/l3n0ire/PEAR-Impact-Project into Grommet"
 const customLabel = () => (
   <Box direction="row" align="center" pad="small" gap="none">
     <strong>

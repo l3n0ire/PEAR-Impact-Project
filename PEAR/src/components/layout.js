@@ -39,18 +39,6 @@ const Layout = ({children}) => {
       }}
     >
       <Accordion>
-<<<<<<< HEAD
-      <div style = {{height: '100vh', width: '100vw'}}>
-
-        <Grid
-          rows = {['xsmall', 'flex', '10vh', '20vh']}
-          columns = {['full']}
-          justifyContent = 'center'
-          areas = {[
-            { name: 'header', start: [0, 0], end: [0, 0] },
-            { name: 'content', start: [0, 1], end: [0, 1] },
-            { name: 'footer', start: [0, 3], end: [0, 3] }
-=======
         <div style={{height: '100vh', width: '100vw'}}>
           <Grid
             rows={['xsmall', 'flex', '10vh', '20vh']}
@@ -65,7 +53,6 @@ const Layout = ({children}) => {
             <Menu gridarea="header" />
             <main gridarea="content">
               <Dropdown></Dropdown>
->>>>>>> parent of 1fbcba9... Revert "Merge branch 'Grommet' of https://github.com/l3n0ire/PEAR-Impact-Project into Grommet"
 
               {children}
             </main>
