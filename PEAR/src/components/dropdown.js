@@ -12,6 +12,7 @@ import PlainButton from './plainbutton'
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 1025 })
   return isDesktop ? children : null
@@ -31,6 +32,8 @@ const Mobile = ({children}) => {
 };
 >>>>>>> parent of 1fbcba9... Revert "Merge branch 'Grommet' of https://github.com/l3n0ire/PEAR-Impact-Project into Grommet"
 =======
+=======
+>>>>>>> parent of 196179c... Add eslint, run eslint
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 1024 })
   return isDesktop ? children : null
@@ -39,6 +42,9 @@ const Mobile = ({ children }) => {
   const isTablet = useMediaQuery({maxWidth: 1023  })
   return isTablet ? children : null
 }
+<<<<<<< HEAD
+>>>>>>> parent of 196179c... Add eslint, run eslint
+=======
 >>>>>>> parent of 196179c... Add eslint, run eslint
 const customLabel = () => (
   <Box direction="row" align="center" pad="small" gap="none">
@@ -65,6 +71,7 @@ const CustomAccordionTheme = {
 const Dropdown = () => (
   <Grommet theme={CustomAccordionTheme}>
   <Box>
+<<<<<<< HEAD
 
   <Desktop>
           <Fragment>
@@ -74,6 +81,17 @@ const Dropdown = () => (
   <Mobile>
     <Fragment>
 
+=======
+
+  <Desktop>
+          <Fragment>
+</Fragment>
+
+  </Desktop>
+  <Mobile>
+    <Fragment>
+
+>>>>>>> parent of 196179c... Add eslint, run eslint
   <AccordionPanel
  label ={customLabel()}
             >
