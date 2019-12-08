@@ -7,19 +7,11 @@ import PlainButton from './plainbutton'
 import SearchBar from './SearchBar'
 
 const Desktop = ({ children }) => {
-<<<<<<< HEAD
   const isDesktop = useMediaQuery({ minWidth: 1025 })
   return isDesktop ? children : null
 }
 const Mobile = ({ children }) => {
   const isTablet = useMediaQuery({maxWidth: 1024 })
-=======
-  const isDesktop = useMediaQuery({ minWidth: 1024 })
-  return isDesktop ? children : null
-}
-const Mobile = ({ children }) => {
-  const isTablet = useMediaQuery({maxWidth: 1023 })
->>>>>>> parent of 196179c... Add eslint, run eslint
   return isTablet ? children : null
 }
 
@@ -59,11 +51,7 @@ const Menu = () => (
                 style={{
                   lineHeight: "4vh",
                   padding: "none",
-<<<<<<< HEAD
                   fontSize: "3.2vh"
-=======
-                  fontSize: "1.5em"
->>>>>>> parent of 196179c... Add eslint, run eslint
                 }}
                 color='black'
               >
@@ -74,11 +62,7 @@ const Menu = () => (
                 style={{
                   lineHeight: "4vh",
                   padding: "none",
-<<<<<<< HEAD
                   fontSize: "3.2vh",
-=======
-                  fontSize: "1.5em",
->>>>>>> parent of 196179c... Add eslint, run eslint
                 }}
                 color='black'
               >
