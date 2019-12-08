@@ -61,7 +61,7 @@ const Layout = ({children}) => {
               {children}
             </main>
 
-            <Box gridarea="footer" align="center">
+            <Box gridarea="footer" align="center" pad={{'top':'large'}}>
               <Text size="small">
                 © {new Date().getFullYear()}, Colin Lin, Daniel Chua, and Jesse
                 Maltese
