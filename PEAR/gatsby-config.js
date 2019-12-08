@@ -1,4 +1,5 @@
 const remark = require('remark')
+var strip = require('strip-markdown')
 
 module.exports = {
   siteMetadata: {
@@ -8,6 +9,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/static/images`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,15 +32,29 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages/blog`,
+        name: "blog",
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "fonts",
         path: `${__dirname}/src/fonts/`,
       },
     },
-    "gatsby-transformer-remark",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/images`,
+        name: "images",
+      },
+    },
 
     {
       resolve: `gatsby-plugin-manifest`,
@@ -62,16 +84,16 @@ module.exports = {
           MarkdownRemark: {
             title: node => node.frontmatter.title,
             tags: node => node.frontmatter.tags,
-            path: node => node.frontmatter.path,
+            slug: node => node.fields.slug,
             author: node => node.frontmatter.author,
             clientName: node => node.frontmatter.clientName,
-            image: node => node.frontmatter.featuredImage,
+            //image: node => node.frontmatter.childImageSharp.fluid.base64,
             excerpt: node => {
               const text = remark()
-                .use()
+                .use(strip)
                 .processSync(node.rawMarkdownBody)
 
-              const excerptLength = 340 // Hard coded excerpt length
+              const excerptLength = 240 // Hard coded excerpt length
               return (
                 String(text)
                   .substring(0, excerptLength)
@@ -82,6 +104,43 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-netlify-cms`,
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    `gatsby-plugin-netlify-cms-paths`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-plugin-netlify-cms-paths`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [  
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+            },
+          },
+        ],
+      },
+    },
+    "gatsby-plugin-netlify", //keep this last in array
   ],
 }
