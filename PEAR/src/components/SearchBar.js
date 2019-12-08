@@ -49,7 +49,7 @@ class SearchBarComponent extends Component {
           textInput: {
             suggestions: {
               extend: {
-                backgroundColor: "white",
+                backgroundColor: "black",
                 dropShadow: 'none'
               },
             },
