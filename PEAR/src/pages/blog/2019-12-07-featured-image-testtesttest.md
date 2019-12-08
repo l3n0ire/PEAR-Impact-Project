@@ -1,6 +1,6 @@
 ---
 date: '2019-12-07'
-title: Featured image testtesttest
+title: 'Look, a Dog'
 author: testtest
 featuredImage: /PEAR/static/images/very_cute_dog.jpg
 clientName: test
