@@ -5,15 +5,22 @@ import {Box, Heading, Image, Paragraph} from 'grommet';
 const AboutPage = () => (
   <Layout>
     <Box pad="large">
+      <Box
+      height="small"
+      margin="medium"
+      >
+      <Image
+      src="../images/azhar.jpg"
+      margin='0'
+      fit="contain"
+      fill/>
+      </Box>
+
+      
       <Heading>About Azhar</Heading>
-      <Box justify="center" height="55vh">
-        <Image
-          style={{ padding: "10px", margin: "0px" }}
-          fit="contain"
-          src='../images/Azhar.jpg'
-        />
-        <Box>
-          <Paragraph style={{ padding: "10px", float: "right" }} fill={true}>
+      
+        
+          <p>
             <b>Azhar Laher.</b> A father and husband, social entrepreneur,
             sports nut, teacher and business coach. He is deeply concerned about
             social justice issues. He has worked in the Human Resources industry
@@ -22,9 +29,8 @@ const AboutPage = () => (
             rewards, employee relations and diversity. He is currently Professor
             of Human Resources in the School of Leadership and Human Resources
             at Seneca College in Toronto.
-          </Paragraph>
-        </Box>
-      </Box>
+            
+          </p>
     </Box>
   </Layout>
 )

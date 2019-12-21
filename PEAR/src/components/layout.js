@@ -45,13 +45,13 @@ const Layout = ({children}) => {
       <Accordion>
         <div style={{height: '100vh', width: '100vw'}}>
           <Grid
-            rows={['xsmall', 'flex', '10vh', '20vh']}
+            rows={['xsmall', 'flex', '20vh', '20vh']}
             columns={['full']}
             justifyContent="center"
             areas={[
-              {name: 'header', start: [0, 0], end: [0, 0]},
-              {name: 'content', start: [0, 1], end: [0, 1]},
-              {name: 'footer', start: [0, 3], end: [0, 3]},
+              {name: 'header', start: [0, 0], end: [1, 0]},
+              {name: 'content', start: [0, 1], end: [1, 1]},
+              {name: 'footer', start: [0, 2], end: [2, 2]},
             ]}
           >
             <Menu gridarea="header" />

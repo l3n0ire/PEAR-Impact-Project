@@ -8,12 +8,19 @@ import SearchBar from './SearchBar'
 
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1025 })
-  return isDesktop ? children : null
+  const isDesktop = useMediaQuery({ minWidth: 1024 })
+  const isLandscape = useMediaQuery({ query: '(orientation: landscape)' })
+  return isDesktop && isLandscape ? children : null
 }
 const Mobile = ({ children }) => {
-  const isTablet = useMediaQuery({maxWidth: 1024 })
-  return isTablet ? children : null
+  const isMobile = useMediaQuery({maxWidth: 767 })
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
+  return isMobile && isPortrait ? children : null
+}
+const Tablet = ({ children }) => {
+  const isMobile = useMediaQuery({maxWidth: 1024, minWidth:768 })
+  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
+  return isMobile && isPortrait ? children : null
 }
 
 const Menu = () => (
@@ -121,6 +128,7 @@ const Menu = () => (
         </Box>
       </Fragment>
     </Desktop>
+    
     <Mobile>
       <Link to="/">
         <Box
@@ -144,8 +152,32 @@ const Menu = () => (
         </Box>
       </Link>
     </Mobile>
+
+    <Tablet>
+      <Link to="/">
+        <Box
+          margin="none"
+          width={{ min: "50%" }}
+          pad='medium'
+        >
+          <Heading
+            color="white"
+            margin="none"
+            style={{
+              lineHeight: "4vh",
+              padding: "none",
+              fontWeight: 400,
+              fontSize: "3.5vh",
+            }}
+          >
+            Success Stories of <span style={{ color: "red", fontWeight: "bold" }}>New Canadians</span>
+          </Heading>
+          
+        </Box>
+      </Link>
+    </Tablet>
   </Box>
 )
 
 export default Menu;
-export { Mobile, Desktop };
+export { Mobile, Desktop,Tablet };

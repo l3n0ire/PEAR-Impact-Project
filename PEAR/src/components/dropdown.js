@@ -8,7 +8,7 @@ import {Article, Contact, ContactInfo, Services, FormDown} from 'grommet-icons';
 import Link from 'gatsby-link';
 import SearchBar from './SearchBar';
 import PlainButton from './plainbutton';
-import {Desktop, Mobile} from './menu';
+import {Desktop, Mobile,Tablet} from './menu';
 
 
 
@@ -18,6 +18,11 @@ const customLabel = () => (
   </Box>
 );
 const CustomAccordionTheme = {
+  global:{
+    color:{
+      focus:"#333"
+    }
+  },
   textInput: {
     suggestions: {
       extend: {
@@ -32,7 +37,7 @@ const CustomAccordionTheme = {
       color: 'red',
     },
     border: {
-      color: 'white',
+      color: 'black',
     },
   },
 };
@@ -106,6 +111,66 @@ const Dropdown = () => (
           </AccordionPanel>
         </Fragment>
       </Mobile>
+
+      <Tablet>
+        <Fragment>
+
+          <AccordionPanel
+          
+            label ={customLabel()}
+            style={{backgroundColor:'black', padding:'0'}}
+          >
+
+            <Box
+              flex={{grow: 1, shrink: 2}}
+              style={{whiteSpace: 'nowrap', backgroundColor:'black'}}
+              direction="column"
+              align="center"
+              justify="evenly"
+              display='inline-block'
+            >
+              <PlainButton
+                color = 'white'
+                hoverColor="red"
+                fillColor="none"
+                size="1.25em"
+                display="inline-block"
+                border={false}
+                text="Stories"
+                target="/"
+
+              />
+              <PlainButton
+                color = 'white'
+                hoverColor="red"
+                fillColor="none"
+                size="1.25em"
+                display="inline-block"
+                border={false}
+                text="About"
+                target="/about"
+              />
+              <PlainButton
+                color = 'white'
+                hoverColor="red"
+                fillColor="none"
+                size="1.25em"
+                display="inline-block"
+                border={false}
+                text="Contact"
+                target="/contact"
+              />
+            </Box>
+
+            <Box style={{backgroundColor:"black", color:"white"}}
+            >
+                 
+              <SearchBar ></SearchBar>
+            </Box>
+
+          </AccordionPanel>
+        </Fragment>
+      </Tablet>
     </Box>
   </Grommet>
 );

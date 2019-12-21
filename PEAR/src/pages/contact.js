@@ -2,26 +2,40 @@ import React from 'react';
 import Layout from '../components/layout';
 import PlainButton from '../components/plainbutton';
 
-import {Box, Heading, FormField, Form, TextArea, Button} from 'grommet';
+import {Box, Heading, FormField, Form, TextArea, Button, grommet, Grommet} from 'grommet';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 function onChange(value) {
   console.log('Captcha value:', value);
 }
 
+const customFormFieldTheme = {
+  global:{
+    colors:{
+      focus:"#333"
+    }
+  },
+  formField: {
+    label: {
+      margin: { vertical: "0", bottom: "small", horizontal: "0" },
+      weight: 600
+    },
+    border:{
+      color:"#333"
+    }
+  }
+};
+
 
 const ContactPage = () => (
   <Layout>
+    <Grommet theme = {customFormFieldTheme}>
     <Box pad="large">
       <Heading>Contact</Heading>
-      <ReCAPTCHA
-        sitekey="6LctE8MUAAAAAHBd7pFmtRxcmzDoSART6Q5BsanO"
-        onChange={onChange}
-      />
       <Form>
         <Box pad={{top: 'medium'}}>
           <FormField
-            style={{width: '30vw'}}
+            style={{width: '50vw', minWidth:'270px' }}
             label="Name"
             name="name"
             required
@@ -30,7 +44,7 @@ const ContactPage = () => (
           />
           <FormField
             focusIndicator={false}
-            style={{width: '30vw'}}
+            style={{width: '50vw', minWidth:'270px'}}
             placeholder="name@domain.com"
             label="Email"
             name="email"
@@ -47,39 +61,28 @@ const ContactPage = () => (
             name="message"
             resize={false}
             plain={false}
+
             style={{
-              height: '30vh',
-              width: '50vw'
+              height: '35vh',
+              width: '50vw',
+              minWidth:'270px',
             }}
             label="Message"
             placeholder="Type your message here."
           />
+          
         </Box>
-        <Box
-          alignSelf="center"
-          margin="small"
-          overflow="hidden"
-          width={{min: '80px', max: '150px'}}
-          border={{side: 'all', color: 'black'}}
-        >
-          <Button
-            alignSelf="center"
-            plain={true}
-            style={{
-              padding: '10px',
-              textAlign: 'center',
-              transition: '0.35s',
-              fontSize: '3vh',
-            }}
-            focusIndicator={false}
-            hoverIndicator="black"
-            fill={true}
-            type="submit"
-            label="Submit"
-          />
-        </Box>
+                
+        <ReCAPTCHA
+        style={{margin:"3vh 0vh",width:'100px'}}
+        sitekey="6LctE8MUAAAAAHBd7pFmtRxcmzDoSART6Q5BsanO"
+        onChange={onChange}
+      />
+      <PlainButton text="Submit" target="/contact" boxMargin="0" />
+
       </Form>
     </Box>
+    </Grommet>
   </Layout>
 );
 
