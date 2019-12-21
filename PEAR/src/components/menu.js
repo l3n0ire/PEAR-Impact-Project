@@ -8,9 +8,9 @@ import SearchBar from './SearchBar'
 
 
 const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1024 })
+  const isDesktop = useMediaQuery({ minWidth: 1025 })
   const isLandscape = useMediaQuery({ query: '(orientation: landscape)' })
-  return isDesktop && isLandscape ? children : null
+  return isLandscape && isDesktop ? children : null
 }
 const Mobile = ({ children }) => {
   const isMobile = useMediaQuery({maxWidth: 767 })
@@ -18,9 +18,8 @@ const Mobile = ({ children }) => {
   return isMobile && isPortrait ? children : null
 }
 const Tablet = ({ children }) => {
-  const isMobile = useMediaQuery({maxWidth: 1024, minWidth:768 })
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
-  return isMobile && isPortrait ? children : null
+  const isTablet = useMediaQuery({maxWidth: 1024, minWidth:768 })
+  return isTablet ? children : null
 }
 
 const Menu = () => (
