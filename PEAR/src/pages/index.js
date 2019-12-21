@@ -14,15 +14,17 @@ const BlogPage = ({ data }) => (
         <Layout>
           <Grid
             alignSelf="center"
-            columns={["45vw", "45vw"]}
+            columns={["flex", "flex","flex"]}
             rows="flex"
             alignContent="center"
             gap="large"
             margin="3vw"
+            align='stretch'
           >
             {data.allMarkdownRemark.edges.map(post => (
               <Link to={post.node.fields.slug}>
-                <Box justify="center" height="55vh" border={{color: '#000', opacity: '100'}}>
+                <Box justify="center" height="55vh" border={{color: '#d3d3d3', opacity: '100'}}
+                hoverIndicator ="black">
                   <Image
                     style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
@@ -69,7 +71,8 @@ const BlogPage = ({ data }) => (
                 }
               />
               <br />
-              <Heading alignSelf="center" level="3" margin="medium">
+              <Heading alignSelf="center" level="2" margin="medium">
+                
                 {post.node.frontmatter.title}
               </Heading>
               <Text alignSelf="center">

@@ -64,6 +64,7 @@ class SearchBarComponent extends Component {
           margin={{ right: "medium" }}
           pad={{ horizontal: "small", vertical: "none" }}
           fill="horizontal"
+          
         >
           <Search color="white" />
           <TextInput
@@ -74,6 +75,7 @@ class SearchBarComponent extends Component {
             focusIndicator={false}
             dropHeight="large"
             placeholder="Search..."
+            size='small'
             onChange={e => {
               this.search(e)
               if (e.target.value !== "") {

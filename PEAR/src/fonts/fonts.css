@@ -1,11 +1,11 @@
 @font-face {
-  font-family: Lora;
+  font-family: Lato;
   font-weight: 400;
   font-style: normal;
-  src: url('Lora-Regular.ttf') format('ttf')
+  src: url('Lato-Regular.ttf') format('ttf')
 }
 @font-face {
-    font-family: Lora;
+    font-family: Lato;
     font-weight: 700;
-    src: url('Lora-Bold.ttf') format('ttf')
+    src: url('Lato-Bold.ttf') format('ttf')
 }

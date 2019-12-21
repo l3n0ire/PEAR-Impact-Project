@@ -6,6 +6,7 @@ import Dropdown from './dropdown'
 import PlainButton from './plainbutton'
 import SearchBar from './SearchBar'
 
+
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 1025 })
   return isDesktop ? children : null
@@ -43,7 +44,6 @@ const Menu = () => (
             <Box
               display="inline-block"
               flex={true}
-              pad={{ left: "small" }}
               alignSelf="start"
             >
               <Heading
@@ -52,7 +52,9 @@ const Menu = () => (
                   fontWeight: 400,
                   lineHeight: "4vh",
                   padding: "none",
-                  fontSize: "3.2vh",
+                  fontSize: "1.5em",
+                  marginLeft: "3vw"
+
                 }}
                 color="white"
               >
@@ -64,7 +66,8 @@ const Menu = () => (
                   fontWeight: 400,
                   lineHeight: "4vh",
                   padding: "none",
-                  fontSize: "3.2vh",
+                  fontSize: "1.5em",
+                  marginLeft: "3vw"
                 }}
                 color="white"
               >
@@ -85,7 +88,7 @@ const Menu = () => (
             hoverColor="red"
             fillColor="none"
             color="white"
-            size="2.3vw"
+            size="1.3em"
             display="inline-block"
             border={false}
             text="Stories"
@@ -94,7 +97,7 @@ const Menu = () => (
           <PlainButton
             hoverColor="red"
             fillColor="none"
-            size="2.3vw"
+            size="1.3em"
             color="white"
             display="inline-block"
             border={false}
@@ -105,7 +108,7 @@ const Menu = () => (
           <PlainButton
             hoverColor="red"
             fillColor="none"
-            size="2.3vw"
+            size="1.3em"
             color="white"
             display="inline-block"
             border={false}
@@ -123,7 +126,7 @@ const Menu = () => (
         <Box
           margin="none"
           width={{ min: "50%" }}
-          style={{ lineHeight: "30px", paddingLeft: "2vw" }}
+          pad='medium'
         >
           <Heading
             color="white"
@@ -135,7 +138,7 @@ const Menu = () => (
               fontSize: "3.5vh",
             }}
           >
-            Success Stories of <span style={{ color: "red" }}>New Canadians</span>
+            Success Stories of <span style={{ color: "red", fontWeight: "bold" }}>New Canadians</span>
           </Heading>
           
         </Box>

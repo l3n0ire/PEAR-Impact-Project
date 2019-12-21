@@ -8,21 +8,13 @@ import {Article, Contact, ContactInfo, Services, FormDown} from 'grommet-icons';
 import Link from 'gatsby-link';
 import SearchBar from './SearchBar';
 import PlainButton from './plainbutton';
+import {Desktop, Mobile} from './menu';
 
 
-const Desktop = ({children}) => {
-  const isDesktop = useMediaQuery({ minWidth: 1025});
-  return isDesktop ? children : null;
-};
-const Mobile = ({children}) => {
-  const isTablet = useMediaQuery({maxWidth: 1024});
-  return isTablet ? children : null;
-};
+
 const customLabel = () => (
-  <Box direction="row" align="center" pad="small" gap="none" style={{backgroundColor:'black'}}>
-    <strong>
-      <Text color ='white' margin="1.5vw">Menu</Text>
-    </strong>
+  <Box direction="row" align="center" pad="medium" gap="none" style={{backgroundColor:'black'}}>
+      <Text color ='white' size="1.25em">Menu</Text>
   </Box>
 );
 const CustomAccordionTheme = {
@@ -61,7 +53,7 @@ const Dropdown = () => (
           <AccordionPanel
           
             label ={customLabel()}
-            style={{backgroundColor:'black'}}
+            style={{backgroundColor:'black', padding:'0'}}
           >
 
             <Box
@@ -105,7 +97,7 @@ const Dropdown = () => (
               />
             </Box>
 
-            <Box flex={{shrink: 2}} margin={{right: 'medium'}}
+            <Box style={{backgroundColor:"black", color:"white"}}
             >
                  
               <SearchBar ></SearchBar>

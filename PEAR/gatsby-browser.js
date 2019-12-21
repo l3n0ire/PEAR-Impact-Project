@@ -1,1 +1,1 @@
-require('typeface-lora')
+require('typeface-lato')
