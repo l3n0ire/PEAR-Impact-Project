@@ -13,7 +13,8 @@ import {Desktop, Mobile,Tablet} from './menu';
 
 
 const customLabel = () => (
-  <Box direction="row" align="center" pad="medium" gap="none" style={{backgroundColor:'black'}}>
+  <Box direction="row" align="center" pad={{vertical:"medium"}} margin={{horizontal:"8vw"}}
+  gap="none" style={{backgroundColor:'black'}}>
       <Text color ='white' size="1.25em">Menu</Text>
   </Box>
 );
@@ -103,6 +104,8 @@ const Dropdown = () => (
             </Box>
 
             <Box style={{backgroundColor:"black", color:"white"}}
+                        pad={{vertical:"1vw", horizontal:'8vw'}}
+                      
             >
                  
               <SearchBar ></SearchBar>

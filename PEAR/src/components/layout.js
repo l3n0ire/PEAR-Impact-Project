@@ -45,7 +45,7 @@ const Layout = ({children}) => {
       <Accordion>
         <div style={{height: '100vh', width: '100vw'}}>
           <Grid
-            rows={['xsmall', 'flex', '20vh', '20vh']}
+            rows={['xsmall', 'flex', 'medium']}
             columns={['full']}
             justifyContent="center"
             areas={[
@@ -61,34 +61,34 @@ const Layout = ({children}) => {
               {children}
             </main>
 
-            <Box gridarea="footer" align="center" pad={{'top':'large'}}>
-              <Text size="small">
+            <Box className ="footer" gridarea="footer" align="center" pad={{'top':'large'}}>
+              <Text size="medium">
                 © {new Date().getFullYear()}, Colin Lin, Daniel Chua, and Jesse
                 Maltese
               </Text>
               <Box direction="row" gap="medium" pad="small">
                 <a href="https://www.facebook.com/azhar.laher" target="_blank">
-                  <FacebookOption />
+                  <FacebookOption color="white" />
                 </a>
 
                 <a
                   href="https://www.instagram.com/azhar_laher/?hl=en"
                   target="_blank"
                 >
-                  <Instagram />
+                  <Instagram color="white" />
                 </a>
 
                 <a
                   href="https://twitter.com/azharlaher?lang=en"
                   target="_blank"
                 >
-                  <Twitter />
+                  <Twitter color="white" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/azhar-laher-877b844/?originalSubdomain=ca"
                   target="_blank"
                 >
-                  <LinkedinOption />
+                  <LinkedinOption  color="white"/>
                 </a>
               </Box>
             </Box>

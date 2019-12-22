@@ -9,6 +9,9 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:"#f4f4f4";
+  
+  
 }
 article,
 aside,
@@ -611,6 +614,16 @@ pre tt:after {
   
   
 
+}
+
+.footer{
+  background-color: #000;
+  color:white;
+  padding:5vw 8vw;
+
+}
+.container{
+  margin:0 8vw;
 }
 @media only screen and (max-width: 480px) {
   html {

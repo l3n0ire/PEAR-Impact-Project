@@ -10,7 +10,8 @@ export default function Template({data}) {
   const tags = post.frontmatter.tags;
   return (
     <Layout>
-      <Box pad="large">
+      <Box pad={{vertical:"large"}} margin={{horizontal:'8vw'}}
+>
         <Heading>{post.frontmatter.title}</Heading>
         <Heading level="4">
             Posted by: {post.frontmatter.author} on {post.frontmatter.date}
@@ -22,9 +23,9 @@ export default function Template({data}) {
             <Grommet theme={{global: {hover: {color: 'dark-1'}}}}>
               <Box
                 direction="row"
-                gap="large"
-                pad="large"
                 alignContent="center"
+                margin={{horizontal:'8vw'}}
+                pad={{vertical:"large"}}
               >
                 <Box alignSelf="center" margin="none" pad="none">
                   <Heading pad="none" margin="none" level="4">

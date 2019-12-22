@@ -17,14 +17,15 @@ const BlogPage = ({ data }) => (
             columns={["flex", "flex","flex"]}
             rows="flex"
             alignContent="center"
-            gap="large"
-            margin="3vw"
+            gap="small"
             align='stretch'
+            margin={{vertical:"3vw", horizontal:'8vw'}}
+
           >
             {data.allMarkdownRemark.edges.map(post => (
               <Link to={post.node.fields.slug}>
-                <Box justify="center" height="medium" border={{color: '#d3d3d3', opacity: '100'}}
-                hoverIndicator ="black">
+                <Box justify="center" height="27vw" border={{color: '#d3d3d3', opacity: '100'}}
+                hoverIndicator ="black" style={{backgroundColor:"white"}}>
                   <Image
                     style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
@@ -41,7 +42,7 @@ const BlogPage = ({ data }) => (
                     >
                       {post.node.frontmatter.title}
                     </Heading>
-                    <Text alignSelf="center">
+                    <Text alignSelf="center" size="medium">
                       {" "}
                       Posted by {post.node.frontmatter.author} on{" "}
                       {post.node.frontmatter.date}
@@ -63,7 +64,11 @@ const BlogPage = ({ data }) => (
       <Layout>
         {data.allMarkdownRemark.edges.map(post => (
           <Link to={post.node.fields.slug}>
-            <Box justify="center" margin={{horizontal:"20vw",vertical:"5vh"}} height="50vh">
+            <Box justify="center" margin={{horizontal:"20vw",vertical:"5vh"}} height="50vw"
+            style={{backgroundColor:"white"}} border={{color: '#d3d3d3', opacity: '100'}}
+            pad={{bottom:"1vh"}}
+            
+            >
               <Image
                 style={{ margin: "0px" }}
                 fit="cover"
@@ -92,7 +97,8 @@ const BlogPage = ({ data }) => (
       <Layout>
         {data.allMarkdownRemark.edges.map(post => (
           <Link to={post.node.fields.slug}>
-            <Box justify="center" margin='medium' height="medium">
+            <Box justify="center" margin={{vertical:"3vw", horizontal:'8vw'}}
+                 height="medium" >
               <Image
                 style={{ margin: "0px" }}
                 fit="cover"

@@ -71,12 +71,11 @@ class SearchBarComponent extends Component {
             onKeyDown={e => this._handleKeyDown(e)}
             id="textinput"
             plain
-            size="medium"
             focusIndicator={false}
-            dropHeight="large"
+            dropHeight="medium"
             placeholder="Search..."
-            size='small'
-            onChange={e => {
+            style={{width:"10vw"}}
+              onChange={e => {
               this.search(e)
               if (e.target.value !== "") {
                 this.setState({ reveal: true })

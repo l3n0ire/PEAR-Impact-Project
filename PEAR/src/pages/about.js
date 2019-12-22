@@ -4,7 +4,7 @@ import {Box, Heading, Image, Paragraph} from 'grommet';
 
 const AboutPage = () => (
   <Layout>
-    <Box pad="large">
+    <Box pad={{vertical:"large"}} margin={{horizontal:"8vw"}}>
       <Box
       height="small"
       margin="medium"

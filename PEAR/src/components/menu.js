@@ -45,12 +45,15 @@ const Menu = () => (
           }}
           flex={{ grow: 2, shrink: 1 }}
           width={{ min: "225px", max: "10%" }}
+          margin={{left:'8vw'}}
+
         >
           <Link to="/">
             <Box
               display="inline-block"
               flex={true}
               alignSelf="start"
+
             >
               <Heading
                 margin="none"
@@ -59,7 +62,6 @@ const Menu = () => (
                   lineHeight: "4vh",
                   padding: "none",
                   fontSize: "1.5em",
-                  marginLeft: "3vw"
 
                 }}
                 color="white"
@@ -73,7 +75,6 @@ const Menu = () => (
                   lineHeight: "4vh",
                   padding: "none",
                   fontSize: "1.5em",
-                  marginLeft: "3vw"
                 }}
                 color="white"
               >
@@ -89,6 +90,8 @@ const Menu = () => (
           align="center"
           justify="evenly"
           display="inline-block"
+          margin={{right:'4vw'}}
+
         >
           <PlainButton
             hoverColor="red"
@@ -121,10 +124,9 @@ const Menu = () => (
             text="Contact"
             target="/contact"
           />
-        </Box>
-        <Box flex={{ shrink: 2 }} margin={{ right: "medium" }}>
           <SearchBar></SearchBar>
         </Box>
+        
       </Fragment>
     </Desktop>
     
@@ -133,7 +135,8 @@ const Menu = () => (
         <Box
           margin="none"
           width={{ min: "50%" }}
-          pad='medium'
+          margin={{horizontal:'8vw'}}
+
         >
           <Heading
             color="white"
@@ -142,7 +145,7 @@ const Menu = () => (
               lineHeight: "4vh",
               padding: "none",
               fontWeight: 400,
-              fontSize: "3.5vh",
+              fontSize: "1.25em",
             }}
           >
             Success Stories of <span style={{ color: "red", fontWeight: "bold" }}>New Canadians</span>
@@ -157,7 +160,8 @@ const Menu = () => (
         <Box
           margin="none"
           width={{ min: "50%" }}
-          pad='medium'
+          margin={{horizontal:'8vw'}}
+
         >
           <Heading
             color="white"
@@ -166,7 +170,7 @@ const Menu = () => (
               lineHeight: "4vh",
               padding: "none",
               fontWeight: 400,
-              fontSize: "3.5vh",
+              fontSize: "1.5em",
             }}
           >
             Success Stories of <span style={{ color: "red", fontWeight: "bold" }}>New Canadians</span>

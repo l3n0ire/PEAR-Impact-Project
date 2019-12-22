@@ -30,7 +30,7 @@ const customFormFieldTheme = {
 const ContactPage = () => (
   <Layout>
     <Grommet theme = {customFormFieldTheme}>
-    <Box pad="large">
+    <Box pad={{vertical:"large"}} margin={{horizontal:"8vw"}}>
       <Heading>Contact</Heading>
       <Form>
         <Box pad={{top: 'medium'}}>
