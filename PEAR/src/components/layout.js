@@ -54,8 +54,8 @@ const Layout = ({children}) => {
               {name: 'footer', start: [0, 2], end: [2, 2]},
             ]}
           >
-            <Menu gridarea="header" />
-            <main gridarea="content">
+            <Menu gridarea="header"  />
+            <main gridarea="content" style={{backgroundColor:"#fefefe"}}>
               <Dropdown></Dropdown>
 
               {children}

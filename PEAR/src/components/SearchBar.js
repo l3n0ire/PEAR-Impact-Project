@@ -74,7 +74,6 @@ class SearchBarComponent extends Component {
             focusIndicator={false}
             dropHeight="medium"
             placeholder="Search..."
-            style={{width:"10vw"}}
               onChange={e => {
               this.search(e)
               if (e.target.value !== "") {

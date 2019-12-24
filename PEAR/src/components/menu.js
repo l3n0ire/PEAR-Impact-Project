@@ -88,9 +88,10 @@ const Menu = () => (
           style={{ whiteSpace: "nowrap" }}
           direction="row"
           align="center"
-          justify="evenly"
+          justify="around"
           display="inline-block"
-          margin={{right:'4vw'}}
+          margin={{left:"0",right:'4vw'}}
+          
 
         >
           <PlainButton
@@ -102,6 +103,8 @@ const Menu = () => (
             border={false}
             text="Stories"
             target="/"
+            boxMargin="0"
+            padding='0'
           />
           <PlainButton
             hoverColor="red"

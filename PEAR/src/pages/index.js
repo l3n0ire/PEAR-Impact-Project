@@ -25,7 +25,7 @@ const BlogPage = ({ data }) => (
             {data.allMarkdownRemark.edges.map(post => (
               <Link to={post.node.fields.slug}>
                 <Box justify="center" height="27vw" border={{color: '#d3d3d3', opacity: '100'}}
-                hoverIndicator ="black" style={{backgroundColor:"white"}}>
+                hoverIndicator ="black" style={{backgroundColor:"white"}} pad={{bottom:'large'}}>
                   <Image
                     style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
@@ -48,10 +48,6 @@ const BlogPage = ({ data }) => (
                       {post.node.frontmatter.date}
                     </Text>
 
-                    <PlainButton
-                      text="Read More"
-                      target={post.node.fields.slug}
-                    />
                 </Box>
               </Link>
             ))}
@@ -66,7 +62,7 @@ const BlogPage = ({ data }) => (
           <Link to={post.node.fields.slug}>
             <Box justify="center" margin={{horizontal:"20vw",vertical:"5vh"}} height="50vw"
             style={{backgroundColor:"white"}} border={{color: '#d3d3d3', opacity: '100'}}
-            pad={{bottom:"1vh"}}
+            pad={{bottom:'large'}}
             
             >
               <Image
@@ -86,7 +82,6 @@ const BlogPage = ({ data }) => (
                 Posted by {post.node.frontmatter.author} on{" "}
                 {post.node.frontmatter.date}
               </Text>
-              <PlainButton text="Read More" target={post.node.fields.slug} />
             </Box>
           </Link>
         ))}
@@ -98,7 +93,10 @@ const BlogPage = ({ data }) => (
         {data.allMarkdownRemark.edges.map(post => (
           <Link to={post.node.fields.slug}>
             <Box justify="center" margin={{vertical:"3vw", horizontal:'8vw'}}
-                 height="medium" >
+                 height="medium"
+                 pad={{bottom:'large'}}
+                 style={{backgroundColor:"white"}}
+                 border={{color: '#d3d3d3', opacity: '100'}} >
               <Image
                 style={{ margin: "0px" }}
                 fit="cover"
@@ -116,7 +114,6 @@ const BlogPage = ({ data }) => (
                 Posted by {post.node.frontmatter.author} on{" "}
                 {post.node.frontmatter.date}
               </Text>
-              <PlainButton text="Read More" target={post.node.fields.slug} />
             </Box>
           </Link>
         ))}

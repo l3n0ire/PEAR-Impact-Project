@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../components/layout';
 import {graphql} from 'gatsby';
-import {Box, Heading, Grommet, Button} from 'grommet';
-import {Mobile, Desktop} from '../components/menu';
+import {Box, Heading, Grommet, Button, Tab} from 'grommet';
+import {Mobile, Desktop, Tablet} from '../components/menu';
 
 
 export default function Template({data}) {
@@ -10,15 +10,17 @@ export default function Template({data}) {
   const tags = post.frontmatter.tags;
   return (
     <Layout>
-      <Box pad={{vertical:"large"}} margin={{horizontal:'8vw'}}
+      <Desktop>
+      <Box pad={{vertical:"large"}} margin={{horizontal:'8vw'}} align="center"
 >
+        <div style={{ margin:"0px, auto", width:"45vw"}}>
         <Heading>{post.frontmatter.title}</Heading>
         <Heading level="4">
             Posted by: {post.frontmatter.author} on {post.frontmatter.date}
         </Heading>
         <div dangerouslySetInnerHTML={{__html: post.html}} />
+        </div>
       </Box>
-      <Desktop>
         {tags.length > 0 ? (
             <Grommet theme={{global: {hover: {color: 'dark-1'}}}}>
               <Box
@@ -59,8 +61,28 @@ export default function Template({data}) {
           ) : null}
       </Desktop>
       <Mobile>
-        <></>
+      <Box pad={{vertical:"large"}} margin={{horizontal:'8vw'}}
+>
+        <Heading>{post.frontmatter.title}</Heading>
+        <Heading level="4">
+            Posted by: {post.frontmatter.author} on {post.frontmatter.date}
+        </Heading>
+        <div dangerouslySetInnerHTML={{__html: post.html}} />
+      </Box>
       </Mobile>
+      <Tablet>
+      <Box pad={{vertical:"large"}} margin={{horizontal:'8vw'}}
+>
+        <Heading>{post.frontmatter.title}</Heading>
+        <Heading level="4">
+            Posted by: {post.frontmatter.author} on {post.frontmatter.date}
+        </Heading>
+        <div dangerouslySetInnerHTML={{__html: post.html}} />
+      </Box>
+        
+      </Tablet>
+
+
     </Layout>
   );
 }
