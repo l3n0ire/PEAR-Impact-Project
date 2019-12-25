@@ -161,7 +161,7 @@ const BlogPage = ({ data }) => (
 
       <Box 
               margin={{vertical:"3vw", horizontal:'8vw'}}
-              height="70vh" border={{color: '#d3d3d3', opacity: '100'}}
+              height="120vw" border={{color: '#d3d3d3', opacity: '100'}}
               style={{backgroundColor:"white"}}
               pad={{bottom:'medium'}}
             
@@ -174,21 +174,21 @@ const BlogPage = ({ data }) => (
                   />
 
                 <Heading
-                      margin={{top:"medium", right:"3vw", left:"3vw", bottom:"small"}}
+                      margin={{top:"small", right:"3vw", left:"3vw", bottom:"small"}}
                       level="2"
                     >
                                     Success Stories of New Canadians
 
                     
                 </Heading>
-              <Text size="medium" margin={{horizontal:"3vw", bottom:"medium"}}>
+              <Text size="small" margin={{horizontal:"3vw", bottom:"small"}}>
                 is a website created by Azhar Laher which features the stories of Canadian immigrants.
                 If you are a new immigrant yourself and wish to share your story, click the button below
                 or contact Azhar. We hope these stories will inspire our readers and help immigrants
                 adapt to their new lives in Canada.
               </Text>
 
-              <PlainButton text="Share Your Story"  target="/" boxMargin="0"/>
+              <PlainButton text="Share Your Story"  target="/" boxMargin="0" />
 
 
 
