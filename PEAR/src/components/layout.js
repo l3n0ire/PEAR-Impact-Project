@@ -33,6 +33,9 @@ const Layout = ({children}) => {
           icon: {
             hover: {
               size: '10vh',
+              background:{
+                color:"black"
+              }
             },
           },
         },

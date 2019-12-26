@@ -1,14 +1,16 @@
 import React, {Fragment} from 'react';
 
 import Layout from '../components/layout';
-import {Grid, Box, TextInput, Text, Heading, Image} from 'grommet';
+import {Grid, Box, TextInput, Text, Heading, Image, Grommet,Button  } from 'grommet';
 import Link from 'gatsby-link';
 import {Desktop, Mobile, Tablet} from '../components/menu';
 import {graphql} from 'gatsby';
 import PlainButton from '../components/plainbutton';
 var dateFormat = require('dateformat');
 
+
 const BlogPage = ({ data }) => (
+
   <Box>
     <Desktop>
       <Fragment>
@@ -63,7 +65,7 @@ const BlogPage = ({ data }) => (
             {data.allMarkdownRemark.edges.map(post => (
               <Link to={post.node.fields.slug}>
                 <Box justify="center" height="27vw" border={{color: '#d3d3d3', opacity: '100'}}
-                hoverIndicator ="black" style={{backgroundColor:"white"}} pad={{bottom:'medium'}}>
+                 style={{backgroundColor:"white"}} pad={{bottom:'medium'}} >
                   <Image
                     style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
@@ -82,6 +84,43 @@ const BlogPage = ({ data }) => (
                     By: {post.node.frontmatter.author}<br/>
                     {dateFormat(new Date(post.node.frontmatter.date),"mmmm d, yyyy")}
                     </Text>
+                    {post.node.frontmatter.tags.length > 0 ? (
+            <Grommet theme={{global: {hover: {color: 'dark-1'}}}}>
+              <Box
+                direction="row"
+                alignContent="center"
+                pad={{top:"medium"}}
+                margin={{horizontal:"medium"}}
+              >
+            
+                {post.node.frontmatter.tags.slice(0, 10).map((tag) => (
+                  <React.Fragment>
+                    <Box
+                      direction="row"
+                      style={{borderRadius: '5px',
+                      margin:"0 1vh 0 0 "
+                    }}
+                      background="light-2"
+                    >
+                      <Button
+                        style={{
+                          borderRadius: '5px',
+                          padding: '1vh',
+                          transition: '0.25s',
+                        }}
+                        color="black"
+                        hoverIndicator="light-4"
+                        plain
+                        href={'/search?q=' + tag}
+                        label={tag}
+                      />
+                    </Box>
+                  </React.Fragment>
+                ))}
+              </Box>
+            </Grommet>
+          ) : null}
+
 
                 </Box>
               </Link>
