@@ -18,8 +18,8 @@ const BlogPage = ({ data }) => (
         <Layout>
           
             <Box 
-              margin={{vertical:"3vw", horizontal:'8vw'}}
-              height="80vh" border={{color: '#d3d3d3', opacity: '100'}}
+              margin="0"
+              height="85vh" border={{color: '#d3d3d3', opacity: '100', side:"bottom"}}
               style={{backgroundColor:"white"}}
               pad={{bottom:'medium'}}
             
