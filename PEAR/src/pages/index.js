@@ -6,6 +6,7 @@ import Link from 'gatsby-link';
 import {Desktop, Mobile, Tablet} from '../components/menu';
 import {graphql} from 'gatsby';
 import PlainButton from '../components/plainbutton';
+import Tag from '../components/tag'
 var dateFormat = require('dateformat');
 
 
@@ -65,7 +66,7 @@ const BlogPage = ({ data }) => (
             {data.allMarkdownRemark.edges.map(post => (
               <Link to={post.node.fields.slug}>
                 <Box justify="center" height="27vw" border={{color: '#d3d3d3', opacity: '100'}}
-                 style={{backgroundColor:"white"}} pad={{bottom:'medium'}} >
+                 style={{backgroundColor:"white"}}  >
                   <Image
                     style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
@@ -75,51 +76,19 @@ const BlogPage = ({ data }) => (
                     }
                   />
                     <Heading
-                      margin={{top:"medium", right:"medium", left:"medium", bottom:"small"}}
+                      margin={{top:"xsmall", right:"medium", left:"medium", bottom:"xsmall"}}
                       level="3"
                     >
                       {post.node.frontmatter.title}
                     </Heading>
-                    <Text size="medium" margin={{horizontal:"medium"}}>
+                    <Text size="medium" margin={{horizontal:"medium", bottom:"small"}}>
                     By: {post.node.frontmatter.author}<br/>
                     {dateFormat(new Date(post.node.frontmatter.date),"mmmm d, yyyy")}
                     </Text>
-                    {post.node.frontmatter.tags.length > 0 ? (
-            <Grommet theme={{global: {hover: {color: 'dark-1'}}}}>
-              <Box
-                direction="row"
-                alignContent="center"
-                pad={{top:"medium"}}
-                margin={{horizontal:"medium"}}
-              >
-            
-                {post.node.frontmatter.tags.slice(0, 10).map((tag) => (
-                  <React.Fragment>
-                    <Box
-                      direction="row"
-                      style={{borderRadius: '5px',
-                      margin:"0 1vh 0 0 "
-                    }}
-                      background="light-2"
-                    >
-                      <Button
-                        style={{
-                          borderRadius: '5px',
-                          padding: '1vh',
-                          transition: '0.25s',
-                        }}
-                        color="black"
-                        hoverIndicator="light-4"
-                        plain
-                        href={'/search?q=' + tag}
-                        label={tag}
-                      />
+
+                    <Box margin={{'left':"medium"}} pad={{"bottom":"0"}}>
+                      <Tag tags={post.node.frontmatter.tags}></Tag>
                     </Box>
-                  </React.Fragment>
-                ))}
-              </Box>
-            </Grommet>
-          ) : null}
 
 
                 </Box>
@@ -171,7 +140,7 @@ const BlogPage = ({ data }) => (
           <Link to={post.node.fields.slug}>
             <Box justify="center" margin={{horizontal:"20vw",vertical:"5vh"}} height="50vw"
             style={{backgroundColor:"white"}} border={{color: '#d3d3d3', opacity: '100'}}
-            pad={{bottom:'medium'}}
+            pad={{bottom:'xsmall'}}
             
             >
               <Image
@@ -181,14 +150,19 @@ const BlogPage = ({ data }) => (
                   post.node.frontmatter.featuredImage.childImageSharp.fluid.src
                 }
               />
-              <Heading level="2" margin={{top:"medium", right:"3vw", left:"3vw", bottom:"0"}}>
+              <Heading level="2" margin={{top:"small", right:"3vw", left:"3vw", bottom:"small"}}>
                 
                 {post.node.frontmatter.title}
               </Heading>
-              <Text margin={{horizontal:"3vw"}}>
+              <Text margin={{horizontal:"3vw", bottom:'small'}}>
                 By: {post.node.frontmatter.author}<br/>
                 {dateFormat(new Date(post.node.frontmatter.date),"mmmm d, yyyy")}
               </Text>
+
+              <Box margin={{'left':"3vw"}}>
+                <Tag tags={post.node.frontmatter.tags}></Tag>
+              </Box>
+
             </Box>
           </Link>
         ))}
@@ -256,6 +230,11 @@ const BlogPage = ({ data }) => (
                 By: {post.node.frontmatter.author} <br/>
                 {dateFormat(new Date(post.node.frontmatter.date),"mmmm d, yyyy")}
               </Text>
+
+              <Box margin={{'left':"3vw"}}>
+                <Tag tags={post.node.frontmatter.tags}></Tag>
+              </Box>
+
             </Box>
           </Link>
         ))}

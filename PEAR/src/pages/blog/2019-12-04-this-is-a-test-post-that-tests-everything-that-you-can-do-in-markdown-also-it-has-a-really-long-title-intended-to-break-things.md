@@ -1,12 +1,10 @@
 ---
 date: '2019-12-04'
-title: >-
-  This is a test post that tests everything that you can do in markdown, also it
-  has a really long title intended to break things...
+title: Mountain Trek
 author: Jesse Maltese
-featuredImage: "../../images/post-4.jpg"
+featuredImage: /PEAR/static/images/mountain-man.jpg
 clientName: Client... Name?
-tags: ['tag', 'tag2']
+tags: ['Argentina', 'Dangerous','War']
 ---
 This is a post
 

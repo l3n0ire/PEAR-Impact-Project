@@ -2,10 +2,12 @@
 date: '2019-12-07'
 title: Dangerous Waters
 author: testtest
-featuredImage: /PEAR/static/images/asian-man.jpg
+featuredImage: /PEAR/static/images/asian-man2.jpg
 clientName: test
 tags:
-  - tagtagtag
+  - Vietnam
+  - War
+  - Inspirational
 ---
 test
 
