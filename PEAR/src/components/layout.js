@@ -58,7 +58,7 @@ const Layout = ({children}) => {
       <Accordion>
         <div style={{height: '100vh', width: '100vw'}}>
           <Grid
-            rows={['xsmall', 'flex', isMobile? 'large':'medium']}
+            rows={['xsmall', 'flex', isMobile? '80vh':'medium']}
             columns={['full']}
             justifyContent="center"
             areas={[
@@ -74,7 +74,7 @@ const Layout = ({children}) => {
               {children}
             </main>
 
-            <Box className ="footer" gridarea="footer" pad={{'top':'large'}} 
+            <Box className ="footer" gridarea="footer" pad={{vertical:'large'}} 
             style={{display:"flex", flexDirection: isMobile ? "column":"row" }}>
             <div style={{flex:"1"}}>
             <Heading
@@ -194,7 +194,9 @@ const Layout = ({children}) => {
 
 
               <div style={{flex:"1"}}>
-                <Heading level ="3">Have a story you want to share?</Heading>
+                <Heading level = {isMobile ? "2":"3"}
+                margin= { isMobile? {bottom:"xlarge"}:{bottom:"large"} }>
+                  Have a story you want to share?</Heading>
 
                 <PlainButton color="white"
                 text="Share Your Story" 
