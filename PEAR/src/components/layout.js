@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {useStaticQuery, graphql, Link} from 'gatsby';
-import {Grid, Box, Grommet, Text, Accordion, AccordionPanel, Button} from 'grommet';
+import {Grid, Box, Grommet, Text, Accordion, AccordionPanel, Button, Heading} from 'grommet';
 import { Helmet } from 'react-helmet'
 import Menu from './menu';
 import './layout.css';
 import globalTheme from './style';
 import Dropdown from './dropdown';
 import {FacebookOption, Instagram, Twitter, MailOption, LinkedinOption} from 'grommet-icons';
+import PlainButton from "../components/plainbutton"
 
 
 const Layout = ({children}) => {
@@ -24,12 +25,16 @@ const Layout = ({children}) => {
   return (
     <Grommet
       theme={{
+
         icon: {
           hover: {
             size: '10vh',
           },
         },
         global: {
+          hover: {
+            color: "red",
+          },
           icon: {
             hover: {
               size: '10vh',
@@ -64,7 +69,36 @@ const Layout = ({children}) => {
               {children}
             </main>
 
-            <Box className ="footer" gridarea="footer" align="center" pad={{'top':'large'}}>
+            <Box className ="footer" gridarea="footer" pad={{'top':'large'}} 
+            style={{display:"flex", flexDirection:"row"}}>
+            <div style={{flex:"1"}}>
+            <Heading
+                margin="none"
+                style={{
+                  fontWeight: 400,
+                  lineHeight: "4vh",
+                  padding: "none",
+                  fontSize: "1.5em",
+
+                }}
+                color="white"
+              >
+                Success Stories
+              </Heading>
+              <Heading
+                margin="none"
+                style={{
+                  fontWeight: 400,
+                  lineHeight: "4vh",
+                  padding: "none",
+                  fontSize: "1.5em",
+                }}
+                color="white"
+              >
+                of <span style={{ color: "red" }}>New Canadians</span>
+              </Heading>
+              
+                <br></br>
               <Text size="medium">
                 © {new Date().getFullYear()}, Colin Lin, Daniel Chua, and Jesse
                 Maltese
@@ -93,7 +127,79 @@ const Layout = ({children}) => {
                 >
                   <LinkedinOption  color="white"/>
                 </a>
+                
               </Box>
+              </div>
+
+              <div style={{flex:"1", color:"white"}} >
+              
+
+
+              <Box
+              alignSelf="center"
+              width="50%"
+              margin={{left:'35%'}}
+
+              
+            >
+              <Heading level='2' >Links</Heading>
+              <Link style={{color:"white"}} to='/'>
+
+              <Box width='15vw' pad={{bottom:"small"}}>
+              <Button 
+              label={<Text size="1.25em">Stories</Text>}
+              plain={true}
+              fill={true}
+              hoverIndicator="black"
+              alignSelf="center"
+              width="10vw"
+              />
+              </Box>
+              </Link>
+
+              <Link style={{color:"white"}} to='/about'>
+
+              <Box width='15vw' pad={{bottom:"small"}}>
+              <Button 
+              label={<Text size="1.25em">About</Text>}
+              plain={true}
+              fill={true}
+              hoverIndicator="black"
+              alignSelf="center"
+              />
+              </Box>
+              </Link>
+
+              <Link style={{color:"white"}} to='/contact'>
+
+             <Box width='15vw'pad={{bottom:"small"}}>
+              <Button 
+              label={<Text size="1.25em">Contact</Text>}
+              plain={true}
+              fill={true}
+              hoverIndicator="black"
+              alignSelf="center"
+              />
+              </Box>
+              </Link>
+
+            </Box>
+
+              </div>
+
+
+              <div style={{flex:"1"}}>
+                <Heading level ="3">Have a story you want to share?</Heading>
+
+                <PlainButton color="white"
+                text="Share Your Story" 
+                hoverColor="black"
+                fillColor="white"
+                target="/" boxMargin="0"/>
+
+
+
+              </div>
             </Box>
           </Grid>
         </div>

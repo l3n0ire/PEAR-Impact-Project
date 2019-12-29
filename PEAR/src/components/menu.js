@@ -104,7 +104,6 @@ const Menu = () => (
             text="Stories"
             target="/"
             boxMargin="0"
-            padding='0'
           />
           <PlainButton
             hoverColor="red"
