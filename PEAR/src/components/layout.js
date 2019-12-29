@@ -58,7 +58,7 @@ const Layout = ({children}) => {
       <Accordion>
         <div style={{height: '100vh', width: '100vw'}}>
           <Grid
-            rows={['xsmall', 'flex', isMobile? '80vh':'medium']}
+            rows={['xsmall', 'flex', isMobile? '100vh':'medium']}
             columns={['full']}
             justifyContent="center"
             areas={[
@@ -195,7 +195,7 @@ const Layout = ({children}) => {
 
               <div style={{flex:"1"}}>
                 <Heading level = {isMobile ? "2":"3"}
-                margin= { isMobile? {bottom:"xlarge"}:{bottom:"large"} }>
+                margin= {{bottom:"large"}}>
                   Have a story you want to share?</Heading>
 
                 <PlainButton color="white"
