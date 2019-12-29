@@ -10,21 +10,24 @@ var dateFormat = require('dateformat');
 export default function Template({data}) {
   const post = data.markdownRemark;
   const tags = post.frontmatter.tags;
+  const imageUrl= "url("+post.frontmatter.featuredImage.childImageSharp.fluid.src+")"
   return (
     <Layout>
       <Desktop>
-        <Box
+     
+       <Box
          height ="50vh"
-         background = {"url("+post.frontmatter.featuredImage.childImageSharp.fluid.src+")"}
+         background = {{ opacity:"weak", image:imageUrl }}
          pad="8vw"
-         >
-          <Heading color="white" alignSelf="center" 
-            margin="auto">
+         />
+          
+        <Box pad={{vertical:"large"}} margin={{horizontal:'8vw'}} align="center">
+          <div style={{ margin:"0px, auto", width:"50vw", minWidth:"700px"}}
+           >
+          <Heading level="1"  
+            >
             {post.frontmatter.title}
           </Heading>
-        </Box>
-        <Box pad={{vertical:"large"}} margin={{horizontal:'8vw'}} align="center">
-          <div style={{ margin:"0px, auto", width:"50vw", minWidth:"700px"}}>
           <Tag tags={tags}></Tag>
           <Heading level="4">
             By: {post.frontmatter.author}<br/>
@@ -40,14 +43,16 @@ export default function Template({data}) {
           height ="50vh"
           background = {"url("+post.frontmatter.featuredImage.childImageSharp.fluid.src+")"}
           pad="8vw"
-          >
-            <Heading color="white" alignSelf="center" 
-              margin="auto">
-              {post.frontmatter.title}
-            </Heading>
-        </Box>
+          />
+            
+
+       
 
         <Box pad={{vertical:"large"}} margin={{horizontal:'8vw'}}>
+        <Heading level="1"  
+            >
+            {post.frontmatter.title}
+          </Heading>
           <Tag tags={tags}></Tag>
           <Heading level="4">
             By: {post.frontmatter.author}<br/>
@@ -63,14 +68,14 @@ export default function Template({data}) {
           height ="50vh"
           background = {"url("+post.frontmatter.featuredImage.childImageSharp.fluid.src+")"}
           pad="8vw"
-          >
-            <Heading color="white" alignSelf="center" 
-              margin="auto">
-              {post.frontmatter.title}
-            </Heading>
-        </Box>
+          />
+         
 
         <Box pad={{vertical:"large"}} margin={{horizontal:'8vw'}}>
+        <Heading level="1"  
+            >
+            {post.frontmatter.title}
+          </Heading>
           <Tag tags={tags}></Tag>
           <Heading level="4">
             By: {post.frontmatter.author}<br/>

@@ -9,9 +9,14 @@ import globalTheme from './style';
 import Dropdown from './dropdown';
 import {FacebookOption, Instagram, Twitter, MailOption, LinkedinOption} from 'grommet-icons';
 import PlainButton from "../components/plainbutton"
+import {Desktop, Tablet, Mobile} from "./menu"
+import { useMediaQuery } from "react-responsive"
+
 
 
 const Layout = ({children}) => {
+  const isMobile = useMediaQuery({maxWidth: 767 });
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -53,7 +58,7 @@ const Layout = ({children}) => {
       <Accordion>
         <div style={{height: '100vh', width: '100vw'}}>
           <Grid
-            rows={['xsmall', 'flex', 'medium']}
+            rows={['xsmall', 'flex', isMobile? 'large':'medium']}
             columns={['full']}
             justifyContent="center"
             areas={[
@@ -63,14 +68,14 @@ const Layout = ({children}) => {
             ]}
           >
             <Menu gridarea="header"  />
-            <main gridarea="content" style={{backgroundColor:"#fefefe"}}>
+            <main gridarea="content" style={{backgroundColor:"#f8f8f8"}}>
               <Dropdown></Dropdown>
 
               {children}
             </main>
 
             <Box className ="footer" gridarea="footer" pad={{'top':'large'}} 
-            style={{display:"flex", flexDirection:"row"}}>
+            style={{display:"flex", flexDirection: isMobile ? "column":"row" }}>
             <div style={{flex:"1"}}>
             <Heading
                 margin="none"
@@ -130,22 +135,22 @@ const Layout = ({children}) => {
                 
               </Box>
               </div>
+              
 
               <div style={{flex:"1", color:"white"}} >
               
 
 
               <Box
-              alignSelf="center"
+              margin= {isMobile ? {left:"0"}:{left:"30%"}}
               width="50%"
-              margin={{left:'35%'}}
 
               
             >
               <Heading level='2' >Links</Heading>
               <Link style={{color:"white"}} to='/'>
 
-              <Box width='15vw' pad={{bottom:"small"}}>
+              <Box width='15em' pad={{bottom:"small"}}>
               <Button 
               label={<Text size="1.25em">Stories</Text>}
               plain={true}
@@ -159,7 +164,7 @@ const Layout = ({children}) => {
 
               <Link style={{color:"white"}} to='/about'>
 
-              <Box width='15vw' pad={{bottom:"small"}}>
+              <Box width='15em' pad={{bottom:"small"}}>
               <Button 
               label={<Text size="1.25em">About</Text>}
               plain={true}
@@ -172,7 +177,7 @@ const Layout = ({children}) => {
 
               <Link style={{color:"white"}} to='/contact'>
 
-             <Box width='15vw'pad={{bottom:"small"}}>
+             <Box width='15em'pad={{bottom:"small"}}>
               <Button 
               label={<Text size="1.25em">Contact</Text>}
               plain={true}
