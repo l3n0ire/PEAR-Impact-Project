@@ -1,9 +1,11 @@
 import React from 'react';
 import Layout from '../components/layout';
 import {graphql} from 'gatsby';
-import {Box, Heading, Grommet, Button, Image} from 'grommet';
+import {Box, Heading, Grommet, Button, Image, Text} from 'grommet';
 import {Mobile, Desktop, Tablet} from '../components/menu';
 import Tag from '../components/tag'
+import Header from '../components/header';
+
 
 var dateFormat = require('dateformat');
 
@@ -11,6 +13,14 @@ export default function Template({data}) {
   const post = data.markdownRemark;
   const tags = post.frontmatter.tags;
   const imageUrl= "url("+post.frontmatter.featuredImage.childImageSharp.fluid.src+")"
+  var tagString=''
+  tags.slice(0, 10).map((tag) => (
+    tagString = tagString + tag +" "
+  ))
+  const author =[post.frontmatter.author]
+  
+
+  
   return (
     <Layout>
       <Desktop>
@@ -29,13 +39,26 @@ export default function Template({data}) {
             {post.frontmatter.title}
           </Heading>
           <Tag tags={tags}></Tag>
-          <Heading level="4">
-            By: {post.frontmatter.author}<br/>
+          <br/>
+          <Box direction ="row">
+            <Text size="large" margin={{top:"xxsmall",right:"medium"}}>By: </Text>
+            <Tag tags={author}></Tag>
+          </Box>
+            <br/>
+            <Heading level="4">
             {dateFormat(new Date(post.frontmatter.date),"mmmm d, yyyy")}
           </Heading>
           <div dangerouslySetInnerHTML={{__html: post.html}} />
+          <Heading margin={{top:"xlarge"}} level="2">Recommended Posts</Heading>
+
+          <Header current ={post.frontmatter.title} is_recommend = {true} query={tagString}></Header>
+
           </div>
+
         </Box>
+        
+
+
       </Desktop>
       
       <Tablet>
@@ -54,11 +77,20 @@ export default function Template({data}) {
             {post.frontmatter.title}
           </Heading>
           <Tag tags={tags}></Tag>
+          <br/>
+          <Box direction ="row">
+            <Text size="large" margin={{top:"xxsmall",right:"medium"}}>By: </Text>
+            <Tag tags={author}></Tag>
+          </Box>
+          <br/>
           <Heading level="4">
-            By: {post.frontmatter.author}<br/>
+           
             {dateFormat(new Date(post.frontmatter.date),"mmmm d, yyyy")}
           </Heading>
           <div dangerouslySetInnerHTML={{__html: post.html}} />
+          <Heading margin={{top:"xlarge"}} level="2">Recommended Posts</Heading>
+
+          <Header current ={post.frontmatter.title} is_recommend = {true} query={tagString}></Header>
         </Box>
 
       </Tablet>
@@ -77,12 +109,20 @@ export default function Template({data}) {
             {post.frontmatter.title}
           </Heading>
           <Tag tags={tags}></Tag>
+          <Box direction ="row">
+            <Text size="large" margin={{top:"xxsmall",right:"medium"}}>By: </Text>
+            <Tag tags={author}></Tag>
+          </Box>
+          <br/>
           <Heading level="4">
-            By: {post.frontmatter.author}<br/>
             {dateFormat(new Date(post.frontmatter.date),"mmmm d, yyyy")}
           </Heading>
           <div dangerouslySetInnerHTML={{__html: post.html}} />
+          <Heading margin={{top:"large"}} level="2">Recommended Posts</Heading>
+
+          <Header current ={post.frontmatter.title} is_recommend = {true} query={tagString}></Header>
         </Box>
+        
 
       </Mobile>
 

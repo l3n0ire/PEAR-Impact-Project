@@ -5,6 +5,9 @@ import { TextInput, Box, Text, Button, Grommet } from 'grommet'
 import { Search, Close } from 'grommet-icons'
 import { Index } from 'elasticlunr'
 const qs = require('query-string')
+import { useMediaQuery } from "react-responsive"
+
+
 
 
 
@@ -21,7 +24,11 @@ export default class SearchResults extends Component {
    
     componentDidMount() {
       const query = qs.parse(window.location.search).q
-      if(typeof query !== 'undefined') {
+      if(this.props.query !=null){
+        this.search(this.props.query)
+
+      }
+      else if(typeof query !== 'undefined') {
         this.search(query)
       }
       else {
@@ -30,22 +37,31 @@ export default class SearchResults extends Component {
     }
 
     render() {
+      const Recommend = ({ children }) => {
+        return this.props.is_recommend ? null:children
+        
+      } // find a better way to do this
+
+      const current = this.props.current
       return (
+
         <React.Fragment>
+
           <Box
-            width='30vw'
+            width="17em"
             height='5vh'
             direction="row"
             align="center"
             pad={{ horizontal: "small", vertical: "none" }}
+            margin={{vertical:"medium"}}
             round="xsmall"
             border={{
               side: "all",
               color: "black",
             }}
-            margin={{ left: "3vw", top: '3vh'}}
           >
             <Search color="black" />
+            
             <TextInput
               focusIndicator={false}
               size='medium'
@@ -63,6 +79,7 @@ export default class SearchResults extends Component {
               plain
             />
             <Button
+              style={{padding:"0"}}
               icon={
                 this.state.reveal ? (
                   <Close color="#999" />
@@ -79,36 +96,39 @@ export default class SearchResults extends Component {
               }}
             />
           </Box>
-          {this.state.results.map(post => (
+
+          {this.state.results.filter(function (post1){
+            if (post1.title == current){
+              return false; // filter out the current post from recommended
+            }
+              return true;
+          }).map(post => (
             <Link to={post.slug}>
               
                 {" "}
                 <Box
                   alignContent="start"
-                  width="93vw"
+                  width="84vw"
                   pad="small"
-                  pad={{left: 'small', right: 'small', top: 'small', bottom: '3vh'}}
-                  margin={{left: '3vw', right:'3vw', top: '3vh', bottom: '2vh'}}
+                  pad={{right: 'small', top: 'small', bottom: 'small'}}
                   hoverIndicator={{ color: "light-2" }}
                   background={{ color: "light-1" }}
                   overflow='hidden'
                 >
                 
-                  <Box direction="row">
                     <Text
-                      size="3vh"
+                      size="large"
                       style={{
                         display: "inline-block",
                       }}
                     >
                       <b>{post.title}</b>
-                      &nbsp;
-                      <span style={{ fontSize: "2.5vh" }}>
-                        by {post.author}
-                      </span>
                     </Text>
-                  </Box>
-                  <Text size='2vh'>{post.excerpt.replace(/^(\\)|\#.*/gm, "")}</Text>
+                    <Text size='medium'>
+                    by {post.author} on {post.date}
+                    </Text>
+                  <Text size='medium' margin={{vertical:"small"}}>{post.excerpt.replace(/^(\\)|\#.*/gm, "")}</Text>
+                  <hr/>
                 </Box>
               
             </Link>

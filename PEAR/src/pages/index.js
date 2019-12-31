@@ -18,7 +18,7 @@ const BlogPage = ({ data }) => (
         <Layout>
           
             <Box 
-              margin="0"
+              margin={{horizontal:"8vw", vertical:"medium"}}
               height="85vh" border={{color: '#d3d3d3', opacity: '100', side:"bottom"}}
               style={{backgroundColor:"white"}}
               pad={{bottom:'medium'}}
@@ -32,14 +32,14 @@ const BlogPage = ({ data }) => (
                   />
 
                 <Heading
-                      margin={{top:"medium", right:"medium", left:"medium", bottom:"small"}}
+                      margin={{top:"medium", horizontal:"medium", bottom:"small"}}
                       level="2"
                     >
                                     Success Stories of New Canadians
 
                     
                 </Heading>
-              <Text size="medium" margin={{horizontal:"medium", bottom:"medium"}}>
+              <Text size="medium" margin={{horizontal:"medium", bottom:"medium"}} >
                 is a website created by Azhar Laher which features the stories of Canadian immigrants.
                 If you are a new immigrant yourself and wish to share your story, click the button below
                 or contact Azhar. We hope these stories will inspire our readers and help immigrants
@@ -51,6 +51,8 @@ const BlogPage = ({ data }) => (
 
 
             </Box>
+            <Heading margin={{horizontal:"8vw", vertical:"large"}}level="1">
+              Latest Posts</Heading>
 
             <Grid
             alignSelf="center"
@@ -136,6 +138,8 @@ const BlogPage = ({ data }) => (
 
 
             </Box>
+            <Heading margin={{horizontal:"20vw", vertical:"large"}}level="1">
+              Latest Posts</Heading>
         {data.allMarkdownRemark.edges.map(post => (
           <Link to={post.node.fields.slug}>
             <Box justify="center" margin={{horizontal:"20vw",vertical:"5vh"}} height="50vw"
@@ -180,7 +184,7 @@ const BlogPage = ({ data }) => (
             
                         >
               <Image
-                    style={{ padding: "0px", margin: "0px" }}
+                    style={{ padding: "0px", margin: "0px", maxHeight:"50vh" }}
                     fit="cover"
                     src='../images/home.jpg'
                     
@@ -206,6 +210,9 @@ const BlogPage = ({ data }) => (
 
 
             </Box>
+
+            <Heading margin={{horizontal:"8vw", vertical:"large"}}level="1">
+              Latest Posts</Heading>
         {data.allMarkdownRemark.edges.map(post => (
           <Link to={post.node.fields.slug}>
             <Box justify="center" margin={{vertical:"3vw", horizontal:'8vw'}}

@@ -51,7 +51,8 @@ class SearchBarComponent extends Component {
               extend: {
                 backgroundColor: "black",
                 dropShadow: 'none',
-                color:'white'
+                color:'white',
+                padding:'0 1em'
               },
             },
           },

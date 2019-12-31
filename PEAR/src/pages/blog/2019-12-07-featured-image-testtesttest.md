@@ -1,9 +1,9 @@
 ---
 date: '2019-12-07'
 title: Dangerous Waters
-author: testtest
+author: Daniel Chua
 featuredImage: /PEAR/static/images/asian-man2.jpg
-clientName: test
+clientName: azhar
 tags:
   - Vietnam
   - War

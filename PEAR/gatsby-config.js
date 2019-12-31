@@ -69,49 +69,6 @@ module.exports = {
       },
     },
     {
-      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
-      options: {
-        fields: [
-          "title",
-          "tags",
-          "path",
-          "author",
-          "clientName",
-          "excerpt",
-          "image",
-        ],
-        resolvers: {
-          MarkdownRemark: {
-            title: node => node.frontmatter.title,
-            tags: node => node.frontmatter.tags,
-            slug: node => node.fields.slug,
-            author: node => node.frontmatter.author,
-            clientName: node => node.frontmatter.clientName,
-            //image: node => node.frontmatter.childImageSharp.fluid.base64,
-            excerpt: node => {
-              const text = remark()
-                .use(strip)
-                .processSync(node.rawMarkdownBody)
-
-              const excerptLength = 240 // Hard coded excerpt length
-              return (
-                String(text)
-                  .substring(0, excerptLength)
-                  .trimRight() + "..."
-              )
-            },
-          },
-        },
-      },
-    },
-    {
-      resolve: "gatsby-plugin-netlify-cms",
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    `gatsby-plugin-netlify-cms-paths`,
-    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -141,6 +98,55 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
+      options: {
+        fields: [
+          "title",
+          "date",
+          "tags",
+          "path",
+          "author",
+          "clientName",
+          "excerpt",
+          "featuredImage",
+        ],
+        resolvers: {
+          MarkdownRemark: {
+            title: node => node.frontmatter.title,
+            date: node => node.frontmatter.date,
+            tags: node => node.frontmatter.tags,
+            slug: node => node.fields.slug,
+            author: node => node.frontmatter.author,
+            clientName: node => node.frontmatter.clientName,
+            featuredImage: node => node.frontmatter.featuredImage
+            ,
+
+            //image: node => node.frontmatter.childImageSharp.fluid.base64,
+            excerpt: node => {
+              const text = remark()
+                .use(strip)
+                .processSync(node.rawMarkdownBody)
+
+              const excerptLength = 240 // Hard coded excerpt length
+              return (
+                String(text)
+                  .substring(0, excerptLength)
+                  .trimRight() + "..."
+              )
+            },
+          },
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    `gatsby-plugin-netlify-cms-paths`,
+    
     "gatsby-plugin-netlify", //keep this last in array
   ],
 }

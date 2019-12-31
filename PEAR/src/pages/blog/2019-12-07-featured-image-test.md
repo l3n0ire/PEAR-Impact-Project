@@ -1,9 +1,9 @@
 ---
 date: '2019-12-07'
 title: Journey On Foot
-author: it must work
+author: Azhar
 featuredImage: /PEAR/static/images/backpack-woman.jpg
-clientName: azhar
+clientName: Azhar
 tags:
   - America
   - Hiking

@@ -1,9 +1,9 @@
 ---
 date: '2019-12-07'
 title: Pursuit of Happiness
-author: me
+author: Colin Lin
 featuredImage: /PEAR/static/images/smiling-woman.jpg
-clientName: someone
+clientName: azhar
 tags:
   - America
   - Happy
