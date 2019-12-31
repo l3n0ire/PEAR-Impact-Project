@@ -32,7 +32,7 @@ render(){
                         color="black"
                         hoverIndicator="light-4"
                         plain
-                        href={'/search?q=' + tag}
+                        href={'/Search?q=' + tag}
                         label={tag}
                       />
                     </Box>
