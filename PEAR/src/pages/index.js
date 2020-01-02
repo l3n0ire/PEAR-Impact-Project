@@ -215,7 +215,7 @@ const BlogPage = ({ data }) => (
               Latest Posts</Heading>
         {data.allMarkdownRemark.edges.map(post => (
           <Link to={post.node.fields.slug}>
-            <Box justify="center" margin={{vertical:"3vw", horizontal:'8vw'}}
+            <Box justify="center" margin={{vertical:"large", horizontal:'8vw'}}
                  height="medium"
                  pad={{bottom:'medium'}}
                  style={{backgroundColor:"white"}}

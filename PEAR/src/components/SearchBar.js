@@ -30,7 +30,7 @@ class SearchBarComponent extends Component {
   }
   _handleKeyDown = e => {
     if (e.key === "Enter") {
-      window.location.href = '/search?q=' + e.target.value
+      window.location.href = '/Search?q=' + e.target.value
     }
   }
 

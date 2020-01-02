@@ -1,11 +1,15 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { Component } from 'react'
-import { TextInput, Box, Text, Button, Grommet } from 'grommet'
+import { TextInput, Box, Text, Button, Grommet,Image,Heading,Grid } from 'grommet'
 import { Search, Close } from 'grommet-icons'
 import { Index } from 'elasticlunr'
 const qs = require('query-string')
 import { useMediaQuery } from "react-responsive"
+var dateFormat = require('dateformat');
+import Tag from './tag'
+import {Desktop, Mobile, Tablet} from '../components/menu';
+
 
 
 
@@ -18,6 +22,7 @@ export default class SearchResults extends Component {
             query: ``,
             results: [],
             reveal: false,
+            images:{},
         }
 
     }
@@ -53,7 +58,7 @@ export default class SearchResults extends Component {
             direction="row"
             align="center"
             pad={{ horizontal: "small", vertical: "none" }}
-            margin={{vertical:"medium"}}
+            margin={this.props.is_recommend? {vertical:"medium"}:{horizontal:"8vw",vertical:"medium" }}
             round="xsmall"
             border={{
               side: "all",
@@ -96,6 +101,30 @@ export default class SearchResults extends Component {
               }}
             />
           </Box>
+          {
+                        
+
+            this.props.images.map(post =>{
+              this.state.images[post.node.frontmatter.title] = post.node.frontmatter.featuredImage.childImageSharp.fluid.src
+
+            }
+            )
+
+        }
+        <Desktop>
+        <Grid
+            alignSelf="center"
+            columns={this.props.is_recommend? ["flex","flex"]: ["flex", "flex","flex"]}
+            rows="flex"
+            alignContent="center"
+            gap="small"
+            align='stretch'
+            margin={this.props.is_recommend? 0:{vertical:"3vw", horizontal:'8vw'}}
+
+            
+
+          >
+          
 
           {this.state.results.filter(function (post1){
             if (post1.title == current){
@@ -104,35 +133,116 @@ export default class SearchResults extends Component {
               return true;
           }).map(post => (
             <Link to={post.slug}>
-              
-                {" "}
-                <Box
-                  alignContent="start"
-                  width="84vw"
-                  pad="small"
-                  pad={{right: 'small', top: 'small', bottom: 'small'}}
-                  hoverIndicator={{ color: "light-2" }}
-                  background={{ color: "light-1" }}
-                  overflow='hidden'
-                >
-                
-                    <Text
-                      size="large"
-                      style={{
-                        display: "inline-block",
-                      }}
+                <Box justify="center" height="27vw" border={{color: '#d3d3d3', opacity: '100'}}
+                 style={{backgroundColor:"white"}}  >
+                   <Image
+                style={{ margin: "0px" }}
+                fit="cover"
+                src={this.state.images[post.title]}
+              />
+
+                    <Heading
+                      margin={{top:"xsmall", right:"medium", left:"medium", bottom:"xsmall"}}
+                      level="3"
                     >
-                      <b>{post.title}</b>
+                      {post.title}
+                    </Heading>
+                    <Text size="medium" margin={{horizontal:"medium", bottom:"small"}}>
+                    By: {post.author}<br/>
+                    {dateFormat(new Date(post.date),"mmmm d, yyyy")}
                     </Text>
-                    <Text size='medium'>
-                    by {post.author} on {post.date}
-                    </Text>
-                  <Text size='medium' margin={{vertical:"small"}}>{post.excerpt.replace(/^(\\)|\#.*/gm, "")}</Text>
-                  <hr/>
+
+                    <Box margin={{'left':"medium"}} pad={{"bottom":"0"}}>
+                      <Tag tags={post.tags}></Tag>
+                    </Box>
+
+
                 </Box>
-              
-            </Link>
+              </Link>
           ))}
+          </Grid>
+          </Desktop>
+<Tablet>
+          {this.state.results.filter(function (post1){
+            if (post1.title == current){
+              return false; // filter out the current post from recommended
+            }
+              return true;
+          }).map(post => (
+            <Link to={post.slug}>
+            <Box justify="center" margin={this.props.is_recommend?{vertical:"5vh"}:
+            {horizontal:"20vw",vertical:"5vh"}} 
+            height="50vw"
+            style={{backgroundColor:"white"}} border={{color: '#d3d3d3', opacity: '100'}}
+            pad={{bottom:'xsmall'}}
+            
+            >
+              <Image
+                style={{ margin: "0px" }}
+                fit="cover"
+                src={
+                  this.state.images[post.title]
+                }
+              />
+              <Heading level="2" margin={{top:"small", right:"3vw", left:"3vw", bottom:"small"}}>
+                
+                {post.title}
+              </Heading>
+              <Text margin={{horizontal:"3vw", bottom:'small'}}>
+                By: {post.author}<br/>
+                {dateFormat(new Date(post.date),"mmmm d, yyyy")}
+              </Text>
+
+              <Box margin={{'left':"3vw"}}>
+                <Tag tags={post.tags}></Tag>
+              </Box>
+
+            </Box>
+          </Link>
+          ))}
+          
+          </Tablet>
+          <Mobile>
+          {this.state.results.filter(function (post1){
+            if (post1.title == current){
+              return false; // filter out the current post from recommended
+            }
+              return true;
+          }).map(post => (
+          <Link to={post.slug}>
+            <Box justify="center" margin={this.props.is_recommend?{vertical:"large"}:
+            {vertical:"large", horizontal:'8vw'}}
+                 height="medium"
+                 pad={{bottom:'medium'}}
+                 style={{backgroundColor:"white"}}
+                 border={{color: '#d3d3d3', opacity: '100'}} >
+              <Image
+                style={{ margin: "0px" }}
+                fit="cover"
+                src={
+                  this.state.images[post.title]
+                }
+              />
+              <Heading  level="2" margin={{top:"medium", right:"medium", left:"medium", bottom:"0"}}>
+                
+                {post.title}
+              </Heading>
+              <Text margin='small'>
+                {" "}
+                
+                By: {post.author} <br/>
+                {dateFormat(new Date(post.date),"mmmm d, yyyy")}
+              </Text>
+
+              <Box margin={{'left':"3vw"}}>
+                <Tag tags={post.tags}></Tag>
+              </Box>
+
+            </Box>
+          </Link>
+          ))}
+
+          </Mobile>
         </React.Fragment>
       )
     }
