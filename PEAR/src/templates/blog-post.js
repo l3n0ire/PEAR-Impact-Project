@@ -26,7 +26,7 @@ export default function Template({data}) {
       <Desktop>
      
        <Box
-         height ="50vh"
+         height ="60vh"
          background = {{ opacity:"weak", image:imageUrl }}
          pad="8vw"
          />

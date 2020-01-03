@@ -2,7 +2,7 @@
 date: '2019-12-07'
 title: Dangerous Waters
 author: Daniel Chua
-featuredImage: /PEAR/static/images/asian-man2.jpg
+featuredImage: /PEAR/static/images/asian-man.jpg
 clientName: azhar
 tags:
   - Vietnam

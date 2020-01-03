@@ -58,7 +58,7 @@ const Layout = ({children}) => {
       <Accordion>
         <div style={{height: '100vh', width: '100vw'}}>
           <Grid
-            rows={['xsmall', 'flex', isMobile? '100vh':'medium']}
+            rows={['xsmall', 'flex', isMobile? '35em':'medium']}
             columns={['full']}
             justifyContent="center"
             areas={[
@@ -81,7 +81,7 @@ const Layout = ({children}) => {
                 margin="none"
                 style={{
                   fontWeight: 400,
-                  lineHeight: "4vh",
+                  lineHeight: "1em",
                   padding: "none",
                   fontSize: "1.5em",
 
@@ -94,7 +94,7 @@ const Layout = ({children}) => {
                 margin="none"
                 style={{
                   fontWeight: 400,
-                  lineHeight: "4vh",
+                  lineHeight: "1em",
                   padding: "none",
                   fontSize: "1.5em",
                 }}
@@ -202,7 +202,7 @@ const Layout = ({children}) => {
                 text="Share Your Story" 
                 hoverColor="black"
                 fillColor="white"
-                target="/" boxMargin="0"/>
+                target="/contact" boxMargin="0"/>
 
 
 

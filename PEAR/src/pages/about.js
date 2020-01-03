@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import {Box, Heading, Image, Paragraph} from 'grommet';
+import PlainButton from '../components/plainbutton'
 
 const AboutPage = () => (
   <Layout>
@@ -31,6 +32,7 @@ const AboutPage = () => (
             at Seneca College in Toronto.
             
           </p>
+          <a href="https://azharlaher.com/about-azhar" style={{textDecoration:"underline"}}> <b>Learn more about Azhar</b></a>
     </Box>
   </Layout>
 )

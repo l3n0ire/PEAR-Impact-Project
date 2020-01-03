@@ -46,7 +46,7 @@ const BlogPage = ({ data }) => (
                 adapt to their new lives in Canada.
               </Text>
 
-              <PlainButton text="Share Your Story"  target="/" boxMargin="0"/>
+              <PlainButton text="Share Your Story"  target="/contact" boxMargin="0"/>
 
 
 
@@ -133,7 +133,7 @@ const BlogPage = ({ data }) => (
                 adapt to their new lives in Canada.
               </Text>
 
-              <PlainButton text="Share Your Story"  target="/" boxMargin="0"/>
+              <PlainButton text="Share Your Story"  target="/contact" boxMargin="0"/>
 
 
 
@@ -178,13 +178,13 @@ const BlogPage = ({ data }) => (
 
       <Box 
               margin={{vertical:"3vw", horizontal:'8vw'}}
-              height="120vw" border={{color: '#d3d3d3', opacity: '100'}}
+              height="28em" border={{color: '#d3d3d3', opacity: '100'}}
               style={{backgroundColor:"white"}}
               pad={{bottom:'medium'}}
             
                         >
               <Image
-                    style={{ padding: "0px", margin: "0px", maxHeight:"50vh" }}
+                    style={{ padding: "0px", margin: "0px", maxHeight:"40vh" }}
                     fit="cover"
                     src='../images/home.jpg'
                     
@@ -205,7 +205,7 @@ const BlogPage = ({ data }) => (
                 adapt to their new lives in Canada.
               </Text>
 
-              <PlainButton text="Share Your Story"  target="/" boxMargin="0" />
+              <PlainButton text="Share Your Story"  target="/contact" boxMargin="0" />
 
 
 
