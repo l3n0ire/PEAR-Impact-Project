@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import Link from 'gatsby-link'
 import { Box, Heading } from 'grommet'
 import { useMediaQuery } from "react-responsive"
-import Dropdown from './dropdown'
-import PlainButton from './plainbutton'
+import Dropdown from './Dropdown'
+import PlainButton from './PlainButton'
 import SearchBar from './SearchBar'
 
 

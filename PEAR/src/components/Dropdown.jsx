@@ -7,8 +7,8 @@ import {grommet} from 'grommet/themes';
 import {Article, Contact, ContactInfo, Services, FormDown} from 'grommet-icons';
 import Link from 'gatsby-link';
 import SearchBar from './SearchBar';
-import PlainButton from './plainbutton';
-import {Desktop, Mobile,Tablet} from './menu';
+import PlainButton from './PlainButton';
+import {Desktop, Mobile,Tablet} from './Menu';
 
 
 

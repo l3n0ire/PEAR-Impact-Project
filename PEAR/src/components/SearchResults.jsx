@@ -7,8 +7,8 @@ import { Index } from 'elasticlunr'
 const qs = require('query-string')
 import { useMediaQuery } from "react-responsive"
 var dateFormat = require('dateformat');
-import Tag from './tag'
-import {Desktop, Mobile, Tablet} from '../components/menu';
+import Tag from './Tag'
+import {Desktop, Mobile, Tablet} from './Menu';
 
 
 
