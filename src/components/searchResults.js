@@ -4,8 +4,8 @@ import { Component } from 'react'
 import { TextInput, Box, Text, Button, Grommet,Image,Heading,Grid } from 'grommet'
 import { Search, Close } from 'grommet-icons'
 import { Index } from 'elasticlunr'
-import Tag from './Tag'
-import {Desktop, Mobile, Tablet} from './Menu'
+import Tag from './tag'
+import {Desktop, Mobile, Tablet} from './menu'
 const qs = require('query-string')
 var dateFormat = require('dateformat')
 
