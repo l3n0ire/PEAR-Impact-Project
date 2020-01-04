@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout.jsx';
+import Layout from '../components/layout';
 import {Box, Heading, Image, Paragraph} from 'grommet';
 
 const AboutPage = () => (
