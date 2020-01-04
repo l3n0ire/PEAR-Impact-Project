@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {StaticQuery, Link} from 'gatsby';
 import {graphql} from 'gatsby';
 
-import SearchResults from './SearchResults';
+import SearchResults from './searchResults';
 
 export default class Header extends Component{
   render(){

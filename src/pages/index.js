@@ -5,7 +5,7 @@ import {Grid, Box, TextInput, Text, Heading, Image, Grommet,Button  } from 'grom
 import Link from 'gatsby-link';
 import {Desktop, Mobile, Tablet} from '../components/menu';
 import {graphql} from 'gatsby';
-import PlainButton from '../components/plainbutton';
+import PlainButton from '../components/plainButton';
 import Tag from '../components/tag'
 var dateFormat = require('dateformat');
 

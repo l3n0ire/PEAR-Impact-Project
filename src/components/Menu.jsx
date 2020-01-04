@@ -2,9 +2,9 @@ import React, { Fragment } from 'react'
 import Link from 'gatsby-link'
 import { Box, Heading } from 'grommet'
 import { useMediaQuery } from "react-responsive"
-import Dropdown from './Dropdown'
-import PlainButton from './PlainButton'
-import SearchBar from './SearchBar'
+import Dropdown from './dropdown'
+import PlainButton from './plainButton'
+import SearchBar from './searchBar'
 
 
 const Desktop = ({ children }) => {

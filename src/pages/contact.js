@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
-import PlainButton from '../components/plainbutton';
+import PlainButton from '../components/plainButton';
 
 import {Box, Heading, FormField, Form, TextArea, Button, grommet, Grommet} from 'grommet';
 import ReCAPTCHA from 'react-google-recaptcha';

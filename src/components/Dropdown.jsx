@@ -6,9 +6,9 @@ import {Grommet, Box, Text, Menu, AccordionPanel} from 'grommet';
 import {grommet} from 'grommet/themes';
 import {Article, Contact, ContactInfo, Services, FormDown} from 'grommet-icons';
 import Link from 'gatsby-link';
-import SearchBar from './SearchBar';
-import PlainButton from './PlainButton';
-import {Desktop, Mobile,Tablet} from './Menu';
+import SearchBar from './searchBar';
+import PlainButton from './plainButton';
+import {Desktop, Mobile,Tablet} from './menu';
 
 
 
