@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-blog-post-js","path":"/post-1","result":{"data":{"markdownRemark":{"html":"<p>This is my very first blog post!</p>","frontmatter":{"path":"/post-1","title":"My First Gatsby Post","author":"Colin Lin","date":"2019-11-07","tags":"Iran, Computer Science"}}},"pageContext":{"isCreatedByStatefulCreatePages":false}}}
