@@ -1,12 +1,12 @@
 import React, {Fragment} from 'react';
 
-import Layout from '../components/layout';
+import Layout from '../components/layout.jsx';
 import {Grid, Box, TextInput, Text, Heading, Image, Grommet,Button  } from 'grommet';
 import Link from 'gatsby-link';
-import {Desktop, Mobile, Tablet} from '../components/menu';
+import {Desktop, Mobile, Tablet} from '../components/menu.jsx';
 import {graphql} from 'gatsby';
-import PlainButton from '../components/plainButton';
-import Tag from '../components/tag'
+import PlainButton from '../components/plainButton.jsx';
+import Tag from '../components/tag.jsx'
 var dateFormat = require('dateformat');
 
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/layout.jsx';
 import {Box, Heading, Image, Paragraph} from 'grommet';
-import PlainButton from '../components/plainbutton'
 
 const AboutPage = () => (
   <Layout>

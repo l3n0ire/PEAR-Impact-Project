@@ -1,10 +1,10 @@
 import React from 'react';
-import Layout from '../components/layout';
-import PlainButton from '../components/plainButton';
+import Layout from '../components/layout.jsx';
+import PlainButton from '../components/plainButton.jsx';
 
 import {Box, Heading, FormField, Form, TextArea, Button, grommet, Grommet} from 'grommet';
 import ReCAPTCHA from 'react-google-recaptcha';
-import {Desktop, Mobile, Tablet} from '../components/menu';
+import {Desktop, Mobile, Tablet} from '../components/menu.jsx';
 
 function onChange(value) {
   console.log('Captcha value:', value);

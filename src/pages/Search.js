@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../components/header';
-import Layout from '../components/layout';
+import Header from '../components/header.jsx';
+import Layout from '../components/layout.jsx';
 
 const search = () => (
   <Layout>
