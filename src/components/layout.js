@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import {useStaticQuery, graphql, Link} from 'gatsby';
 import {Grid, Box, Grommet, Text, Accordion, AccordionPanel, Button, Heading} from 'grommet';
 import { Helmet } from 'react-helmet'
-import Menu from './menu';
+import Menu from './Menu';
 import './layout.css';
 import globalTheme from './style';
 import Dropdown from './dropdown';
 import {FacebookOption, Instagram, Twitter, MailOption, LinkedinOption} from 'grommet-icons';
 import PlainButton from "./plainButton"
-import {Desktop, Tablet, Mobile} from "./menu"
+import {Desktop, Tablet, Mobile} from "./Menu"
 import { useMediaQuery } from "react-responsive"
 
 
