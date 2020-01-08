@@ -13,7 +13,6 @@ const AboutPage = () => (
       src="https://azharlaher.com/wp-content/uploads/2019/10/img-3299_1_orig-1024x576.jpg"
       margin='0'
       fit="contain"
-      alt="hi"
       fill/>
       </Box>
 

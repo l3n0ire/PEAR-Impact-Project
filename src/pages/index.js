@@ -28,7 +28,6 @@ const BlogPage = ({ data }) => (
                     style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
                     src='../images/home.jpg'
-                    alt="hi"
                     
                   />
 
