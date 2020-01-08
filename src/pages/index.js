@@ -28,7 +28,7 @@ const BlogPage = ({ data }) => (
                     style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
                     src='../images/home.jpg'
-                    a11yTitle="hi"
+                    alt="hi"
                     
                   />
 
@@ -73,7 +73,6 @@ const BlogPage = ({ data }) => (
                   <Image
                     style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
-                    a11yTitle="hi"
                     src={
                       post.node.frontmatter.featuredImage.childImageSharp.fluid
                         .src
@@ -117,7 +116,6 @@ const BlogPage = ({ data }) => (
                     style={{ padding: "0px", margin: "0px" }}
                     fit="cover"
                     src='../images/home.jpg'
-                    a11yTitle="hi"
                     
                   />
 
@@ -153,7 +151,6 @@ const BlogPage = ({ data }) => (
               <Image
                 style={{ margin: "0px" }}
                 fit="cover"
-                a11yTitle="hi"
                 src={
                   post.node.frontmatter.featuredImage.childImageSharp.fluid.src
                 }
@@ -191,7 +188,6 @@ const BlogPage = ({ data }) => (
                     style={{ padding: "0px", margin: "0px", maxHeight:"40vh" }}
                     fit="cover"
                     src='../images/home.jpg'
-                    a11yTitle="hi"
                     
                   />
 
@@ -228,7 +224,6 @@ const BlogPage = ({ data }) => (
               <Image
                 style={{ margin: "0px" }}
                 fit="cover"
-                a11yTitle="hi"
                 src={
                   post.node.frontmatter.featuredImage.childImageSharp.fluid.src
                 }
