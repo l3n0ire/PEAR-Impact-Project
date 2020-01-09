@@ -4,6 +4,7 @@ title: Mountain Trek
 author: Jesse Maltese
 featuredImage: /static/images/mountain-man.jpg
 clientName: Client... Name?
+countryCode: ar
 tags: ['Argentina', 'Dangerous','War']
 ---
 This is a post

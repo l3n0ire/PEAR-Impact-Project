@@ -1,98 +1,135 @@
 import React, {Fragment} from 'react';
 
 import Layout from '../components/layout';
-import {Grid, Box, TextInput, Text, Heading, Image, Grommet,Button  } from 'grommet';
+import {
+  Grid,
+  Box,
+  TextInput,
+  Text,
+  Heading,
+  Image,
+  Grommet,
+  Button,
+} from 'grommet';
 import Link from 'gatsby-link';
 import {Desktop, Mobile, Tablet} from '../components/menu';
 import {graphql} from 'gatsby';
 import PlainButton from '../components/plainButton';
-import Tag from '../components/tag'
-var dateFormat = require('dateformat');
-
+import Tag from '../components/tag';
+const dateFormat = require('dateformat');
+const countryList = require('country-list')
 
 const BlogPage = ({ data }) => (
-
   <Box>
     <Desktop>
       <Fragment>
         <Layout>
-          
-            <Box 
-              margin={{horizontal:"8vw", vertical:"medium"}}
-              height="85vh" border={{color: '#d3d3d3', opacity: '100', side:"bottom"}}
-              style={{backgroundColor:"white"}}
-              pad={{bottom:'medium'}}
-            
-                        >
-              <Image
-                    style={{ padding: "0px", margin: "0px" }}
-                    fit="cover"
-                    src='../images/home.jpg'
-                    
-                  />
+          <Box
+            margin={{ horizontal: '8vw', vertical: 'medium' }}
+            height='85vh'
+            border={{ color: '#d3d3d3', opacity: '100', side: 'bottom' }}
+            style={{ backgroundColor: 'white' }}
+            pad={{ bottom: 'medium' }}
+          >
+            <Image
+              style={{ padding: '0px', margin: '0px' }}
+              fit='cover'
+              alt='Home page photograph'
+              src='../images/home.jpg'
+            />
 
-                <Heading
-                      margin={{top:"medium", horizontal:"medium", bottom:"small"}}
-                      level="2"
-                    >
-                                    Success Stories of New Canadians
+            <Heading
+              margin={{ top: 'medium', horizontal: 'medium', bottom: 'small' }}
+              level='2'
+            >
+              Success Stories of New Canadians
+            </Heading>
+            <Text
+              size='medium'
+              margin={{ horizontal: 'medium', bottom: 'medium' }}
+            >
+              is a website created by Azhar Laher which features the stories of
+              Canadian immigrants. If you are a new immigrant yourself and wish
+              to share your story, click the button below or contact Azhar. We
+              hope these stories will inspire our readers and help immigrants
+              adapt to their new lives in Canada.
+            </Text>
 
-                    
-                </Heading>
-              <Text size="medium" margin={{horizontal:"medium", bottom:"medium"}} >
-                is a website created by Azhar Laher which features the stories of Canadian immigrants.
-                If you are a new immigrant yourself and wish to share your story, click the button below
-                or contact Azhar. We hope these stories will inspire our readers and help immigrants
-                adapt to their new lives in Canada.
-              </Text>
+            <PlainButton
+              text='Share Your Story'
+              target='/contact'
+              boxMargin='0'
+            />
+          </Box>
+          <Heading margin={{ horizontal: '8vw', vertical: 'large' }} level='1'>
+            Latest Posts
+          </Heading>
 
-              <PlainButton text="Share Your Story"  target="/contact" boxMargin="0"/>
-
-
-
-            </Box>
-            <Heading margin={{horizontal:"8vw", vertical:"large"}}level="1">
-              Latest Posts</Heading>
-
-            <Grid
-            alignSelf="center"
-            columns={["flex", "flex","flex"]}
-            rows="flex"
-            alignContent="center"
-            gap="small"
+          <Grid
+            alignSelf='center'
+            columns={['flex', 'flex', 'flex']}
+            rows='flex'
+            alignContent='center'
+            gap='small'
             align='stretch'
-            margin={{vertical:"3vw", horizontal:'8vw'}}
-            
-
+            margin={{ vertical: '3vw', horizontal: '8vw' }}
           >
             {data.allMarkdownRemark.edges.map(post => (
               <Link to={post.node.fields.slug}>
-                <Box justify="center" height="27vw" border={{color: '#d3d3d3', opacity: '100'}}
-                 style={{backgroundColor:"white"}}  >
+                <Box
+                  justify='center'
+                  height='27vw'
+                  border={{ color: '#d3d3d3', opacity: '100' }}
+                  style={{ backgroundColor: 'white' }}
+                >
                   <Image
-                    style={{ padding: "0px", margin: "0px" }}
-                    fit="cover"
+                    style={{ padding: '0px', margin: '0px' }}
+                    fit='cover'
                     src={
                       post.node.frontmatter.featuredImage.childImageSharp.fluid
                         .src
                     }
+                    alt='Story image'
                   />
-                    <Heading
-                      margin={{top:"xsmall", right:"medium", left:"medium", bottom:"xsmall"}}
-                      level="3"
-                    >
-                      {post.node.frontmatter.title}
-                    </Heading>
-                    <Text size="medium" margin={{horizontal:"medium", bottom:"small"}}>
-                    By: {post.node.frontmatter.author}<br/>
-                    {dateFormat(new Date(post.node.frontmatter.date),"mmmm d, yyyy")}
-                    </Text>
-
-                    <Box margin={{'left':"medium"}} pad={{"bottom":"0"}}>
-                      <Tag tags={post.node.frontmatter.tags}></Tag>
+                  <Heading
+                    margin={{
+                      top: 'xsmall',
+                      right: 'medium',
+                      left: 'medium',
+                      bottom: 'xsmall'
+                    }}
+                    level='3'
+                  >
+                    {post.node.frontmatter.title}
+                  </Heading>
+                  <Text
+                    size='medium'
+                    margin={{ horizontal: 'medium', bottom: 'small' }}
+                  >
+                    By: {post.node.frontmatter.author}
+                    <br />
+                    {dateFormat(
+                      new Date(post.node.frontmatter.date),
+                      'mmmm d, yyyy'
+                    )}
+                  </Text>
+                  {console.log(post.node.frontmatter)}
+                  <Box margin={{ left: 'medium' }} pad={{ bottom: '0' }}>
+                    <Box height='xxsmall' width='xxsmall'>
+                      <Image
+                        alignSelf='start'
+                        fill={false}
+                        fit='contain'
+                        a11yTitle={countryList.getName(post.node.frontmatter.countryCode)}
+                        src={
+                          '../images/flags/' +
+                          post.node.frontmatter.countryCode +
+                          '.png'
+                        }
+                      />
                     </Box>
-
-
+                    <Tag tags={post.node.frontmatter.tags}></Tag>
+                  </Box>
                 </Box>
               </Link>
             ))}
@@ -103,70 +140,87 @@ const BlogPage = ({ data }) => (
 
     <Tablet>
       <Layout>
+        <Box
+          margin={{ vertical: '3vw', horizontal: '20vw' }}
+          height='70vw'
+          border={{ color: '#d3d3d3', opacity: '100' }}
+          style={{ backgroundColor: 'white' }}
+          pad={{ bottom: 'medium' }}
+        >
+          <Image
+            style={{ padding: '0px', margin: '0px' }}
+            fit='cover'
+            src='../images/home.jpg'
+          />
 
-      <Box 
-              margin={{vertical:"3vw", horizontal:'20vw'}}
-              height="70vw" border={{color: '#d3d3d3', opacity: '100'}}
-              style={{backgroundColor:"white"}}
-              pad={{bottom:'medium'}}
-            
-                        >
-              <Image
-                    style={{ padding: "0px", margin: "0px" }}
-                    fit="cover"
-                    src='../images/home.jpg'
-                    
-                  />
+          <Heading
+            margin={{
+              top: 'medium',
+              right: '3vw',
+              left: '3vw',
+              bottom: 'small'
+            }}
+            level='2'
+          >
+            Success Stories of New Canadians
+          </Heading>
+          <Text size='medium' margin={{ horizontal: '3vw', bottom: 'medium' }}>
+            is a website created by Azhar Laher which features the stories of
+            Canadian immigrants. If you are a new immigrant yourself and wish to
+            share your story, click the button below or contact Azhar. We hope
+            these stories will inspire our readers and help immigrants adapt to
+            their new lives in Canada.
+          </Text>
 
-                <Heading
-                      margin={{top:"medium", right:"3vw", left:"3vw", bottom:"small"}}
-                      level="2"
-                    >
-                                    Success Stories of New Canadians
-
-                    
-                </Heading>
-              <Text size="medium" margin={{horizontal:"3vw", bottom:"medium"}}>
-                is a website created by Azhar Laher which features the stories of Canadian immigrants.
-                If you are a new immigrant yourself and wish to share your story, click the button below
-                or contact Azhar. We hope these stories will inspire our readers and help immigrants
-                adapt to their new lives in Canada.
-              </Text>
-
-              <PlainButton text="Share Your Story"  target="/contact" boxMargin="0"/>
-
-
-
-            </Box>
-            <Heading margin={{horizontal:"20vw", vertical:"large"}}level="1">
-              Latest Posts</Heading>
+          <PlainButton
+            text='Share Your Story'
+            target='/contact'
+            boxMargin='0'
+          />
+        </Box>
+        <Heading margin={{ horizontal: '20vw', vertical: 'large' }} level='1'>
+          Latest Posts
+        </Heading>
         {data.allMarkdownRemark.edges.map(post => (
           <Link to={post.node.fields.slug}>
-            <Box justify="center" margin={{horizontal:"20vw",vertical:"5vh"}} height="50vw"
-            style={{backgroundColor:"white"}} border={{color: '#d3d3d3', opacity: '100'}}
-            pad={{bottom:'xsmall'}}
-            
+            <Box
+              justify='center'
+              margin={{ horizontal: '20vw', vertical: '5vh' }}
+              height='50vw'
+              style={{ backgroundColor: 'white' }}
+              border={{ color: '#d3d3d3', opacity: '100' }}
+              pad={{ bottom: 'xsmall' }}
             >
               <Image
-                style={{ margin: "0px" }}
-                fit="cover"
+                style={{ margin: '0px' }}
+                fit='cover'
                 src={
                   post.node.frontmatter.featuredImage.childImageSharp.fluid.src
                 }
               />
-              <Heading level="2" margin={{top:"small", right:"3vw", left:"3vw", bottom:"small"}}>
-                
+              <Heading
+                level='2'
+                margin={{
+                  top: 'small',
+                  right: '3vw',
+                  left: '3vw',
+                  bottom: 'small'
+                }}
+              >
                 {post.node.frontmatter.title}
               </Heading>
-              <Text margin={{horizontal:"3vw", bottom:'small'}}>
-                By: {post.node.frontmatter.author}<br/>
-                {dateFormat(new Date(post.node.frontmatter.date),"mmmm d, yyyy")}
+              <Text margin={{ horizontal: '3vw', bottom: 'small' }}>
+                By: {post.node.frontmatter.author}
+                <br />
+                {dateFormat(
+                  new Date(post.node.frontmatter.date),
+                  'mmmm d, yyyy'
+                )}
               </Text>
 
-              <Box margin={{'left':"3vw"}}>
+              <Box margin={{ left: '3vw' }}>
                 <Tag tags={post.node.frontmatter.tags}></Tag>
               </Box>
-
             </Box>
           </Link>
         ))}
@@ -175,113 +229,125 @@ const BlogPage = ({ data }) => (
 
     <Mobile>
       <Layout>
+        <Box
+          margin={{ vertical: '3vw', horizontal: '8vw' }}
+          height='28em'
+          border={{ color: '#d3d3d3', opacity: '100' }}
+          style={{ backgroundColor: 'white' }}
+          pad={{ bottom: 'medium' }}
+        >
+          <Image
+            style={{ padding: '0px', margin: '0px', maxHeight: '40vh' }}
+            fit='cover'
+            src='../images/home.jpg'
+          />
 
-      <Box 
-              margin={{vertical:"3vw", horizontal:'8vw'}}
-              height="28em" border={{color: '#d3d3d3', opacity: '100'}}
-              style={{backgroundColor:"white"}}
-              pad={{bottom:'medium'}}
-            
-                        >
-              <Image
-                    style={{ padding: "0px", margin: "0px", maxHeight:"40vh" }}
-                    fit="cover"
-                    src='../images/home.jpg'
-                    
-                  />
+          <Heading
+            margin={{
+              top: 'small',
+              right: '3vw',
+              left: '3vw',
+              bottom: 'small'
+            }}
+            level='2'
+          >
+            Success Stories of New Canadians
+          </Heading>
+          <Text size='small' margin={{ horizontal: '3vw', bottom: 'small' }}>
+            is a website created by Azhar Laher which features the stories of
+            Canadian immigrants. If you are a new immigrant yourself and wish to
+            share your story, click the button below or contact Azhar. We hope
+            these stories will inspire our readers and help immigrants adapt to
+            their new lives in Canada.
+          </Text>
 
-                <Heading
-                      margin={{top:"small", right:"3vw", left:"3vw", bottom:"small"}}
-                      level="2"
-                    >
-                                    Success Stories of New Canadians
+          <PlainButton
+            text='Share Your Story'
+            target='/contact'
+            boxMargin='0'
+          />
+        </Box>
 
-                    
-                </Heading>
-              <Text size="small" margin={{horizontal:"3vw", bottom:"small"}}>
-                is a website created by Azhar Laher which features the stories of Canadian immigrants.
-                If you are a new immigrant yourself and wish to share your story, click the button below
-                or contact Azhar. We hope these stories will inspire our readers and help immigrants
-                adapt to their new lives in Canada.
-              </Text>
-
-              <PlainButton text="Share Your Story"  target="/contact" boxMargin="0" />
-
-
-
-            </Box>
-
-            <Heading margin={{horizontal:"8vw", vertical:"large"}}level="1">
-              Latest Posts</Heading>
+        <Heading margin={{ horizontal: '8vw', vertical: 'large' }} level='1'>
+          Latest Posts
+        </Heading>
         {data.allMarkdownRemark.edges.map(post => (
           <Link to={post.node.fields.slug}>
-            <Box justify="center" margin={{vertical:"large", horizontal:'8vw'}}
-                 height="medium"
-                 pad={{bottom:'medium'}}
-                 style={{backgroundColor:"white"}}
-                 border={{color: '#d3d3d3', opacity: '100'}} >
+            <Box
+              justify='center'
+              margin={{ vertical: 'large', horizontal: '8vw' }}
+              height='medium'
+              pad={{ bottom: 'medium' }}
+              style={{ backgroundColor: 'white' }}
+              border={{ color: '#d3d3d3', opacity: '100' }}
+            >
               <Image
-                style={{ margin: "0px" }}
-                fit="cover"
+                style={{ margin: '0px' }}
+                fit='cover'
                 src={
                   post.node.frontmatter.featuredImage.childImageSharp.fluid.src
                 }
               />
-              <Heading  level="2" margin={{top:"medium", right:"medium", left:"medium", bottom:"0"}}>
-                
+              <Heading
+                level='2'
+                margin={{
+                  top: 'medium',
+                  right: 'medium',
+                  left: 'medium',
+                  bottom: '0'
+                }}
+              >
                 {post.node.frontmatter.title}
               </Heading>
               <Text margin='small'>
-                {" "}
-                
-                By: {post.node.frontmatter.author} <br/>
-                {dateFormat(new Date(post.node.frontmatter.date),"mmmm d, yyyy")}
+                {' '}
+                By: {post.node.frontmatter.author} <br />
+                {dateFormat(
+                  new Date(post.node.frontmatter.date),
+                  'mmmm d, yyyy'
+                )}
               </Text>
 
-              <Box margin={{'left':"3vw"}}>
+              <Box margin={{ left: '3vw' }}>
                 <Tag tags={post.node.frontmatter.tags}></Tag>
               </Box>
-
             </Box>
           </Link>
         ))}
       </Layout>
     </Mobile>
   </Box>
-)
-
+);
 
 export const pageQuery = graphql`
-         query MainPageQuery {
-           allMarkdownRemark(
-             sort: {
-               fields: [frontmatter___date, frontmatter___title]
-               order: DESC
-             }
-           ) {
-             edges {
-               node {
-                 fields {
-                   slug
-                 }
-                 frontmatter {
-                   title
-                   date
-                   clientName
-                   author
-                   tags
-                   featuredImage {
-                     childImageSharp {
-                       fluid(maxWidth: 800, quality: 100) {
-                         src
-                       }
-                     }
-                   }
-                 }
-               }
-             }
-           }
-         }
-       `;
+  query MainPageQuery {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date, frontmatter___title], order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date
+            clientName
+            author
+            tags
+            countryCode
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 50) {
+                  src
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default BlogPage;

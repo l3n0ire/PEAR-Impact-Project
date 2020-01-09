@@ -4,6 +4,7 @@ title: Journey On Foot
 author: Azhar
 featuredImage: /static/images/backpack-woman.jpg
 clientName: Azhar
+countryCode: us
 tags:
   - America
   - Hiking

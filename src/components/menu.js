@@ -1,39 +1,39 @@
-import React, { Fragment } from 'react'
-import Link from 'gatsby-link'
-import { Box, Heading } from 'grommet'
-import { useMediaQuery } from "react-responsive"
-import Dropdown from './dropdown'
-import PlainButton from './plainButton'
-import SearchBar from './searchBar'
+import React, {Fragment} from 'react';
+import Link from 'gatsby-link';
+import {Box, Heading} from 'grommet';
+import {useMediaQuery} from 'react-responsive';
+import Dropdown from './dropdown';
+import PlainButton from './plainButton';
+import SearchBar from './searchBar';
 
 
-const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 1025 })
-  const isLandscape = useMediaQuery({ query: '(orientation: landscape)' })
-  return isLandscape && isDesktop ? children : null
-}
-const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({maxWidth: 767 })
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' })
-  return isMobile ? children : null
-}
-const Tablet = ({ children }) => {
-  const isTablet = useMediaQuery({maxWidth: 1024, minWidth:768 })
-  return isTablet ? children : null
-}
+const Desktop = ({children}) => {
+  const isDesktop = useMediaQuery({minWidth: 1025});
+  const isLandscape = useMediaQuery({query: '(orientation: landscape)'});
+  return isLandscape && isDesktop ? children : null;
+};
+const Mobile = ({children}) => {
+  const isMobile = useMediaQuery({maxWidth: 767});
+  const isPortrait = useMediaQuery({query: '(orientation: portrait)'});
+  return isMobile ? children : null;
+};
+const Tablet = ({children}) => {
+  const isTablet = useMediaQuery({maxWidth: 1024, minWidth: 768});
+  return isTablet ? children : null;
+};
 
 const Menu = () => (
   <Box
     style={{
-      flexDirection: "row",
+      flexDirection: 'row',
     }}
     fill="horizontal"
     align="center"
     direction="row"
     height="xsmall"
-    //elevation="xsmall"
+    // elevation="xsmall"
     background={{
-      color: "black",
+      color: 'black',
     }}
   >
     <Desktop>
@@ -41,11 +41,11 @@ const Menu = () => (
         <Box
           display="inline-block"
           style={{
-            whiteSpace: "nowrap",
+            whiteSpace: 'nowrap',
           }}
-          flex={{ grow: 2, shrink: 1 }}
-          width={{ min: "225px", max: "10%" }}
-          margin={{left:'8vw'}}
+          flex={{grow: 2, shrink: 1}}
+          width={{min: '225px', max: '10%'}}
+          margin={{left: '8vw'}}
 
         >
           <Link to="/">
@@ -59,9 +59,9 @@ const Menu = () => (
                 margin="none"
                 style={{
                   fontWeight: 400,
-                  lineHeight: "4vh",
-                  padding: "none",
-                  fontSize: "1.5em",
+                  lineHeight: '4vh',
+                  padding: 'none',
+                  fontSize: '1.5em',
 
                 }}
                 color="white"
@@ -72,26 +72,26 @@ const Menu = () => (
                 margin="none"
                 style={{
                   fontWeight: 400,
-                  lineHeight: "4vh",
-                  padding: "none",
-                  fontSize: "1.5em",
+                  lineHeight: '4vh',
+                  padding: 'none',
+                  fontSize: '1.5em',
                 }}
                 color="white"
               >
-                of <span style={{ color: "red" }}>New Canadians</span>
+                of <span style={{color: 'red'}}>New Canadians</span>
               </Heading>
             </Box>
           </Link>
         </Box>
         <Box
-          flex={{ grow: 1, shrink: 2 }}
-          style={{ whiteSpace: "nowrap" }}
+          flex={{grow: 1, shrink: 2}}
+          style={{whiteSpace: 'nowrap'}}
           direction="row"
           align="center"
           justify="around"
           display="inline-block"
-          margin={{left:"0",right:'4vw'}}
-          
+          margin={{left: '0', right: '4vw'}}
+
 
         >
           <PlainButton
@@ -128,31 +128,31 @@ const Menu = () => (
           />
           <SearchBar></SearchBar>
         </Box>
-        
+
       </Fragment>
     </Desktop>
-    
+
     <Mobile>
       <Link to="/">
         <Box
           margin="none"
-          width={{ min: "50%" }}
-          margin={{horizontal:'8vw'}}
+          width={{min: '50%'}}
+          margin={{horizontal: '8vw'}}
 
         >
           <Heading
             color="white"
             margin="none"
             style={{
-              lineHeight: "4vh",
-              padding: "none",
+              lineHeight: '4vh',
+              padding: 'none',
               fontWeight: 400,
-              fontSize: "1.25em",
+              fontSize: '1.25em',
             }}
           >
-            Success Stories of <span style={{ color: "red", fontWeight: "bold" }}>New Canadians</span>
+            Success Stories of <span style={{color: 'red', fontWeight: 'bold'}}>New Canadians</span>
           </Heading>
-          
+
         </Box>
       </Link>
     </Mobile>
@@ -161,28 +161,28 @@ const Menu = () => (
       <Link to="/">
         <Box
           margin="none"
-          width={{ min: "50%" }}
-          margin={{horizontal:'8vw'}}
+          width={{min: '50%'}}
+          margin={{horizontal: '8vw'}}
 
         >
           <Heading
             color="white"
             margin="none"
             style={{
-              lineHeight: "4vh",
-              padding: "none",
+              lineHeight: '4vh',
+              padding: 'none',
               fontWeight: 400,
-              fontSize: "1.5em",
+              fontSize: '1.5em',
             }}
           >
-            Success Stories of <span style={{ color: "red", fontWeight: "bold" }}>New Canadians</span>
+            Success Stories of <span style={{color: 'red', fontWeight: 'bold'}}>New Canadians</span>
           </Heading>
-          
+
         </Box>
       </Link>
     </Tablet>
   </Box>
-)
+);
 
 export default Menu;
-export { Mobile, Desktop,Tablet };
+export {Mobile, Desktop, Tablet};

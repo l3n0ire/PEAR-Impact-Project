@@ -8,27 +8,26 @@ import {Article, Contact, ContactInfo, Services, FormDown} from 'grommet-icons';
 import Link from 'gatsby-link';
 import SearchBar from './searchBar';
 import PlainButton from './plainButton';
-import {Desktop, Mobile,Tablet} from './menu';
-
+import {Desktop, Mobile, Tablet} from './menu';
 
 
 const customLabel = () => (
-  <Box direction="row" align="center" pad={{vertical:"medium"}} margin={{horizontal:"8vw"}}
-  gap="none" style={{backgroundColor:'black'}}>
-      <Text color ='white' size="1.25em">Menu</Text>
+  <Box direction="row" align="center" pad={{vertical: 'medium'}} margin={{horizontal: '8vw'}}
+    gap="none" style={{backgroundColor: 'black'}}>
+    <Text color ='white' size="1.25em">Menu</Text>
   </Box>
 );
 const CustomAccordionTheme = {
-  global:{
-    color:{
-      focus:"#333"
-    }
+  global: {
+    color: {
+      focus: '#333',
+    },
   },
   textInput: {
     suggestions: {
       extend: {
-        backgroundColor: "black",
-        dropShadow: 'none'
+        backgroundColor: 'black',
+        dropShadow: 'none',
       },
     },
   },
@@ -57,14 +56,14 @@ const Dropdown = () => (
         <Fragment>
 
           <AccordionPanel
-          
+
             label ={customLabel()}
-            style={{backgroundColor:'black', padding:'0'}}
+            style={{backgroundColor: 'black', padding: '0'}}
           >
 
             <Box
               flex={{grow: 1, shrink: 2}}
-              style={{whiteSpace: 'nowrap', backgroundColor:'black'}}
+              style={{whiteSpace: 'nowrap', backgroundColor: 'black'}}
               direction="column"
               align="center"
               justify="evenly"
@@ -103,11 +102,11 @@ const Dropdown = () => (
               />
             </Box>
 
-            <Box style={{backgroundColor:"black", color:"white"}}
-                        pad={{vertical:"1vw", horizontal:'8vw'}}
-                      
+            <Box style={{backgroundColor: 'black', color: 'white'}}
+              pad={{vertical: '1vw', horizontal: '8vw'}}
+
             >
-                 
+
               <SearchBar ></SearchBar>
             </Box>
 
@@ -119,14 +118,14 @@ const Dropdown = () => (
         <Fragment>
 
           <AccordionPanel
-          
+
             label ={customLabel()}
-            style={{backgroundColor:'black', padding:'0'}}
+            style={{backgroundColor: 'black', padding: '0'}}
           >
 
             <Box
               flex={{grow: 1, shrink: 2}}
-              style={{whiteSpace: 'nowrap', backgroundColor:'black'}}
+              style={{whiteSpace: 'nowrap', backgroundColor: 'black'}}
               direction="column"
               align="center"
               justify="evenly"
@@ -165,9 +164,9 @@ const Dropdown = () => (
               />
             </Box>
 
-            <Box style={{backgroundColor:"black", color:"white"}}
+            <Box style={{backgroundColor: 'black', color: 'white'}}
             >
-                 
+
               <SearchBar ></SearchBar>
             </Box>
 

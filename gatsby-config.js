@@ -87,6 +87,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1000,
+              quality: 50
             },
           },
         ],
@@ -113,8 +114,7 @@ module.exports = {
             slug: node => node.fields.slug,
             author: node => node.frontmatter.author,
             clientName: node => node.frontmatter.clientName,
-            featuredImage: node => node.frontmatter.featuredImage
-            ,
+            featuredImage: node => node.frontmatter.featuredImage,
 
             //image: node => node.frontmatter.childImageSharp.fluid.base64,
             excerpt: node => {

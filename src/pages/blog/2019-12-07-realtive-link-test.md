@@ -4,6 +4,7 @@ title: Pursuit of Happiness
 author: Colin Lin
 featuredImage: /static/images/smiling-woman.jpg
 clientName: azhar
+countryCode: us
 tags:
   - America
   - Happy
