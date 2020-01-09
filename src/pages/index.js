@@ -82,15 +82,36 @@ const BlogPage = ({ data }) => (
                   border={{ color: '#d3d3d3', opacity: '100' }}
                   style={{ backgroundColor: 'white' }}
                 >
-                  <Image
-                    style={{ padding: '0px', margin: '0px' }}
-                    fit='cover'
+                <Image
+                  position='absolute'
+                  style={{ padding: '0px', margin: '0px', "zIndex": "1" }}
+                  fit='cover'
+                  src={
+                    post.node.frontmatter.featuredImage.childImageSharp
+                      .fluid.src
+                  }
+                  alt='Story image'
+                />
+                {/* 
+                This is for country images. Can't position it properly yet.
+                <Image
+                    style={{
+                      "height": '5vh', 
+                      "width": '7vw',
+                      "top": "5px",
+                      "zIndex": "3"
+                    }}
+                    fit='contain'
+                    position='absolute'
+                    a11yTitle={countryList.getName(
+                      post.node.frontmatter.countryCode
+                    )}
                     src={
-                      post.node.frontmatter.featuredImage.childImageSharp.fluid
-                        .src
+                      '../images/flags/' +
+                      post.node.frontmatter.countryCode +
+                      '.png'
                     }
-                    alt='Story image'
-                  />
+                    /> */}
                   <Heading
                     margin={{
                       top: 'xsmall',
@@ -114,20 +135,11 @@ const BlogPage = ({ data }) => (
                     )}
                   </Text>
                   {console.log(post.node.frontmatter)}
-                  <Box margin={{ left: 'medium' }} pad={{ bottom: '0' }}>
-                    <Box height='xxsmall' width='xxsmall'>
-                      <Image
-                        alignSelf='start'
-                        fill={false}
-                        fit='contain'
-                        a11yTitle={countryList.getName(post.node.frontmatter.countryCode)}
-                        src={
-                          '../images/flags/' +
-                          post.node.frontmatter.countryCode +
-                          '.png'
-                        }
-                      />
-                    </Box>
+                  <Box
+                    direction='row'
+                    margin={{ left: 'medium' }}
+                    pad={{ bottom: '0' }}
+                  >
                     <Tag tags={post.node.frontmatter.tags}></Tag>
                   </Box>
                 </Box>

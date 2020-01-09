@@ -1,3 +1,4 @@
 node_modules
 PEAR
 public
+.cache
