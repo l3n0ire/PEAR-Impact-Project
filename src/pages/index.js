@@ -15,12 +15,23 @@ import Link from 'gatsby-link';
 import {Desktop, Mobile, Tablet} from '../components/menu';
 import {graphql} from 'gatsby';
 import PlainButton from '../components/plainButton';
+import Img from "gatsby-image"
 import Tag from '../components/tag';
+import { Helmet } from 'react-helmet'
 const dateFormat = require('dateformat');
 const countryList = require('country-list')
 
+
+
 const BlogPage = ({ data }) => (
   <Box>
+    <Helmet>
+      <meta
+        charSet='utf-8'
+        name='description'
+        content='Collection of stories'
+      />
+    </Helmet>
     <Desktop>
       <Fragment>
         <Layout>
@@ -34,7 +45,6 @@ const BlogPage = ({ data }) => (
             <Image
               style={{ padding: '0px', margin: '0px' }}
               fit='cover'
-              alt='Home page photograph'
               src='../images/home.jpg'
             />
 
@@ -82,17 +92,16 @@ const BlogPage = ({ data }) => (
                   border={{ color: '#d3d3d3', opacity: '100' }}
                   style={{ backgroundColor: 'white' }}
                 >
-                <Image
-                  position='absolute'
-                  style={{ padding: '0px', margin: '0px', "zIndex": "1" }}
-                  fit='cover'
-                  src={
-                    post.node.frontmatter.featuredImage.childImageSharp
-                      .fluid.src
-                  }
-                  alt='Story image'
-                />
-                {/* 
+                  <Img
+                    position='absolute'
+                    style={{ padding: '0px', margin: '0px', zIndex: '1' }}
+                    fit='cover'
+                    fluid={
+                      post.node.frontmatter.featuredImage.childImageSharp.fluid
+                    }
+                    alt='Story image'
+                  />
+                  {/* 
                 This is for country images. Can't position it properly yet.
                 <Image
                     style={{
@@ -134,7 +143,6 @@ const BlogPage = ({ data }) => (
                       'mmmm d, yyyy'
                     )}
                   </Text>
-                  {console.log(post.node.frontmatter)}
                   <Box
                     direction='row'
                     margin={{ left: 'medium' }}
@@ -159,7 +167,7 @@ const BlogPage = ({ data }) => (
           style={{ backgroundColor: 'white' }}
           pad={{ bottom: 'medium' }}
         >
-          <Image
+          <Img
             style={{ padding: '0px', margin: '0px' }}
             fit='cover'
             src='../images/home.jpg'
@@ -203,11 +211,11 @@ const BlogPage = ({ data }) => (
               border={{ color: '#d3d3d3', opacity: '100' }}
               pad={{ bottom: 'xsmall' }}
             >
-              <Image
+              <Img
                 style={{ margin: '0px' }}
                 fit='cover'
-                src={
-                  post.node.frontmatter.featuredImage.childImageSharp.fluid.src
+                fluid={
+                  post.node.frontmatter.featuredImage.childImageSharp.fluid
                 }
               />
               <Heading
@@ -332,34 +340,44 @@ const BlogPage = ({ data }) => (
 );
 
 export const pageQuery = graphql`
-  query MainPageQuery {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date, frontmatter___title], order: DESC }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date
-            clientName
-            author
-            tags
-            countryCode
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 800, quality: 50) {
-                  src
-                }
+         query MainPageQuery {
+          fileName: file(relativePath: { eq: "static/images/home.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 400, maxHeight: 250) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
-        }
-      }
-    }
-  }
-`;
+          allMarkdownRemark(
+             sort: {
+               fields: [frontmatter___date, frontmatter___title]
+               order: DESC
+             }
+           ) {
+             edges {
+               node {
+                 fields {
+                   slug
+                 }
+                 frontmatter {
+                   title
+                   date
+                   clientName
+                   author
+                   tags
+                   countryCode
+                   featuredImage {
+                     childImageSharp {
+                       fluid(maxWidth: 800, quality: 50) {
+                         ...GatsbyImageSharpFluid
+                       }
+                     }
+                   }
+                 }
+               }
+             }
+           }
+         }
+       `;
 
 export default BlogPage;

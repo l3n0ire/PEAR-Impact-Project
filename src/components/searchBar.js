@@ -68,34 +68,35 @@ class SearchBarComponent extends Component {
           
         >
           <Search color="white" />
-          <TextInput
-            onKeyDown={e => this._handleKeyDown(e)}
-            id="textinput"
-            plain
-            focusIndicator={false}
-            dropHeight="medium"
-            placeholder="Search..."
-              onChange={e => {
-              this.search(e)
-              if (e.target.value !== "") {
-                this.setState({ reveal: true })
-              } else {
-                this.setState({ reveal: false })
-              }
-            }}
-            //Only truncate title if its over 25 characters...
-            suggestions={this.state.results.map(post => {
-              let title = post.title
-              if (title.length > 25) {
-                title = post.title.substring(0, 25) + "..."
-              }
-              return {
-                label: title,
-                path: post.slug,
-              }
-            })}
-            onSelect={e => (window.location.href = e.suggestion.path)}
-          />
+            <TextInput
+              aria-label='Search'
+              onKeyDown={e => this._handleKeyDown(e)}
+              id="textinput"
+              plain
+              focusIndicator={false}
+              dropHeight="medium"
+              placeholder="Search..."
+                onChange={e => {
+                this.search(e)
+                if (e.target.value !== "") {
+                  this.setState({ reveal: true })
+                } else {
+                  this.setState({ reveal: false })
+                }
+              }}
+              //Only truncate title if its over 25 characters...
+              suggestions={this.state.results.map(post => {
+                let title = post.title
+                if (title.length > 25) {
+                  title = post.title.substring(0, 25) + "..."
+                }
+                return {
+                  label: title,
+                  path: post.slug,
+                }
+              })}
+              onSelect={e => (window.location.href = e.suggestion.path)}
+            />
           <Button
             focusIndicator={false}
             icon={

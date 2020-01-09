@@ -25,159 +25,155 @@ const Tablet = ({children}) => {
 const Menu = () => (
   <Box
     style={{
-      flexDirection: 'row',
+      flexDirection: 'row'
     }}
-    fill="horizontal"
-    align="center"
-    direction="row"
-    height="xsmall"
+    fill='horizontal'
+    align='center'
+    direction='row'
+    height='xsmall'
     // elevation="xsmall"
     background={{
-      color: 'black',
+      color: 'black'
     }}
   >
     <Desktop>
       <Fragment>
         <Box
-          display="inline-block"
+          display='inline-block'
           style={{
-            whiteSpace: 'nowrap',
+            whiteSpace: 'nowrap'
           }}
-          flex={{grow: 2, shrink: 1}}
-          width={{min: '225px', max: '10%'}}
-          margin={{left: '8vw'}}
-
+          flex={{ grow: 2, shrink: 1 }}
+          width={{ min: '225px', max: '10%' }}
+          margin={{ left: '8vw' }}
         >
-          <Link to="/">
-            <Box
-              display="inline-block"
-              flex={true}
-              alignSelf="start"
-
-            >
+          <Link to='/'>
+            <Box display='inline-block' flex={true} alignSelf='start'>
               <Heading
-                margin="none"
+                margin='none'
                 style={{
                   fontWeight: 400,
                   lineHeight: '4vh',
                   padding: 'none',
-                  fontSize: '1.5em',
-
+                  fontSize: '1.5em'
                 }}
-                color="white"
+                color='white'
               >
                 Success Stories
               </Heading>
               <Heading
-                margin="none"
+                margin='none'
                 style={{
                   fontWeight: 400,
                   lineHeight: '4vh',
                   padding: 'none',
-                  fontSize: '1.5em',
+                  fontSize: '1.5em'
                 }}
-                color="white"
+                color='white'
               >
-                of <span style={{color: 'red'}}>New Canadians</span>
+                of <span style={{ color: 'red' }}>New Canadians</span>
               </Heading>
             </Box>
           </Link>
         </Box>
         <Box
-          flex={{grow: 1, shrink: 2}}
-          style={{whiteSpace: 'nowrap'}}
-          direction="row"
-          align="center"
-          justify="around"
-          display="inline-block"
-          margin={{left: '0', right: '4vw'}}
-
-
+          flex={{ grow: 1, shrink: 2 }}
+          style={{ whiteSpace: 'nowrap' }}
+          direction='row'
+          align='center'
+          justify='around'
+          display='inline-block'
+          margin={{ left: '0', right: '4vw' }}
+          role='tab'
         >
           <PlainButton
-            hoverColor="red"
-            fillColor="none"
-            color="white"
-            size="1.3em"
-            display="inline-block"
+            role='tab'
+            hoverColor='red'
+            fillColor='none'
+            color='white'
+            size='1.3em'
+            display='inline-block'
             border={false}
-            text="Stories"
-            target="/"
-            boxMargin="0"
+            text='Stories'
+            target='/'
+            boxMargin='0'
           />
           <PlainButton
-            hoverColor="red"
-            fillColor="none"
-            size="1.3em"
-            color="white"
-            display="inline-block"
+            role='tab'
+            hoverColor='red'
+            fillColor='none'
+            size='1.3em'
+            color='white'
+            display='inline-block'
             border={false}
-            text="About"
-            target="/about"
+            text='About'
+            target='/about'
           />
 
           <PlainButton
-            hoverColor="red"
-            fillColor="none"
-            size="1.3em"
-            color="white"
-            display="inline-block"
+            role='tab'
+            hoverColor='red'
+            fillColor='none'
+            size='1.3em'
+            color='white'
+            display='inline-block'
             border={false}
-            text="Contact"
-            target="/contact"
+            text='Contact'
+            target='/contact'
           />
           <SearchBar></SearchBar>
         </Box>
-
       </Fragment>
     </Desktop>
 
     <Mobile>
-      <Link to="/">
+      <Link to='/'>
         <Box
-          margin="none"
-          width={{min: '50%'}}
-          margin={{horizontal: '8vw'}}
-
+          margin='none'
+          width={{ min: '50%' }}
+          margin={{ horizontal: '8vw' }}
         >
           <Heading
-            color="white"
-            margin="none"
+            color='white'
+            margin='none'
             style={{
               lineHeight: '4vh',
               padding: 'none',
               fontWeight: 400,
-              fontSize: '1.25em',
+              fontSize: '1.25em'
             }}
           >
-            Success Stories of <span style={{color: 'red', fontWeight: 'bold'}}>New Canadians</span>
+            Success Stories of{' '}
+            <span style={{ color: 'red', fontWeight: 'bold' }}>
+              New Canadians
+            </span>
           </Heading>
-
         </Box>
       </Link>
     </Mobile>
 
     <Tablet>
-      <Link to="/">
+      <Link to='/'>
         <Box
-          margin="none"
-          width={{min: '50%'}}
-          margin={{horizontal: '8vw'}}
-
+          margin='none'
+          width={{ min: '50%' }}
+          margin={{ horizontal: '8vw' }}
         >
           <Heading
-            color="white"
-            margin="none"
+            color='white'
+            margin='none'
             style={{
               lineHeight: '4vh',
               padding: 'none',
               fontWeight: 400,
-              fontSize: '1.5em',
+              fontSize: '1.5em'
             }}
           >
-            Success Stories of <span style={{color: 'red', fontWeight: 'bold'}}>New Canadians</span>
+            Success Stories of{' '}
+            <span style={{ color: 'red', fontWeight: 'bold' }}>
+              New Canadians
+            </span>
           </Heading>
-
         </Box>
       </Link>
     </Tablet>

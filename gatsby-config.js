@@ -3,51 +3,63 @@ var strip = require('strip-markdown')
 
 module.exports = {
   siteMetadata: {
-    title: `PEAR Impact Project`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Success Stories of Canadians`,
+    description: `The success stories of new Canadian immigrants by Azhar Laher.`,
+    author: `Azhar Laher`,
+    siteUrl: 'https://success-stories-of-new-canadians.netlify.com/'
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/static/images`,
-      },
+        path: `${__dirname}/static/images`
+      }
     },
-    
-    "gatsby-plugin-catch-links",
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en'
+      }
+    },
+    'gatsby-plugin-catch-links',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
-        name: "pages",
-      },
+        name: 'pages'
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages/blog`,
-        name: "blog",
-      },
+        name: 'blog'
+      }
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "fonts",
-        path: `${__dirname}/src/fonts/`,
-      },
+        name: 'fonts',
+        path: `${__dirname}/src/fonts/`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/static/images`,
-        name: "images",
-      },
+        name: 'images'
+      }
     },
 
     {
@@ -59,8 +71,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/images/leaf.png`, // This path is relative to the root of the site.
-      },
+        icon: `static/images/leaf.png` // This path is relative to the root of the site.
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -70,41 +82,41 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1200,
-            },
-          },
-        ],
-      },
+              maxWidth: 1200
+            }
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [  
+        plugins: [
           {
-            resolve: `gatsby-remark-relative-images`,
+            resolve: `gatsby-remark-relative-images`
           },
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1000,
               quality: 50
-            },
-          },
-        ],
-      },
+            }
+          }
+        ]
+      }
     },
     {
       resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
       options: {
         fields: [
-          "title",
-          "date",
-          "tags",
-          "path",
-          "author",
-          "clientName",
-          "excerpt",
-          "featuredImage",
+          'title',
+          'date',
+          'tags',
+          'path',
+          'author',
+          'clientName',
+          'excerpt',
+          'featuredImage'
         ],
         resolvers: {
           MarkdownRemark: {
@@ -120,27 +132,27 @@ module.exports = {
             excerpt: node => {
               const text = remark()
                 .use(strip)
-                .processSync(node.rawMarkdownBody)
+                .processSync(node.rawMarkdownBody);
 
-              const excerptLength = 240 // Hard coded excerpt length
+              const excerptLength = 240; // Hard coded excerpt length
               return (
                 String(text)
                   .substring(0, excerptLength)
-                  .trimRight() + "..."
-              )
-            },
-          },
-        },
-      },
+                  .trimRight() + '...'
+              );
+            }
+          }
+        }
+      }
     },
     {
-      resolve: "gatsby-plugin-netlify-cms",
+      resolve: 'gatsby-plugin-netlify-cms',
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
     },
     `gatsby-plugin-netlify-cms-paths`,
-    
-    "gatsby-plugin-netlify", //keep this last in array
-  ],
-}
+
+    'gatsby-plugin-netlify' //keep this last in array
+  ]
+};

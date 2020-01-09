@@ -116,7 +116,7 @@ const Layout = ({children}) => {
                   <a
                     href='https://www.facebook.com/azhar.laher'
                     target='_blank'
-                    rel='noopener'
+                    rel='noopener noreferrer'
                   >
                     <FacebookOption color='white' />
                   </a>
@@ -124,7 +124,7 @@ const Layout = ({children}) => {
                   <a
                     href='https://www.instagram.com/azhar_laher/?hl=en'
                     target='_blank'
-                    rel='noopener'
+                    rel='noopener noreferrer'
                   >
                     <Instagram color='white' />
                   </a>
@@ -132,13 +132,14 @@ const Layout = ({children}) => {
                   <a
                     href='https://twitter.com/azharlaher?lang=en'
                     target='_blank'
+                    rel='noopener noreferrer'
                   >
                     <Twitter color='white' />
                   </a>
                   <a
                     href='https://www.linkedin.com/in/azhar-laher-877b844/?originalSubdomain=ca'
                     target='_blank'
-                    rel='noopener'
+                    rel='noopener noreferrer'
                   >
                     <LinkedinOption color='white' />
                   </a>

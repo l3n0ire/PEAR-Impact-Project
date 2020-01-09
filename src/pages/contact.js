@@ -37,6 +37,7 @@ const ContactPage = () => (
             <Heading>Contact</Heading>
             <Form>
               <Box pad={{top: 'medium'}}>
+                <label>
                 <FormField
                   style={{minWidth: '270px'}}
                   label="Name"
@@ -45,6 +46,8 @@ const ContactPage = () => (
                   focusIndicator={false}
                   validate={{regexp: /^[a-z]/i}}
                 />
+              </label>
+              <label>
                 <FormField
                   focusIndicator={false}
                   style={{minWidth: '270px'}}
@@ -57,6 +60,8 @@ const ContactPage = () => (
                   }}
                   required
                 />
+                </label>
+              <label>
                 <TextArea
                   focusIndicator={false}
                   component={TextArea}
@@ -71,7 +76,7 @@ const ContactPage = () => (
                   label="Message"
                   placeholder="Type your message here."
                 />
-
+              </label>
               </Box>
 
               <ReCAPTCHA
