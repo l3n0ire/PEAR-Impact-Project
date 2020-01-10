@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import {graphql} from 'gatsby';
+import Img from 'gatsby-image'
 import {Box, Heading, Grommet, Button, Image, Text} from 'grommet';
 import {Mobile, Desktop, Tablet} from '../components/menu';
 import Tag from '../components/tag';
@@ -94,9 +95,12 @@ export default function Template({data}) {
       <Mobile>
         <Box
           height ="50vh"
-          background = {'url('+post.frontmatter.featuredImage.childImageSharp.fluid.src+')'}
+          
           pad="8vw"
-        />
+        >
+          <Img alt='Main image' fluid = {post.frontmatter.featuredImage.childImageSharp.fluid}/>
+        </Box>
+        
 
 
         <Box pad={{vertical: 'large'}} margin={{horizontal: '8vw'}}>

@@ -42,10 +42,12 @@ const BlogPage = ({ data }) => (
             style={{ backgroundColor: 'white' }}
             pad={{ bottom: 'medium' }}
           >
-            <Image
+            <Img
               style={{ padding: '0px', margin: '0px' }}
               fit='cover'
-              src='../images/home.jpg'
+              fluid={data.allFile.edges[0].node.childImageSharp.sizes.src}
+              sizes={data.allFile.edges[0].node.childImageSharp.sizes}
+              alt='Homepage'
             />
 
             <Heading
@@ -93,11 +95,14 @@ const BlogPage = ({ data }) => (
                   style={{ backgroundColor: 'white' }}
                 >
                   <Img
-                    position='absolute'
-                    style={{ padding: '0px', margin: '0px', zIndex: '1' }}
+                    style={{ padding: '0px', margin: '0px' }}
                     fit='cover'
                     fluid={
-                      post.node.frontmatter.featuredImage.childImageSharp.fluid
+                      post.node.frontmatter.featuredImage.childImageSharp.sizes
+                        .src
+                    }
+                    sizes={
+                      post.node.frontmatter.featuredImage.childImageSharp.sizes
                     }
                     alt='Story image'
                   />
@@ -170,7 +175,9 @@ const BlogPage = ({ data }) => (
           <Img
             style={{ padding: '0px', margin: '0px' }}
             fit='cover'
-            src='../images/home.jpg'
+            fluid={data.allFile.edges[0].node.childImageSharp.sizes.src}
+            sizes={data.allFile.edges[0].node.childImageSharp.sizes}
+            alt='Homepage'
           />
 
           <Heading
@@ -212,11 +219,15 @@ const BlogPage = ({ data }) => (
               pad={{ bottom: 'xsmall' }}
             >
               <Img
-                style={{ margin: '0px' }}
+                style={{ padding: '0px', margin: '0px' }}
                 fit='cover'
                 fluid={
-                  post.node.frontmatter.featuredImage.childImageSharp.fluid
+                  post.node.frontmatter.featuredImage.childImageSharp.sizes.src
                 }
+                sizes={
+                  post.node.frontmatter.featuredImage.childImageSharp.sizes
+                }
+                alt='Story image'
               />
               <Heading
                 level='2'
@@ -256,10 +267,12 @@ const BlogPage = ({ data }) => (
           style={{ backgroundColor: 'white' }}
           pad={{ bottom: 'medium' }}
         >
-          <Image
-            style={{ padding: '0px', margin: '0px', maxHeight: '40vh' }}
+          <Img
+            style={{ padding: '0px', margin: '0px' }}
             fit='cover'
-            src='../images/home.jpg'
+            fluid={data.allFile.edges[0].node.childImageSharp.sizes.src}
+            sizes={data.allFile.edges[0].node.childImageSharp.sizes}
+            alt='Homepage'
           />
 
           <Heading
@@ -301,12 +314,16 @@ const BlogPage = ({ data }) => (
               style={{ backgroundColor: 'white' }}
               border={{ color: '#d3d3d3', opacity: '100' }}
             >
-              <Image
-                style={{ margin: '0px' }}
+              <Img
+                style={{ padding: '0px', margin: '0px' }}
                 fit='cover'
-                src={
-                  post.node.frontmatter.featuredImage.childImageSharp.fluid.src
+                fluid={
+                  post.node.frontmatter.featuredImage.childImageSharp.sizes.src
                 }
+                sizes={
+                  post.node.frontmatter.featuredImage.childImageSharp.sizes
+                }
+                alt='Story image'
               />
               <Heading
                 level='2'
@@ -341,14 +358,22 @@ const BlogPage = ({ data }) => (
 
 export const pageQuery = graphql`
          query MainPageQuery {
-          fileName: file(relativePath: { eq: "static/images/home.jpg" }) {
-            childImageSharp {
-              fluid(maxWidth: 400, maxHeight: 250) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          allMarkdownRemark(
+           allFile(
+             filter: {
+               childImageSharp: { sizes: { originalName: { eq: "home.jpg" } } }
+             }
+           ) {
+             edges {
+               node {
+                 childImageSharp {
+                   sizes {
+                     ...GatsbyImageSharpSizes_withWebp
+                   }
+                 }
+               }
+             }
+           }
+           allMarkdownRemark(
              sort: {
                fields: [frontmatter___date, frontmatter___title]
                order: DESC
@@ -368,8 +393,8 @@ export const pageQuery = graphql`
                    countryCode
                    featuredImage {
                      childImageSharp {
-                       fluid(maxWidth: 800, quality: 50) {
-                         ...GatsbyImageSharpFluid
+                       sizes(maxWidth: 800, quality: 50) {
+                         ...GatsbyImageSharpSizes_withWebp
                        }
                      }
                    }
