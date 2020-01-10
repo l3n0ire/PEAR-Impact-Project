@@ -47,7 +47,8 @@ const BlogPage = ({ data }) => (
               fit='cover'
               fluid={data.allFile.edges[0].node.childImageSharp.sizes.src}
               sizes={data.allFile.edges[0].node.childImageSharp.sizes}
-              alt='Homepage'
+              aria-label='Homepage'
+              alt='story image'
             />
             <Heading
               margin={{ top: 'medium', horizontal: 'medium', bottom: 'small' }}
@@ -103,7 +104,8 @@ const BlogPage = ({ data }) => (
                     sizes={
                       post.node.frontmatter.featuredImage.childImageSharp.sizes
                     }
-                    alt='Story image'
+                    aria-label='Story image'
+                    alt='story image'
                   />
                   {/* 
                 This is for country images. Can't position it properly yet.
@@ -176,7 +178,8 @@ const BlogPage = ({ data }) => (
             fit='cover'
             fluid={data.allFile.edges[0].node.childImageSharp.sizes.src}
             sizes={data.allFile.edges[0].node.childImageSharp.sizes}
-            alt='Homepage'
+            aria-label='Homepage'
+            alt='story image'
           />
 
           <Heading
@@ -226,7 +229,8 @@ const BlogPage = ({ data }) => (
                 sizes={
                   post.node.frontmatter.featuredImage.childImageSharp.sizes
                 }
-                alt='Story image'
+                aria-label='Story image'
+                alt='story image'
               />
               <Heading
                 level='2'
@@ -271,7 +275,8 @@ const BlogPage = ({ data }) => (
             fit='cover'
             fluid={data.allFile.edges[0].node.childImageSharp.sizes.src}
             sizes={data.allFile.edges[0].node.childImageSharp.sizes}
-            alt='Homepage'
+            aria-label='Homepage'
+            alt='story image'
           />
 
           <Heading
@@ -322,7 +327,8 @@ const BlogPage = ({ data }) => (
                 sizes={
                   post.node.frontmatter.featuredImage.childImageSharp.sizes
                 }
-                alt='Story image'
+                aria-label='Story image'
+                alt='story image'
               />
               <Heading
                 level='2'
