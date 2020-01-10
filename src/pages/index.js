@@ -49,7 +49,6 @@ const BlogPage = ({ data }) => (
               sizes={data.allFile.edges[0].node.childImageSharp.sizes}
               alt='Homepage'
             />
-
             <Heading
               margin={{ top: 'medium', horizontal: 'medium', bottom: 'small' }}
               level='2'

@@ -116,7 +116,8 @@ module.exports = {
           'author',
           'clientName',
           'excerpt',
-          'featuredImage'
+          'featuredImage',
+          'countryCode'
         ],
         resolvers: {
           MarkdownRemark: {

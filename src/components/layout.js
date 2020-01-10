@@ -13,7 +13,7 @@ import {Desktop, Tablet, Mobile} from './menu';
 import {useMediaQuery} from 'react-responsive';
 
 
-const Layout = ({children}) => {
+const Layout = ({children}) => {  
   const isMobile = useMediaQuery({maxWidth: 767});
 
   const data = useStaticQuery(graphql`
