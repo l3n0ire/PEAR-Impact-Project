@@ -24,108 +24,113 @@ export default function Template({data}) {
   return (
     <Layout>
       <Desktop>
-
         <Box
-          height ="60vh"
-          background = {{opacity: 'weak', image: imageUrl}}
-          pad="8vw"
+          height='60vh'
+          background={{ opacity: 'weak', image: imageUrl }}
+          pad='8vw'
         />
 
-        <Box pad={{vertical: 'large'}} margin={{horizontal: '8vw'}} align="center">
-          <div style={{margin: '0px, auto', width: '50vw', minWidth: '700px'}}
+        <Box
+          pad={{ vertical: 'large' }}
+          margin={{ horizontal: '8vw' }}
+          align='center'
+        >
+          <div
+            style={{ margin: '0px, auto', width: '50vw', minWidth: '700px' }}
           >
-            <Heading level="1"
-            >
-              {post.frontmatter.title}
-            </Heading>
+            <Heading level='1'>{post.frontmatter.title}</Heading>
             <Tag tags={tags}></Tag>
-            <br/>
-            <Box direction ="row">
-              <Text size="large" margin={{top: 'xxsmall', right: 'medium'}}>By: </Text>
+            <br />
+            <Box direction='row'>
+              <Text size='large' margin={{ top: 'xxsmall', right: 'medium' }}>
+                By:{' '}
+              </Text>
               <Tag tags={author}></Tag>
             </Box>
-            <br/>
-            <Heading level="4">
+            <br />
+            <Heading level='4'>
               {dateFormat(new Date(post.frontmatter.date), 'mmmm d, yyyy')}
             </Heading>
-            <div dangerouslySetInnerHTML={{__html: post.html}} />
-            <Heading margin={{top: 'xlarge'}} level="2">Recommended Posts</Heading>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <Heading margin={{ top: 'xlarge' }} level='2'>
+              Recommended Posts
+            </Heading>
 
-            <Header current ={post.frontmatter.title} is_recommend = {true} query={tagString}></Header>
-
+            <Header
+              current={post.frontmatter.title}
+              is_recommend={true}
+              query={tagString}
+            ></Header>
           </div>
-
         </Box>
-
-
       </Desktop>
 
       <Tablet>
         <Box
-          height ="50vh"
-          background = {'url('+post.frontmatter.featuredImage.childImageSharp.fluid.src+')'}
-          pad="8vw"
+          height='60vh'
+          background={{ opacity: 'weak', image: imageUrl }}
+          pad='8vw'
         />
 
-
-        <Box pad={{vertical: 'large'}} margin={{horizontal: '8vw'}}>
-          <Heading level="1"
-          >
-            {post.frontmatter.title}
-          </Heading>
+        <Box pad={{ vertical: 'large' }} margin={{ horizontal: '8vw' }}>
+          <Heading level='1'>{post.frontmatter.title}</Heading>
           <Tag tags={tags}></Tag>
-          <br/>
-          <Box direction ="row">
-            <Text size="large" margin={{top: 'xxsmall', right: 'medium'}}>By: </Text>
+          <br />
+          <Box direction='row'>
+            <Text size='large' margin={{ top: 'xxsmall', right: 'medium' }}>
+              By:{' '}
+            </Text>
             <Tag tags={author}></Tag>
           </Box>
-          <br/>
-          <Heading level="4">
-
+          <br />
+          <Heading level='4'>
             {dateFormat(new Date(post.frontmatter.date), 'mmmm d, yyyy')}
           </Heading>
-          <div dangerouslySetInnerHTML={{__html: post.html}} />
-          <Heading margin={{top: 'xlarge'}} level="2">Recommended Posts</Heading>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Heading margin={{ top: 'xlarge' }} level='2'>
+            Recommended Posts
+          </Heading>
 
-          <Header current ={post.frontmatter.title} is_recommend = {true} query={tagString}></Header>
+          <Header
+            current={post.frontmatter.title}
+            is_recommend={true}
+            query={tagString}
+          ></Header>
         </Box>
-
       </Tablet>
 
       <Mobile>
         <Box
-          height ="50vh"
-          
-          pad="8vw"
-        >
-          <Img alt='Main image' fluid = {post.frontmatter.featuredImage.childImageSharp.fluid}/>
-        </Box>
-        
+          height='60vh'
+          background={{ opacity: 'weak', image: imageUrl }}
+          pad='8vw'
+        />
 
-
-        <Box pad={{vertical: 'large'}} margin={{horizontal: '8vw'}}>
-          <Heading level="1"
-          >
-            {post.frontmatter.title}
-          </Heading>
+        <Box pad={{ vertical: 'large' }} margin={{ horizontal: '8vw' }}>
+          <Heading level='1'>{post.frontmatter.title}</Heading>
           <Tag tags={tags}></Tag>
-          <Box direction ="row">
-            <Text size="large" margin={{top: 'xxsmall', right: 'medium'}}>By: </Text>
+          <Box direction='row'>
+            <Text size='large' margin={{ top: 'xxsmall', right: 'medium' }}>
+              By:{' '}
+            </Text>
             <Tag tags={author}></Tag>
           </Box>
-          <br/>
-          <Heading level="4">
+          <br />
+          <Heading level='4'>
             {dateFormat(new Date(post.frontmatter.date), 'mmmm d, yyyy')}
           </Heading>
-          <div dangerouslySetInnerHTML={{__html: post.html}} />
-          <Heading margin={{top: 'large'}} level="2">Recommended Posts</Heading>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Heading margin={{ top: 'large' }} level='2'>
+            Recommended Posts
+          </Heading>
 
-          <Header current ={post.frontmatter.title} is_recommend = {true} query={tagString}></Header>
+          <Header
+            current={post.frontmatter.title}
+            is_recommend={true}
+            query={tagString}
+          ></Header>
         </Box>
-
-
       </Mobile>
-
     </Layout>
   );
 }
